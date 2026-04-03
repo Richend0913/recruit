@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>委託配送スタッフ募集｜BURNING BROS.｜月収60万円可</title>
+<meta name="description" content="東京（世田谷区・大田区）・神奈川（横浜市・座間市）の委託配送スタッフ募集。単価143円〜、普通免許OK、車なしリースOK。大学生・主婦・副業歓迎。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+/* ────────────────────────────
+   全セクション：明示的に背景色と文字色を指定
+──────────────────────────── */
+body {
+  font-family:'Noto Sans JP', sans-serif;
+  background-color:#111111;
+  color:#dddddd;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  height:56px;
+  background-color:#0a0a0a;
+  border-bottom:2px solid #c8891e;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 28px;
+}
+.nav-logo {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:19px; letter-spacing:5px;
+  color:#c8891e;
+}
+.nav-btn {
+  background-color:#c8891e;
+  color:#000000;
+  font-size:12px; font-weight:900; letter-spacing:1px;
+  padding:9px 22px; border-radius:2px;
+  text-decoration:none;
+}
+
+/* ── HERO ── */
+.hero {
+  background-color:#0a0a0a;
+  padding:100px 24px 72px;
+  position:relative;
+  overflow:hidden;
+}
+/* decorative large number behind */
+.hero-deco {
+  position:absolute;
+  font-family:'Bebas Neue', sans-serif;
+  font-size:400px; line-height:1;
+  color:#1a1a1a;
+  right:-40px; top:50%;
+  transform:translateY(-50%);
+  pointer-events:none; user-select:none;
+  letter-spacing:-10px;
+}
+.hero-inner { max-width:820px; margin:0 auto; position:relative; z-index:1; }
+
+.live-row {
+  display:flex; align-items:center; gap:10px;
+  margin-bottom:28px;
+}
+.live-dot {
+  width:9px; height:9px; border-radius:50%;
+  background-color:#4ade80;
+  box-shadow:0 0 8px #4ade80;
+  animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100%{ opacity:1; } 50%{ opacity:.4; }
+}
+.live-text {
+  font-size:11px; letter-spacing:3px; font-weight:700;
+  color:#4ade80;
+}
+
+.hero-label {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(22px,4vw,32px);
+  letter-spacing:4px;
+  color:#888888;
+  display:block; margin-bottom:4px;
+}
+.hero-amount {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(96px,18vw,180px);
+  line-height:.9;
+  color:#c8891e;
+  display:block; margin-bottom:4px;
+}
+.hero-label2 {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(32px,6vw,60px);
+  letter-spacing:3px;
+  color:#ffffff;
+  display:block; margin-bottom:28px;
+}
+
+.hero-line {
+  width:56px; height:3px;
+  background-color:#c8891e;
+  margin-bottom:28px;
+}
+
+.hero-copy {
+  font-size:15px; line-height:1.95;
+  color:#aaaaaa;
+  margin-bottom:36px;
+  max-width:520px;
+}
+.hero-copy strong { color:#ffffff; font-weight:700; }
+
+/* badges */
+.badge-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:40px; }
+.bdg {
+  font-size:12px; font-weight:700; letter-spacing:.5px;
+  padding:7px 16px; border-radius:2px;
+  background-color:#1e1e1e;
+  color:#cccccc;
+  border:1px solid #333333;
+}
+.bdg-gold {
+  background-color:#251a07;
+  color:#c8891e;
+  border:1px solid #5a3d0a;
+}
+
+.btn-row { display:flex; gap:12px; flex-wrap:wrap; }
+.btn-gold {
+  display:inline-flex; align-items:center; gap:8px;
+  background-color:#c8891e; color:#000000;
+  font-size:15px; font-weight:900; letter-spacing:.5px;
+  padding:17px 38px; border-radius:2px; text-decoration:none;
+}
+.btn-green {
+  display:inline-flex; align-items:center; gap:8px;
+  background-color:#06c755; color:#ffffff;
+  font-size:15px; font-weight:900;
+  padding:17px 32px; border-radius:2px; text-decoration:none;
+}
+
+/* ── BAND ── */
+.band {
+  background-color:#c8891e;
+  border-top:none; border-bottom:none;
+}
+.band-inner {
+  max-width:960px; margin:0 auto;
+  display:flex;
+}
+.band-cell {
+  flex:1; text-align:center;
+  padding:22px 12px;
+  border-right:1px solid #a06c10;
+}
+.band-cell:last-child { border-right:none; }
+.band-num {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(22px,3.5vw,36px);
+  color:#000000;
+  line-height:1; margin-bottom:5px;
+}
+.band-lbl {
+  font-size:10px; font-weight:700;
+  color:#4d3200;
+  letter-spacing:1px;
+}
+
+/* ── COMMON SECTION ── */
+.sec-dark  { background-color:#111111; padding:80px 24px; }
+.sec-black { background-color:#0a0a0a; padding:80px 24px; }
+.inner { max-width:820px; margin:0 auto; }
+
+.sec-eyebrow {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:11px; letter-spacing:5px;
+  color:#c8891e;
+  display:block; margin-bottom:10px;
+}
+.sec-line { width:36px; height:2px; background-color:#c8891e; margin:12px 0 28px; }
+.sec-h2 {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(36px,6vw,58px);
+  letter-spacing:1px; line-height:1;
+  color:#ffffff;
+  margin-bottom:8px;
+}
+.sec-note {
+  font-size:14px; color:#888888;
+  margin-bottom:44px; line-height:1.8;
+}
+
+/* ── WHO ── */
+.who-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:2px; background-color:#2a2a2a;
+  border:1px solid #2a2a2a; border-radius:4px; overflow:hidden;
+}
+.who-card {
+  background-color:#161616;
+  padding:36px 26px;
+}
+.who-card-num {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:44px; line-height:1;
+  color:#2a2a2a; margin-bottom:14px;
+}
+.who-card-icon { font-size:28px; margin-bottom:12px; }
+.who-card h3 { font-size:17px; font-weight:900; color:#ffffff; margin-bottom:10px; }
+.who-card p  { font-size:13px; color:#888888; line-height:1.9; }
+.who-card p strong { color:#cccccc; font-weight:700; }
+
+/* ── INCOME ── */
+.income-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
+.ic {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:4px; overflow:hidden;
+}
+.ic-head {
+  background-color:#0f0f0f;
+  padding:14px 22px;
+  font-family:'Bebas Neue', sans-serif;
+  font-size:13px; letter-spacing:4px;
+  color:#888888;
+  border-bottom:1px solid #2a2a2a;
+}
+.ic-body { padding:28px 22px; }
+.ic-place { font-size:11px; color:#666666; letter-spacing:2px; margin-bottom:8px; }
+.ic-amount {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(52px,8vw,78px);
+  color:#c8891e; line-height:1; margin-bottom:8px;
+}
+.ic-count { font-size:13px; color:#666666; margin-bottom:14px; }
+.ic-tag {
+  display:inline-block;
+  background-color:#251a07;
+  border:1px solid #5a3d0a;
+  border-radius:2px;
+  padding:4px 12px;
+  font-size:11px; color:#c8891e; letter-spacing:1px;
+}
+.income-note {
+  background-color:#161616;
+  border-left:3px solid #c8891e;
+  padding:18px 22px;
+  font-size:13px; color:#888888; line-height:1.9;
+}
+.income-note strong { color:#c8891e; }
+
+/* ── CONDITIONS ── */
+.cond-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.cond-card {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:4px; padding:30px 26px;
+  display:flex; gap:18px;
+}
+.cond-icon-box {
+  width:46px; height:46px; flex-shrink:0;
+  background-color:#251a07;
+  border:1px solid #5a3d0a;
+  border-radius:4px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px;
+}
+.cond-lbl { font-size:10px; letter-spacing:2px; color:#c8891e; margin-bottom:6px; }
+.cond-card h3 { font-size:15px; font-weight:700; color:#ffffff; margin-bottom:6px; line-height:1.4; }
+.cond-card p  { font-size:13px; color:#888888; line-height:1.8; }
+.cond-card p strong { color:#cccccc; }
+
+/* ── AREAS ── */
+.area-grid { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+.area-card {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  padding:44px 36px;
+}
+.area-city {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(44px,7vw,76px);
+  line-height:.9; letter-spacing:1px; margin-bottom:10px;
+}
+.area-tokyo .area-city { color:#c8891e; }
+.area-kana  .area-city { color:#5ba3d0; }
+.area-place { font-size:13px; color:#666666; letter-spacing:1px; margin-bottom:24px; }
+.area-income {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(38px,5vw,56px);
+  color:#ffffff; line-height:1; margin-bottom:6px;
+}
+.area-count { font-size:12px; color:#666666; }
+
+/* ── DORM ── */
+.dorm-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
+.dorm-card {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:4px; padding:28px 22px;
+}
+.dorm-icon { font-size:26px; margin-bottom:12px; }
+.dorm-card h3 { font-size:15px; font-weight:700; color:#ffffff; margin-bottom:8px; }
+.dorm-card p  { font-size:13px; color:#888888; line-height:1.8; }
+.dorm-card p strong { color:#cccccc; }
+.dorm-note {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  border-left:3px solid #c8891e;
+  border-radius:0 4px 4px 0;
+  padding:18px 22px;
+  font-size:13px; color:#888888; line-height:1.9;
+}
+.dorm-note strong { color:#c8891e; }
+
+/* ── APPLY CTA ── */
+.apply-wrap {
+  background-color:#0f0f0f;
+  border:1px solid #2a2a2a;
+  border-radius:6px;
+  padding:56px 40px;
+  text-align:center;
+}
+.apply-h {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(42px,7vw,78px);
+  line-height:1; letter-spacing:1px;
+  color:#ffffff; margin-bottom:12px;
+}
+.apply-h span { color:#c8891e; }
+.apply-sub { font-size:14px; color:#888888; margin-bottom:40px; line-height:1.9; }
+.apply-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:22px; }
+.apply-note { font-size:12px; color:#555555; line-height:2; }
+
+/* ── FLOW ── */
+.flow-list { display:grid; gap:0; }
+.flow-item {
+  display:flex; gap:22px;
+  padding-bottom:40px; position:relative;
+}
+.flow-item:last-child { padding-bottom:0; }
+.flow-item::before {
+  content:''; position:absolute;
+  left:27px; top:56px; bottom:0; width:1px;
+  background:linear-gradient(#c8891e, #2a2a2a);
+}
+.flow-item:last-child::before { display:none; }
+.flow-n {
+  width:56px; height:56px; border-radius:50%; flex-shrink:0;
+  background-color:#251a07;
+  border:2px solid #c8891e;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Bebas Neue', sans-serif; font-size:22px;
+  color:#c8891e;
+  position:relative; z-index:1;
+}
+.flow-body { padding-top:12px; }
+.flow-body h3 { font-size:16px; font-weight:700; color:#ffffff; margin-bottom:6px; }
+.flow-body p  { font-size:13px; color:#888888; line-height:1.85; }
+
+/* ── FAQ ── */
+.faq-list {
+  border:1px solid #2a2a2a;
+  border-radius:4px; overflow:hidden;
+}
+.faq-item { border-bottom:1px solid #2a2a2a; }
+.faq-item:last-child { border-bottom:none; }
+.faq-q {
+  padding:20px 24px; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  background-color:#161616;
+  font-size:14px; font-weight:700;
+  color:#dddddd;
+  user-select:none;
+}
+.faq-q:hover { background-color:#1c1c1c; }
+.faq-arr {
+  width:26px; height:26px; border-radius:50%; flex-shrink:0;
+  border:1px solid #444444;
+  background-color:#0f0f0f;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; color:#c8891e;
+  transition:transform .3s;
+}
+.faq-item.open .faq-arr { transform:rotate(45deg); }
+.faq-a {
+  max-height:0; overflow:hidden;
+  transition:max-height .35s ease, padding .35s;
+  background-color:#0f0f0f;
+  font-size:13px; color:#888888; line-height:1.9;
+  padding:0 24px;
+}
+.faq-item.open .faq-a { max-height:180px; padding:0 24px 22px; }
+
+/* ── FOOTER ── */
+footer {
+  background-color:#080808;
+  border-top:1px solid #222222;
+  padding:28px 28px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:12px;
+}
+.f-logo { font-family:'Bebas Neue', sans-serif; font-size:18px; letter-spacing:5px; color:#c8891e; }
+.f-copy { font-size:11px; color:#444444; }
+
+/* ── FLOAT ── */
+.float-bar {
+  display:none; position:fixed;
+  bottom:0; left:0; right:0; z-index:200;
+  background-color:#c8891e;
+  padding:16px 24px; text-align:center;
+  font-size:15px; font-weight:900;
+  color:#000000; text-decoration:none;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .band-inner { flex-wrap:wrap; }
+  .band-cell  { flex:1 1 50%; border-bottom:1px solid #a06c10; }
+  .who-grid   { grid-template-columns:1fr; }
+  .income-grid{ grid-template-columns:1fr; }
+  .cond-grid  { grid-template-columns:1fr; }
+  .area-grid  { grid-template-columns:1fr; }
+  .dorm-grid  { grid-template-columns:1fr; }
+  .apply-wrap { padding:40px 24px; }
+  .float-bar  { display:block; }
+  body { padding-bottom:56px; }
+  nav  { padding:0 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">BURNING BROS.</span>
+  <a href="#apply" class="nav-btn">今すぐ応募</a>
+</nav>
+
+<a href="#apply" class="float-bar">📩 今すぐ応募する</a>
+
+<!-- ████ HERO ████ -->
+<section class="hero">
+  <div class="hero-deco">60</div>
+  <div class="hero-inner">
+    <div class="live-row">
+      <span class="live-dot"></span>
+      <span class="live-text">東京・神奈川　スタッフ募集中</span>
+    </div>
+
+    <span class="hero-label">月収</span>
+    <span class="hero-amount">60万円</span>
+    <span class="hero-label2">可能。</span>
+    <div class="hero-line"></div>
+
+    <p class="hero-copy">
+      委託配送　単価<strong>143円〜</strong>の高単価。<br>
+      <strong>大学生・主婦・正社員の副業</strong>、誰でも歓迎。<br>
+      普通免許があれば、今すぐ始められる。
+    </p>
+
+    <div class="badge-row">
+      <span class="bdg-gold">💴 単価143円〜</span>
+      <span class="bdg-gold">🚗 車なし → リースOK</span>
+      <span class="bdg">🎓 大学生歓迎</span>
+      <span class="bdg">👩 主婦・パート歓迎</span>
+      <span class="bdg">💼 副業・ダブルワーク歓迎</span>
+      <span class="bdg">💳 前借りOK</span>
+    </div>
+
+    <div class="btn-row">
+      <a href="#apply" class="btn-gold">📩 今すぐ応募する</a>
+      <a href="tel:XXXXXXXXXX" class="btn-green">📞 電話で問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- ████ BAND ████ -->
+<div class="band">
+  <div class="band-inner">
+    <div class="band-cell"><div class="band-num">143円〜</div><div class="band-lbl">配送1個あたりの単価</div></div>
+    <div class="band-cell"><div class="band-num">60万円</div><div class="band-lbl">東京エリア月収目安</div></div>
+    <div class="band-cell"><div class="band-num">普通免許</div><div class="band-lbl">特別な資格不要</div></div>
+    <div class="band-cell"><div class="band-num">リースあり</div><div class="band-lbl">車なしでも即スタート</div></div>
+    <div class="band-cell"><div class="band-num">前借りOK</div><div class="band-lbl">給与の前払い制度あり</div></div>
+  </div>
+</div>
+
+<!-- ████ WHO ████ -->
+<section class="sec-dark">
+  <div class="inner">
+    <span class="sec-eyebrow">WHO WE WELCOME</span>
+    <h2 class="sec-h2">こんな方、大歓迎です</h2>
+    <div class="sec-line"></div>
+    <p class="sec-note">フルタイムでがっつり稼ぎたい方も、空き時間だけ入りたい方も。</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-card-num">01</div>
+        <div class="who-card-icon">🎓</div>
+        <h3>大学生</h3>
+        <p>授業の合間・空きコマだけでもOK。<strong>何時から何時まで入れるか</strong>は相談して決めます。しっかり稼ぎたい方はフル参加も歓迎。</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-num">02</div>
+        <div class="who-card-icon">👩</div>
+        <h3>主婦・パート</h3>
+        <p>子供の送り迎え前後など、<strong>自分のペースで入れる時間帯</strong>を一緒に考えます。扶養内での稼ぎ方も相談してください。</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-num">03</div>
+        <div class="who-card-icon">💼</div>
+        <h3>正社員・副業</h3>
+        <p>本業の休日や退勤後に<strong>副収入</strong>を作りたい方。業務委託だから本業に影響なく、稼ぎたい日だけ動けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ INCOME ████ -->
+<section class="sec-black" id="income">
+  <div class="inner">
+    <span class="sec-eyebrow">INCOME MODEL</span>
+    <h2 class="sec-h2">収入モデル</h2>
+    <div class="sec-line"></div>
+    <p class="sec-note">エリアによって配送量が変わります。稼働日数・時間は自由に調整可能。</p>
+    <div class="income-grid">
+      <div class="ic">
+        <div class="ic-head">TOKYO</div>
+        <div class="ic-body">
+          <div class="ic-place">世田谷区・大田区 周辺</div>
+          <div class="ic-amount">60万円</div>
+          <div class="ic-count">月間 4,500〜6,000個（フル稼働時）</div>
+          <span class="ic-tag">最高収入を狙うならこちら</span>
+        </div>
+      </div>
+      <div class="ic">
+        <div class="ic-head">KANAGAWA</div>
+        <div class="ic-body">
+          <div class="ic-place">横浜市・座間市 周辺</div>
+          <div class="ic-amount">40万円</div>
+          <div class="ic-count">月間 2,500〜3,000個（フル稼働時）</div>
+          <span class="ic-tag">自分のペースで稼ぐならこちら</span>
+        </div>
+      </div>
+    </div>
+    <div class="income-note">
+      <strong>稼働時間は調整できます。</strong>フルで入れない方も、希望の時間帯・日数に合わせた収入目安をお伝えします。まずはご相談ください。
+    </div>
+  </div>
+</section>
+
+<!-- ████ CONDITIONS ████ -->
+<section class="sec-dark">
+  <div class="inner">
+    <span class="sec-eyebrow">CONDITIONS</span>
+    <h2 class="sec-h2">仕事の条件</h2>
+    <div class="sec-line"></div>
+    <p class="sec-note">始めやすさにこだわりました。</p>
+    <div class="cond-grid">
+      <div class="cond-card">
+        <div class="cond-icon-box">🪪</div>
+        <div>
+          <div class="cond-lbl">必要な免許</div>
+          <h3>普通免許のみでOK</h3>
+          <p>AT限定も問題なし。<strong>普通自動車免許</strong>さえあれば特別な資格は一切不要。</p>
+        </div>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon-box">🕐</div>
+        <div>
+          <div class="cond-lbl">稼働時間</div>
+          <h3>朝8時〜夜8時・相談OK</h3>
+          <p>基本は8:00〜20:00の範囲内。<strong>何時から何時まで入れるか</strong>を教えてもらえれば一緒に調整します。</p>
+        </div>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon-box">🚗</div>
+        <div>
+          <div class="cond-lbl">車両</div>
+          <h3>リース月4万円前後</h3>
+          <p>車がなくてもOK。修理費・メンテ込みで<strong>月4万円前後</strong>のリースを用意しています。</p>
+        </div>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon-box">💳</div>
+        <div>
+          <div class="cond-lbl">給与</div>
+          <h3>月払い・前借りOK</h3>
+          <p>月払いが基本。<strong>給与の前払い制度あり</strong>なので、仕事を始めたばかりでも安心して動けます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ AREAS ████ -->
+<section class="sec-black">
+  <div class="inner">
+    <span class="sec-eyebrow">SERVICE AREA</span>
+    <h2 class="sec-h2">対応エリア</h2>
+    <div class="sec-line"></div>
+    <div class="area-grid">
+      <div class="area-card area-tokyo">
+        <div class="area-city">TOKYO</div>
+        <div class="area-place">世田谷区・大田区 周辺</div>
+        <div class="area-income">50〜60万円</div>
+        <div class="area-count">月間 4,500〜6,000個</div>
+      </div>
+      <div class="area-card area-kana">
+        <div class="area-city">KANAGAWA</div>
+        <div class="area-place">横浜市・座間市 周辺</div>
+        <div class="area-income">35〜43万円</div>
+        <div class="area-count">月間 2,500〜3,000個</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ HOUSING ████ -->
+<section class="sec-dark">
+  <div class="inner">
+    <span class="sec-eyebrow">HOUSING SUPPORT</span>
+    <h2 class="sec-h2">住居サポート</h2>
+    <div class="sec-line"></div>
+    <p class="sec-note">近くにお住まいの方はそのまま通勤OK。上京・引っ越しを検討している方はご相談ください。</p>
+    <div class="dorm-grid">
+      <div class="dorm-card">
+        <div class="dorm-icon">🏠</div>
+        <h3>単身・ファミリー両対応</h3>
+        <p>一人はもちろん、<strong>家族連れでの上京・転居</strong>もサポート。ファミリータイプの部屋もご案内できます。</p>
+      </div>
+      <div class="dorm-card">
+        <div class="dorm-icon">📋</div>
+        <h3>審査に不安でもOK</h3>
+        <p>一般の賃貸審査に自信がない方も安心してご相談ください。</p>
+      </div>
+    </div>
+    <div class="dorm-note">
+      <strong>こんな方向けのオプションです：</strong>地方から上京してすぐ稼ぎたい方 / 家族で引っ越しを検討している方 / 賃貸の審査や初期費用が不安な方
+    </div>
+  </div>
+</section>
+
+<!-- ████ APPLY ████ -->
+<section class="sec-black" id="apply">
+  <div class="inner">
+    <div class="apply-wrap">
+      <div class="apply-h">まず一言、<br><span>連絡ください。</span></div>
+      <p class="apply-sub">質問だけでも、話を聞きたいだけでも歓迎。<br>LINEでも電話でも、気軽にどうぞ。</p>
+      <div class="apply-btns">
+        <a href="https://line.me/R/ti/p/@XXXXXXXXX" class="btn-green" style="font-size:14px;padding:16px 36px;">💬 LINEで応募する</a>
+        <a href="tel:XXXXXXXXXX" class="btn-gold" style="font-size:14px;padding:16px 36px;">📞 電話で問い合わせる</a>
+      </div>
+      <p class="apply-note">
+        ※ 対応時間：9:00〜21:00（LINEは24時間受付）<br>
+        ※ しつこい勧誘は一切ありません。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ████ FLOW ████ -->
+<section class="sec-dark">
+  <div class="inner">
+    <span class="sec-eyebrow">HOW TO JOIN</span>
+    <h2 class="sec-h2">応募からスタートまで</h2>
+    <div class="sec-line"></div>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-n">1</div>
+        <div class="flow-body">
+          <h3>LINEまたは電話で連絡</h3>
+          <p>「応募したい」の一言だけで大丈夫。質問・相談だけでも歓迎します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-n">2</div>
+        <div class="flow-body">
+          <h3>希望を聞かせてください</h3>
+          <p>エリア・稼働時間・車両の有無・住居サポートの要否など、状況に合わせて話し合います。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-n">3</div>
+        <div class="flow-body">
+          <h3>契約・準備</h3>
+          <p>業務委託契約の締結。リースや住居サポートが必要な方は並行して手続きを進めます。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-n">4</div>
+        <div class="flow-body">
+          <h3>仕事スタート</h3>
+          <p>初日からサポートあり。未経験でも安心して始められます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ FAQ ████ -->
+<section class="sec-black">
+  <div class="inner">
+    <span class="sec-eyebrow">FAQ</span>
+    <h2 class="sec-h2" style="margin-bottom:12px;">よくある質問</h2>
+    <div class="sec-line"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">未経験でも大丈夫ですか？<span class="faq-arr">+</span></div>
+        <div class="faq-a">はい、問題ありません。配送未経験の方がほとんどです。始め方から丁寧にサポートしますので、安心してご連絡ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">バイトやパートとして短時間だけ働けますか？<span class="faq-arr">+</span></div>
+        <div class="faq-a">はい。何時から何時まで入れるかは個別に相談して決めます。授業の合間、子供の送り迎えの前後など、ご自身のスケジュールをお聞かせください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">車を持っていませんが働けますか？<span class="faq-arr">+</span></div>
+        <div class="faq-a">大丈夫です。修理費・メンテナンス込みで月4万円前後のリース車両をご用意しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">正社員の副業として掛け持ちできますか？<span class="faq-arr">+</span></div>
+        <div class="faq-a">業務委託のため、本業と掛け持ちしている方も多いです。稼働日・時間は柔軟に相談できます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">給与の支払いはいつですか？<span class="faq-arr">+</span></div>
+        <div class="faq-a">月払いが基本ですが、前払い制度があります。仕事を始めたばかりで生活費が心配な方もご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">家族がいますが、住居サポートは使えますか？<span class="faq-arr">+</span></div>
+        <div class="faq-a">はい、ファミリータイプの部屋もご案内できます。住居サポートを希望する方はお問い合わせ時にお伝えください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">BURNING BROS.</div>
+  <div class="f-copy">© 2026 BURNING BROS株式会社　東京・神奈川 委託配送スタッフ募集</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06 });
+
+document.querySelectorAll('.who-card,.ic,.cond-card,.dorm-card,.flow-item,.faq-item,.area-card').forEach(el => {
+  el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
