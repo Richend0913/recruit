@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スマホとPCだけ持って、神奈川に向かった。| BURNING BROS. インタビュー</title>
+<meta name="description" content="山口で建設業をしていた23歳の男が、一本のブログ記事をきっかけに、着替えも持たず神奈川にやってきた。配達員8年目、神奈川リーダーのストーリー。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0906;
+    --paper: #f3ece0;
+    --paper-deep: #e8dfcc;
+    --fire: #ff2d00;
+    --fire-deep: #cc2200;
+    --hazard: #ffc700;
+    --ash: #2a2520;
+    --smoke: #6b635a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 500;
+    background: var(--paper);
+    color: var(--ink);
+    font-feature-settings: "palt";
+    line-height: 1.85;
+    overflow-x: hidden;
+    line-break: strict;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+    opacity: 0.1;
+  }
+
+  /* Navigation */
+  .nav {
+    position: sticky; top: 0;
+    z-index: 100;
+    padding: 14px 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(10, 9, 6, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(243, 236, 224, 0.08);
+  }
+  .nav__brand {
+    color: var(--paper);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav__brand .mark {
+    display: inline-block; width: 20px; height: 20px;
+    background: var(--fire);
+    clip-path: polygon(50% 0, 100% 40%, 85% 100%, 15% 100%, 0 40%);
+  }
+  .nav__back {
+    color: var(--paper);
+    text-decoration: none;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 8px 14px;
+    border: 1px solid rgba(243, 236, 224, 0.3);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav__back:hover {
+    background: var(--fire);
+    border-color: var(--fire);
+  }
+
+  /* Hero */
+  .article-hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 28px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero__grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(243, 236, 224, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(243, 236, 224, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .article-hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .article-hero__tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--hazard);
+    border: 1px solid var(--hazard);
+    padding: 5px 12px;
+    margin-bottom: 28px;
+    letter-spacing: 0.1em;
+  }
+  .article-hero__tag::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--fire);
+  }
+  .article-hero__title {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 800;
+    font-size: clamp(30px, 5.5vw, 60px);
+    line-height: 1.25;
+    margin-bottom: 30px;
+    letter-spacing: -0.01em;
+  }
+  .article-hero__title .fire { color: var(--fire); }
+  .article-hero__meta {
+    display: flex;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(243, 236, 224, 0.15);
+    flex-wrap: wrap;
+  }
+  .article-hero__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .article-hero__meta-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--smoke);
+    letter-spacing: 0.1em;
+  }
+  .article-hero__meta-value {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--paper);
+  }
+
+  /* Article body */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 28px 60px;
+  }
+  .article__lead {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 600;
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.9;
+    color: var(--ash);
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(10, 9, 6, 0.1);
+    margin-bottom: 56px;
+    text-wrap: pretty;
+  }
+
+  .chapter {
+    margin-bottom: 64px;
+  }
+  .chapter__num {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 13px;
+    color: var(--fire);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+  }
+  .chapter__title {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 800;
+    font-size: clamp(22px, 3.2vw, 32px);
+    line-height: 1.4;
+    margin-bottom: 28px;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .chapter__title .fire { color: var(--fire); }
+  .chapter p {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 20px;
+    text-wrap: pretty;
+  }
+  .chapter p strong {
+    background: linear-gradient(transparent 60%, rgba(255, 199, 0, 0.5) 60%);
+    font-weight: 700;
+  }
+  .chapter p em {
+    font-style: normal;
+    color: var(--fire);
+    font-weight: 700;
+  }
+
+  /* Pull quote */
+  .pullquote {
+    margin: 48px -20px;
+    padding: 36px 32px;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+  }
+  .pullquote::before {
+    content: "“";
+    position: absolute;
+    top: 0; left: 20px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 80px;
+    color: var(--fire);
+    line-height: 1;
+  }
+  .pullquote__text {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 800;
+    font-size: clamp(19px, 2.6vw, 26px);
+    line-height: 1.55;
+    padding-left: 40px;
+    color: var(--paper);
+    text-wrap: balance;
+  }
+  .pullquote__text .fire { color: var(--fire); }
+
+  /* Quick facts card */
+  .fact-card {
+    background: var(--paper-deep);
+    border: 2px solid var(--ink);
+    padding: 28px 32px;
+    margin: 40px 0;
+  }
+  .fact-card__label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--fire);
+    margin-bottom: 14px;
+  }
+  .fact-card__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fact-card__item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .fact-card__item-key {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 11px;
+    color: var(--smoke);
+    letter-spacing: 0.05em;
+    padding-top: 4px;
+  }
+  .fact-card__item-val {
+    color: var(--ash);
+    font-weight: 500;
+  }
+
+  /* Timeline inside article */
+  .mini-timeline {
+    background: var(--paper-deep);
+    padding: 32px;
+    margin: 40px 0;
+    border-left: 4px solid var(--fire);
+  }
+  .mini-timeline__title {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .mini-timeline__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .mini-timeline__row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .mini-timeline__year {
+    font-family: "Archivo Black", sans-serif;
+    color: var(--fire);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .mini-timeline__body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--ash);
+  }
+
+  /* Goal card (final) */
+  .goal-card {
+    background: var(--hazard);
+    padding: 40px 36px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .goal-card::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg, transparent 0 30px, rgba(0,0,0,0.05) 30px 31px
+    );
+    pointer-events: none;
+  }
+  .goal-card__label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .goal-card__text {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 800;
+    font-size: clamp(18px, 2.6vw, 24px);
+    line-height: 1.65;
+    color: var(--ink);
+    position: relative;
+    text-wrap: pretty;
+  }
+  .goal-card__text .fire { color: var(--fire); }
+
+  /* CTA section at end */
+  .article-cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 28px 100px;
+    text-align: center;
+  }
+  .article-cta__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .article-cta__label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--hazard);
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+  }
+  .article-cta__title {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 800;
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.4;
+    margin-bottom: 14px;
+    text-wrap: balance;
+  }
+  .article-cta__title .fire { color: var(--fire); }
+  .article-cta__sub {
+    font-size: 15px;
+    color: #b8b0a4;
+    line-height: 1.9;
+    max-width: 480px;
+    margin: 0 auto 36px;
+  }
+  .article-cta__buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-fire {
+    background: var(--fire);
+    color: var(--paper);
+    border: 2px solid var(--fire);
+    padding: 18px 34px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 5px 5px 0 var(--hazard);
+  }
+  .btn-fire:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--hazard); }
+  .btn-outline {
+    background: transparent;
+    color: var(--paper);
+    border: 2px solid var(--paper);
+    padding: 18px 30px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn-outline:hover { background: var(--paper); color: var(--ink); }
+
+  /* Footer */
+  .footer-simple {
+    background: var(--ink);
+    color: var(--smoke);
+    padding: 32px 28px;
+    text-align: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(243, 236, 224, 0.08);
+  }
+
+  @media (max-width: 720px) {
+    .article { padding: 50px 20px 40px; }
+    .article-hero { padding: 60px 20px 70px; }
+    .pullquote { margin: 36px -10px; padding: 28px 24px; }
+    .pullquote::before { font-size: 60px; top: -4px; }
+    .pullquote__text { padding-left: 26px; }
+    .fact-card__item { grid-template-columns: 1fr; gap: 2px; }
+    .fact-card__item-key { padding-top: 0; }
+    .mini-timeline__row { grid-template-columns: 70px 1fr; gap: 10px; }
+    .article-hero__meta { gap: 18px; }
+    .btn-fire, .btn-outline { padding: 16px 24px; font-size: 14px; }
+    .nav__brand { font-size: 14px; }
+    .nav__back { font-size: 11px; padding: 6px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="./" class="nav__brand">
+    <span class="mark"></span>
+    BURNING BROS.
+  </a>
+  <a href="./" class="nav__back">← 採用TOPへ</a>
+</nav>
+
+<!-- HERO -->
+<section class="article-hero">
+  <div class="article-hero__grid"></div>
+  <div class="article-hero__inner">
+    <div class="article-hero__tag">INTERVIEW / ドライバーの話</div>
+    <h1 class="article-hero__title">
+      スマホとPCだけ持って、<br>
+      神奈川に<span class="fire">向かった。</span>
+    </h1>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="article__lead">
+    山口県で建設業をしていた23歳の男が、ある日、一本の古いブログ記事に辿り着いた。着替えも、思い出の物も、全部置いてきた。神奈川に向かった理由は、たったひとつ。
+  </p>
+
+  <!-- Chapter 1 -->
+  <div class="chapter">
+    <div class="chapter__num">CHAPTER 01</div>
+    <h2 class="chapter__title">23歳まで、<br>山口で建設業をしていた。</h2>
+
+    <p>
+      特に不満もなかった。体を動かす仕事は性に合っていたし、地元にいれば家族や友達も近い。普通に働いて、普通に生きていく。そういう未来に違和感はなかった。
+    </p>
+    <p>
+      ただ、「このまま」で終わっていいのか、という気持ちが、どこかにずっとあった。建設現場で働きながら、ぼんやりと、別の場所のことを考える日が増えていった。
+    </p>
+  </div>
+
+  <!-- Chapter 2 -->
+  <div class="chapter">
+    <div class="chapter__num">CHAPTER 02</div>
+    <h2 class="chapter__title">ある日、<br><span class="fire">一本の古いブログ</span>に辿り着いた。</h2>
+
+    <p>
+      仕事を探していたわけではなかった。ネットサーフィンの延長で、たまたまAmebaブログに流れ着いただけ。その中に、BURNING BROS.の社長が書いたブログがあった。
+    </p>
+    <p>
+      内容は正直、薄かった。3年前の投稿で、しかも短文。とても「ブログ」と呼べるような代物じゃなかった。数日分の投稿しか無くて、すぐに更新が止まっていた。
+    </p>
+    <p>
+      でも、その中に一行だけ、目に留まった言葉があった。
+    </p>
+
+    <div class="pullquote">
+      <p class="pullquote__text">
+        <span class="fire">3年後には、法人化を目指しています。</span>
+      </p>
+    </div>
+
+    <p>
+      3年前の投稿。ってことは、もう法人になってるよな——そう思って、最新のブログを開いた。
+    </p>
+    <p>
+      ちゃんと、<strong>法人化されていた。</strong>
+    </p>
+    <p>
+      その瞬間、何かが動いた。<em>有言実行できる人だ</em>。俺は、周りの環境と関わる人で人生の全てが決まると思うタイプ。この人と一緒に働きたい。そう思って、すぐに連絡した。
+    </p>
+  </div>
+
+  <!-- Chapter 3 -->
+  <div class="chapter">
+    <div class="chapter__num">CHAPTER 03</div>
+    <h2 class="chapter__title">着替えも、思い出の物も、<br>全部、置いてきた。</h2>
+
+    <p>
+      当時の俺は、賃貸の審査がブラックで、自分で部屋を借りることができなかった。それを伝えたら、社長は「家はうちで用意するよ」と言ってくれた。
+    </p>
+    <p>
+      だから山口を出る時、持って行ったのは<strong>スマホとPCだけ</strong>。着替えも、思い出の物も、全部置いてきた。笑ってしまうくらい身軽だった。
+    </p>
+    <p>
+      普通に考えたら、無謀だったと思う。でも、あの時の俺には、それが一番正しい選択に見えていた。
+    </p>
+
+    <div class="fact-card">
+      <div class="fact-card__label">WHAT HE BROUGHT</div>
+      <div class="fact-card__items">
+        <div class="fact-card__item">
+          <span class="fact-card__item-key">持ち物</span>
+          <span class="fact-card__item-val">スマホ1台・PC1台</span>
+        </div>
+        <div class="fact-card__item">
+          <span class="fact-card__item-key">置いてきた</span>
+          <span class="fact-card__item-val">着替え、思い出の物、すべて</span>
+        </div>
+        <div class="fact-card__item">
+          <span class="fact-card__item-key">住居</span>
+          <span class="fact-card__item-val">会社が用意（名義代行）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 4 -->
+  <div class="chapter">
+    <div class="chapter__num">CHAPTER 04</div>
+    <h2 class="chapter__title">8年目。<br>今は<span class="fire">神奈川のリーダー</span>。</h2>
+
+    <p>
+      配達員として働き始めて、気づけば8年が経った。
+    </p>
+    <p>
+      今は神奈川エリアのリーダーとして、メンバーの管理と、誰かが休んだ時の穴埋めをしている。自分で走る日もあれば、現場を見回る日もある。新しく入った人のフォローに回る日もある。
+    </p>
+    <p>
+      神奈川に来てから結婚して、子供も2人生まれた。働き方を変えなきゃいけないタイミングで、社長とご飯に行って色々提案すると、<strong>すぐ賛同してくれて、行動に移してくれる。</strong>
+    </p>
+    <p>
+      これが、BURNING BROS.という会社の一番のところだと思っている。
+    </p>
+  </div>
+
+  <!-- Pull Quote -->
+  <div class="pullquote">
+    <p class="pullquote__text">
+      他の会社だと、<br>
+      70歳過ぎても配達員のまま。<br>
+      <span class="fire">ここなら、未来を一緒に作れる。</span>
+    </p>
+  </div>
+
+  <!-- Chapter 5 -->
+  <div class="chapter">
+    <div class="chapter__num">CHAPTER 05</div>
+    <h2 class="chapter__title">10年目までに、<br>走らなくても生活できる状態に。</h2>
+
+    <p>
+      俺の目標は、はっきりしている。
+    </p>
+    <p>
+      BURNING BROS.で働き始めて10年目までに、配達員としては<strong>全く稼働しない状態</strong>にする。
+    </p>
+    <p>
+      そのために考えているのは、2つの収入軸を組み立てること。
+    </p>
+    <p>
+      ひとつは、<strong>紹介したドライバーの継続報酬</strong>。自分が呼んだ仲間が走り続ける限り、毎月入ってくる収入。
+    </p>
+    <p>
+      もうひとつは、<strong>他エリアに事業を広げること</strong>。新しい拠点を立ち上げて、そこの運営を担う。会社の利益を増やしながら、そのエリアの管理インセンティブを受け取る。事業をつくる側に回るイメージ。
+    </p>
+    <p>
+      配達だけで終わらせず、<em>会社を一緒に大きくしていく側</em>に立つ。そして、家族の時間を第一に考えて行動できるようにする。
+    </p>
+    <p>
+      この目標は、他社だったら絶対に立てられなかったと思う。だって、配達員という職業は、体が動くうちに稼ぐ仕事だから。走れなくなった瞬間、収入もゼロになる。
+    </p>
+    <p>
+      でもBURNING BROS.には、紹介の継続報酬と、事業拡大の管理インセンティブという2つの仕組みがある。走らなくても、チームが走れば、事業が伸びれば、収入になる。だから、<em>体ではなく仕組みで稼ぐ</em>未来を作れる。
+    </p>
+  </div>
+
+  <!-- Timeline -->
+  <div class="mini-timeline">
+    <div class="mini-timeline__title">ここまでの軌跡</div>
+    <div class="mini-timeline__list">
+      <div class="mini-timeline__row">
+        <span class="mini-timeline__year">〜23歳</span>
+        <span class="mini-timeline__body">山口県で建設業</span>
+      </div>
+      <div class="mini-timeline__row">
+        <span class="mini-timeline__year">23歳</span>
+        <span class="mini-timeline__body">社長のブログを発見。その日のうちに連絡。スマホとPCだけ持って神奈川へ</span>
+      </div>
+      <div class="mini-timeline__row">
+        <span class="mini-timeline__year">24歳〜</span>
+        <span class="mini-timeline__body">配達員として稼働開始。現場でルートとノウハウを身につける</span>
+      </div>
+      <div class="mini-timeline__row">
+        <span class="mini-timeline__year">数年後</span>
+        <span class="mini-timeline__body">神奈川で結婚、子供2人が誕生。働き方の再設計を始める</span>
+      </div>
+      <div class="mini-timeline__row">
+        <span class="mini-timeline__year">現在</span>
+        <span class="mini-timeline__body">神奈川リーダー。管理・穴埋め・新人サポートが主な仕事</span>
+      </div>
+      <div class="mini-timeline__row">
+        <span class="mini-timeline__year">10年目</span>
+        <span class="mini-timeline__body">配達稼働ゼロ。他エリアへの事業拡大による管理インセンティブと、紹介の継続報酬で生活する</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Goal card -->
+  <div class="goal-card">
+    <div class="goal-card__label">MY GOAL / 俺の目標</div>
+    <p class="goal-card__text">
+      10年目までに配達稼働ゼロ。<br>
+      他エリアの事業拡大と紹介報酬で、会社の利益と自分の収入を同時に伸ばす。<br>
+      <span class="fire">家族の時間を、第一に。</span>
+    </p>
+  </div>
+
+  <!-- Chapter 6 -->
+  <div class="chapter">
+    <div class="chapter__num">CHAPTER 06</div>
+    <h2 class="chapter__title">人生は、<br>関わる人と環境で決まる。</h2>
+
+    <p>
+      あの日、たまたま辿り着いた古いブログ。そこに書かれていた「法人化を目指します」の一行。
+    </p>
+    <p>
+      もしあの一行を読んでいなかったら、俺は今も山口で建設業をしていたかもしれない。結婚していたかどうかもわからない。子供がいたかもわからない。
+    </p>
+    <p>
+      たぶん、人生って、そういう小さな出会いで決まっていく。
+    </p>
+    <p>
+      BURNING BROS.は、有言実行する社長と、それに賛同して動く仲間がいる会社。提案すれば聞いてくれる。働き方を変えたければ、一緒に考えてくれる。走れなくなっても、次のステージが用意されている。
+    </p>
+    <p>
+      これを読んで何かが動いた人がいたら、連絡をください。<br>
+      <strong>スマホ1台あれば、始められます。</strong>
+    </p>
+  </div>
+
+</article>
+
+<!-- CTA -->
+<section class="article-cta">
+  <div class="article-cta__inner">
+    <div class="article-cta__label">NOW RECRUITING</div>
+    <h2 class="article-cta__title">
+      あなたの<span class="fire">その先</span>を、<br>
+      一緒に作ります。
+    </h2>
+    <p class="article-cta__sub">
+      BURNING BROS.株式会社は、本気で働きたい仲間を募集しています。<br>
+      まずは話を聞いてみるだけでもOK。気軽にご連絡ください。
+    </p>
+    <div class="article-cta__buttons">
+      <a href="https://lin.ee/8rR88pb" class="btn-fire" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.282.629-.63.629h-2.386c-.345 0-.627-.285-.627-.63V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .628.285.628.63 0 .349-.282.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.65.65 0 0 1-.194.028.636.636 0 0 1-.51-.247l-2.443-3.324v2.94a.631.631 0 0 1-.63.629.63.63 0 0 1-.627-.628V8.108c0-.27.173-.51.43-.595a.646.646 0 0 1 .195-.03c.195 0 .375.104.495.254l2.462 3.33V8.108a.63.63 0 0 1 .628-.63.632.632 0 0 1 .63.63v4.771zm-5.741 0a.632.632 0 0 1-.631.629.631.631 0 0 1-.626-.63V8.109a.63.63 0 0 1 .629-.63c.345 0 .63.283.63.63v4.771zm-2.466.629H4.917a.634.634 0 0 1-.631-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+        </svg>
+        LINEで応募する
+      </a>
+      <a href="tel:08089560913" class="btn-outline">
+        ☎ 080-8956-0913
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-simple">
+  © BURNING BROS. Inc. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
