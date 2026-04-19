@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-63VB4HT3T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-63VB4HT3T2');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紹介キャンペーン｜BURNING BROS.｜紹介報酬5万円</title>
+  <meta name="google-site-verification" content="GRXPtbHLxfl8zA96yG12Rml4YJ00PvNXt6lHKJOYQiE" />
+  <link rel="canonical" href="https://richend0913.github.io/referral/">
+<meta name="description" content="BURNING BROS.の紹介キャンペーン。配送スタッフを紹介して3ヶ月定着で5万円の紹介報酬をお支払いします。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Noto Sans JP', sans-serif;
+  background-color:#0a0a0a;
+  color:#dddddd;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap { max-width:640px; margin:0 auto; padding:0 24px; }
+
+/* ── HERO ── */
+.hero {
+  background-color:#0a0a0a;
+  padding:72px 24px 64px;
+  text-align:center;
+  border-bottom:1px solid #1e1e1e;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before {
+  content:'¥50,000';
+  position:absolute;
+  font-family:'Bebas Neue', sans-serif;
+  font-size:280px; line-height:1;
+  color:#141414;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+  pointer-events:none; user-select:none;
+  letter-spacing:-4px;
+}
+.hero-inner { position:relative; z-index:1; }
+
+.hero-tag {
+  display:inline-block;
+  background-color:#1a1200;
+  border:1px solid #5a3d0a;
+  border-radius:2px;
+  padding:7px 20px;
+  font-size:11px; font-weight:700; letter-spacing:3px;
+  color:#c8891e;
+  margin-bottom:32px;
+}
+
+.hero-eyebrow {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(18px,4vw,26px);
+  letter-spacing:4px;
+  color:#888888;
+  display:block; margin-bottom:8px;
+}
+.hero-amount {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(88px,18vw,160px);
+  line-height:.88;
+  color:#c8891e;
+  display:block; margin-bottom:8px;
+  text-shadow:0 0 60px rgba(200,137,30,.2);
+}
+.hero-unit {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(28px,6vw,48px);
+  letter-spacing:3px;
+  color:#ffffff;
+  display:block; margin-bottom:28px;
+}
+
+.hero-line {
+  width:48px; height:3px;
+  background-color:#c8891e;
+  margin:0 auto 28px;
+}
+
+.hero-copy {
+  font-size:15px; line-height:2;
+  color:#aaaaaa;
+  margin-bottom:0;
+}
+.hero-copy strong { color:#ffffff; font-weight:700; }
+
+/* ── WHAT ── */
+.what {
+  background-color:#111111;
+  padding:64px 24px;
+  border-bottom:1px solid #1e1e1e;
+}
+.sec-eyebrow {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:11px; letter-spacing:5px;
+  color:#c8891e;
+  display:block; margin-bottom:10px; text-align:center;
+}
+.sec-h2 {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(32px,6vw,52px);
+  letter-spacing:1px; line-height:1;
+  color:#ffffff;
+  text-align:center; margin-bottom:10px;
+}
+.sec-line {
+  width:36px; height:2px;
+  background-color:#c8891e;
+  margin:14px auto 36px;
+}
+
+.what-copy {
+  font-size:14px; color:#aaaaaa; line-height:2;
+  text-align:center; margin-bottom:40px;
+}
+.what-copy strong { color:#ffffff; }
+
+/* 3 steps */
+.steps { display:grid; gap:14px; }
+.step {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:4px;
+  padding:28px 24px;
+  display:flex; gap:20px; align-items:flex-start;
+}
+.step-num {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:40px; line-height:1;
+  color:#c8891e;
+  flex-shrink:0; width:40px; text-align:center;
+}
+.step-body {}
+.step-title { font-size:16px; font-weight:700; color:#ffffff; margin-bottom:6px; }
+.step-desc  { font-size:13px; color:#888888; line-height:1.8; }
+.step-desc strong { color:#cccccc; }
+
+/* arrow between steps */
+.step-arrow {
+  text-align:center; font-size:20px; color:#333333; margin:-6px 0;
+}
+
+/* ── REWARD ── */
+.reward {
+  background-color:#0f0f0f;
+  padding:64px 24px;
+  border-bottom:1px solid #1e1e1e;
+}
+
+.reward-card {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:6px;
+  overflow:hidden;
+}
+.reward-head {
+  background-color:#1a1200;
+  border-bottom:1px solid #5a3d0a;
+  padding:20px 28px;
+  display:flex; align-items:center; gap:12px;
+}
+.reward-head-icon { font-size:24px; }
+.reward-head-text {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:18px; letter-spacing:3px;
+  color:#c8891e;
+}
+.reward-body { padding:32px 28px; }
+
+.reward-row {
+  display:grid; grid-template-columns:1fr auto;
+  align-items:center; gap:16px;
+  padding:16px 0;
+  border-bottom:1px solid #222222;
+}
+.reward-row:last-child { border-bottom:none; padding-bottom:0; }
+.reward-row:first-child { padding-top:0; }
+
+.rr-label { font-size:13px; color:#888888; margin-bottom:4px; }
+.rr-value { font-size:15px; font-weight:700; color:#ffffff; }
+.rr-amount {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:42px; color:#c8891e; line-height:1;
+  text-align:right;
+}
+.rr-amount-sub { font-size:11px; color:#666666; text-align:right; }
+
+.reward-note {
+  margin-top:20px;
+  background-color:#111111;
+  border-left:3px solid #c8891e;
+  padding:14px 18px;
+  font-size:12px; color:#888888; line-height:1.9;
+}
+.reward-note strong { color:#c8891e; }
+
+/* ── WHO CAN ── */
+.who {
+  background-color:#111111;
+  padding:64px 24px;
+  border-bottom:1px solid #1e1e1e;
+}
+.who-list { display:grid; gap:10px; list-style:none; }
+.who-list li {
+  background-color:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:4px;
+  padding:18px 22px;
+  display:flex; align-items:flex-start; gap:14px;
+  font-size:14px; color:#cccccc; line-height:1.6;
+}
+.who-list li .check {
+  font-size:16px; color:#c8891e; flex-shrink:0; margin-top:1px;
+}
+
+.who-ng {
+  margin-top:16px;
+  background-color:#160f0f;
+  border:1px solid #3a1a1a;
+  border-radius:4px;
+  padding:18px 22px;
+}
+.who-ng-title { font-size:11px; letter-spacing:2px; color:#cc4444; margin-bottom:10px; }
+.who-ng p { font-size:13px; color:#888888; line-height:1.8; }
+
+/* ── CTA ── */
+.cta-sec {
+  background-color:#0a0a0a;
+  padding:64px 24px;
+}
+.cta-box {
+  background-color:#111111;
+  border:1px solid #2a2a2a;
+  border-radius:6px;
+  padding:48px 32px;
+  text-align:center;
+}
+.cta-h {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:clamp(36px,7vw,60px);
+  letter-spacing:1px; line-height:1.05;
+  color:#ffffff; margin-bottom:12px;
+}
+.cta-h span { color:#c8891e; }
+.cta-sub { font-size:14px; color:#888888; line-height:1.9; margin-bottom:36px; }
+.cta-sub strong { color:#dddddd; }
+
+.cta-btns { display:grid; gap:12px; margin-bottom:20px; }
+
+.btn-line {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background-color:#06c755; color:#ffffff;
+  font-size:15px; font-weight:900;
+  padding:18px 32px; border-radius:3px; text-decoration:none;
+}
+.btn-tel {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background-color:#1e1e1e; color:#cccccc;
+  border:1px solid #333333;
+  font-size:14px; font-weight:700;
+  padding:16px 32px; border-radius:3px; text-decoration:none;
+}
+.cta-note { font-size:11px; color:#555555; line-height:2; }
+
+/* ── FAQ ── */
+.faq-sec {
+  background-color:#111111;
+  padding:64px 24px;
+}
+.faq-list {
+  border:1px solid #2a2a2a;
+  border-radius:4px; overflow:hidden;
+}
+.faq-item { border-bottom:1px solid #2a2a2a; }
+.faq-item:last-child { border-bottom:none; }
+.faq-q {
+  padding:20px 22px; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  background-color:#161616;
+  font-size:14px; font-weight:700; color:#dddddd;
+  user-select:none;
+}
+.faq-q:hover { background-color:#1c1c1c; }
+.faq-ic {
+  width:26px; height:26px; border-radius:50%; flex-shrink:0;
+  border:1px solid #333333;
+  background-color:#0f0f0f;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; color:#c8891e;
+  transition:transform .3s;
+}
+.faq-item.open .faq-ic { transform:rotate(45deg); }
+.faq-a {
+  max-height:0; overflow:hidden;
+  transition:max-height .35s ease, padding .35s;
+  background-color:#0f0f0f;
+  font-size:13px; color:#888888; line-height:1.9;
+  padding:0 22px;
+}
+.faq-item.open .faq-a { max-height:200px; padding:0 22px 20px; }
+
+/* ── FOOTER ── */
+footer {
+  background-color:#080808;
+  border-top:1px solid #1a1a1a;
+  padding:24px 28px;
+  text-align:center;
+}
+.f-logo { font-family:'Bebas Neue', sans-serif; font-size:17px; letter-spacing:5px; color:#c8891e; margin-bottom:6px; }
+.f-copy { font-size:11px; color:#444444; }
+
+/* ── FLOAT ── */
+.float-bar {
+  display:none; position:fixed;
+  bottom:0; left:0; right:0; z-index:200;
+  background-color:#06c755;
+  padding:16px 24px; text-align:center;
+  font-size:15px; font-weight:900;
+  color:#ffffff; text-decoration:none;
+}
+
+@media(max-width:480px){
+  .float-bar { display:block; }
+  body { padding-bottom:56px; }
+  .hero::before { font-size:160px; }
+  .cta-box { padding:36px 20px; }
+}
+</style>
+  <meta property="og:title" content="紹介キャンペーン｜BURNING BROS.｜紹介報酬5万円">
+  <meta property="og:description" content="BURNING BROS.の紹介キャンペーン。配送スタッフを紹介して3ヶ月定着で5万円の紹介報酬をお支払いします。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://richend0913.github.io/referral/images/ogp.png">
+  <meta property="og:url" content="https://richend0913.github.io/referral/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://richend0913.github.io/referral/images/ogp.png">
+  <meta name="twitter:title" content="紹介キャンペーン｜BURNING BROS.｜紹介報酬5万円">
+  <meta name="twitter:description" content="BURNING BROS.の紹介キャンペーン。配送スタッフを紹介して3ヶ月定着で5万円の紹介報酬をお支払いします。">
+</head>
+<body>
+
+<a href="#contact" class="float-bar">💬 LINEで紹介する</a>
+
+<!-- ████ HERO ████ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">BURNING BROS. — 紹介キャンペーン</div>
+
+    <span class="hero-eyebrow">紹介報酬</span>
+    <span class="hero-amount">5万円</span>
+    <span class="hero-unit">もらえます。</span>
+
+    <div class="hero-line"></div>
+
+    <p class="hero-copy">
+      配送スタッフを紹介してくれた方に、<br>
+      <strong>定着確認後に5万円</strong>をお渡しします。<br>
+      紹介するだけ。あとはBURNING BROS.にお任せください。
+    </p>
+  </div>
+</section>
+
+<!-- ████ HOW IT WORKS ████ -->
+<section class="what">
+  <div class="wrap">
+    <span class="sec-eyebrow">HOW IT WORKS</span>
+    <h2 class="sec-h2">仕組みはシンプルです</h2>
+    <div class="sec-line"></div>
+    <p class="what-copy">
+      難しいことは何もありません。<br>
+      <strong>「働いてみたいかも」という人をLINEで教えるだけ。</strong><br>
+      あとの説明・手続きは全部こちらでやります。
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">「働けそうな人」が周りにいたら</div>
+          <div class="step-desc">大学生・主婦・副業を探している人など、誰でもOK。「この仕事どう？」と話してみてください。</div>
+        </div>
+      </div>
+      <div class="step-arrow">↓</div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">LINEで「紹介です」と一言送る</div>
+          <div class="step-desc">紹介者のお名前と、紹介する方のお名前・連絡先をLINEで送ってください。それだけでOKです。</div>
+        </div>
+      </div>
+      <div class="step-arrow">↓</div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">3ヶ月定着で<strong>5万円をお渡し</strong></div>
+          <div class="step-desc">紹介した方がフル稼働で3ヶ月続いた時点で、紹介報酬5万円をお支払いします。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ REWARD DETAIL ████ -->
+<section class="reward">
+  <div class="wrap">
+    <span class="sec-eyebrow">REWARD DETAIL</span>
+    <h2 class="sec-h2">報酬の詳細</h2>
+    <div class="sec-line"></div>
+
+    <div class="reward-card">
+      <div class="reward-head">
+        <span class="reward-head-icon">💴</span>
+        <span class="reward-head-text">紹介報酬の内容</span>
+      </div>
+      <div class="reward-body">
+        <div class="reward-row">
+          <div>
+            <div class="rr-label">フル稼働で定着した場合</div>
+            <div class="rr-value">東京・神奈川どちらのエリアでも</div>
+          </div>
+          <div>
+            <div class="rr-amount">5万円</div>
+            <div class="rr-amount-sub">1名あたり</div>
+          </div>
+        </div>
+        <div class="reward-row">
+          <div>
+            <div class="rr-label">フル稼働以外（パート・短時間）で定着した場合</div>
+            <div class="rr-value">東京・神奈川どちらのエリアでも</div>
+          </div>
+          <div>
+            <div class="rr-amount">2万円</div>
+            <div class="rr-amount-sub">1名あたり</div>
+          </div>
+        </div>
+        <div class="reward-row">
+          <div>
+            <div class="rr-label">支払い条件</div>
+            <div class="rr-value">紹介した方が3ヶ月定着した時点</div>
+          </div>
+        </div>
+        <div class="reward-row">
+          <div>
+            <div class="rr-label">支払い方法</div>
+            <div class="rr-value">銀行振込または現金手渡し</div>
+          </div>
+        </div>
+        <div class="reward-row">
+          <div>
+            <div class="rr-label">紹介人数の上限</div>
+            <div class="rr-value">上限なし（何名でもOK）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reward-note">
+      <strong>例①：</strong>フル稼働の方を3人紹介・全員定着 → 合計<strong>15万円</strong><br>
+      <strong>例②：</strong>フル稼働1人＋短時間2人が定着 → 合計<strong>9万円</strong><br>
+      紹介できる人数に上限はありません。
+    </div>
+  </div>
+</section>
+
+<!-- ████ WHO CAN REFER ████ -->
+<section class="who">
+  <div class="wrap">
+    <span class="sec-eyebrow">WHO CAN REFER</span>
+    <h2 class="sec-h2">こんな人を<br>紹介してください</h2>
+    <div class="sec-line"></div>
+
+    <ul class="who-list">
+      <li><span class="check">✓</span>収入を増やしたいと言っている友人・知人</li>
+      <li><span class="check">✓</span>バイトや副業を探している大学生</li>
+      <li><span class="check">✓</span>空き時間にパートを探している主婦の方</li>
+      <li><span class="check">✓</span>ダブルワーク・副業を検討している社会人</li>
+      <li><span class="check">✓</span>上京したい・引っ越して働きたいと言っている人</li>
+      <li><span class="check">✓</span>普通自動車免許を持っている方</li>
+    </ul>
+
+    <div class="who-ng">
+      <div class="who-ng-title">⚠ 報酬金額について</div>
+      <p>フル稼働（東京・神奈川どちらのエリアでも）での定着で<strong style="color:#c8891e;">5万円</strong>、パート・短時間での定着で<strong style="color:#c8891e;">2万円</strong>をお支払いします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ████ CTA ████ -->
+<section class="cta-sec" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="cta-h">紹介する人が<br><span>いますか？</span></div>
+      <p class="cta-sub">
+        LINEで<strong>「紹介です」</strong>と一言送ってください。<br>
+        紹介者のお名前と、紹介する方の名前・連絡先をお知らせください。<br>
+        あとはこちらで対応します。
+      </p>
+      <div class="cta-btns">
+        <a href="https://line.me/R/ti/p/@uee1001a" class="btn-line">
+          💬 LINEで紹介する
+        </a>
+        <a href="tel:08089560913" class="btn-tel">
+          📞 まず電話で相談する
+        </a>
+      </div>
+      <p class="cta-note">
+        ※ 対応時間：9:00〜21:00（LINEは24時間受付）<br>
+        ※ 紹介後のフォロー・説明は全てBURNING BROS.が行います。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ████ FAQ ████ -->
+<section class="faq-sec">
+  <div class="wrap">
+    <span class="sec-eyebrow">FAQ</span>
+    <h2 class="sec-h2" style="margin-bottom:12px;">よくある質問</h2>
+    <div class="sec-line"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">紹介できる人数に上限はありますか？<span class="faq-ic">+</span></div>
+        <div class="faq-a">上限はありません。定着が確認できた方の人数分、報酬をお支払いします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">紹介した後、自分が何かする必要はありますか？<span class="faq-ic">+</span></div>
+        <div class="faq-a">LINEで名前と連絡先をお知らせいただければ、あとの説明・手続きは全てBURNING BROS.が対応します。紹介者の方にご負担はかかりません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">3ヶ月定着したかどうかはどう確認しますか？<span class="faq-ic">+</span></div>
+        <div class="faq-a">3ヶ月経過した時点でこちらからご連絡します。報酬の受け取り方法についてもその際にご案内します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">報酬はいつ受け取れますか？<span class="faq-ic">+</span></div>
+        <div class="faq-a">紹介した方が3ヶ月フル稼働での定着を確認後、速やかにお支払いします。銀行振込または現金手渡しに対応しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">紹介した相手がパートや短時間勤務の場合も対象ですか？<span class="faq-ic">+</span></div>
+        <div class="faq-a">フル稼働での定着で5万円、パート・短時間での定着で2万円をお支払いします。エリア（東京・神奈川）は問いません。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">BURNING BROS.</div>
+  <div class="f-copy">© 2026 BURNING BROS株式会社　紹介キャンペーン専用ページ</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
