@@ -149,6 +149,20 @@
   .tax-support__title { font-family: "Shippori Mincho B1", serif; font-weight: 800; font-size: clamp(28px, 5vw, 42px); margin-bottom: 16px; color: var(--paper); }
   .tax-support__desc { color: #b8b0a4; font-size: 15px; line-height: 1.9; max-width: 700px; }
 
+  /* ========== FOREIGN BENEFITS ========== */
+  .foreign-benefits { padding: 100px 0; background: var(--ink); color: var(--paper); display: none; }
+  .foreign-benefits.i18n-visible { display: block; }
+  .foreign-benefits .section-tag { color: var(--hazard); }
+  .foreign-benefits .section-tag::before { background: var(--hazard); }
+  .foreign-benefits__title { font-family: "Shippori Mincho B1", serif; font-weight: 800; font-size: clamp(28px, 5vw, 42px); margin-bottom: 40px; color: var(--paper); }
+  .foreign-benefits__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; }
+  .fb-card { background: rgba(243,236,224,0.04); border: 1px solid rgba(243,236,224,0.08); padding: 32px 28px; }
+  .fb-card__title { font-family: "Shippori Mincho B1", serif; font-weight: 800; font-size: 20px; margin-bottom: 12px; color: var(--hazard); }
+  .fb-card__desc { font-size: 14px; line-height: 1.9; color: #b8b0a4; }
+  @media (max-width: 768px) {
+    .foreign-benefits__grid { grid-template-columns: 1fr; }
+  }
+
   /* ========== HERO ========== */
   .hero {
     min-height: 100vh;
@@ -3923,6 +3937,8 @@
         <a onclick="setLang('vi')">Tiếng Việt</a>
         <a onclick="setLang('ne')">नेपाली</a>
         <a onclick="setLang('id')">Bahasa Indonesia</a>
+        <a onclick="setLang('zh')">中文</a>
+        <a onclick="setLang('ko')">한국어</a>
       </div>
     </div>
     <a href="#apply" class="nav__cta" id="navApplyBtn" data-i18n="nav_cta">応募する</a>
@@ -4059,23 +4075,23 @@
 <!-- ============== TICKER ============== -->
 <div class="ticker">
   <div class="ticker__track">
-    <span class="ticker__item">委託ドライバー募集中</span>
-    <span class="ticker__item">1個 ¥143〜 完全歩合制</span>
-    <span class="ticker__item">東京 / 世田谷・大田</span>
-    <span class="ticker__item">神奈川 / 横浜・座間</span>
-    <span class="ticker__item">車両リース・制服・社宅契約サポート</span>
-    <span class="ticker__item">未経験歓迎</span>
-    <span class="ticker__item">前借りOK</span>
-    <span class="ticker__item">紹介は継続報酬 ¥22/個</span>
+    <span class="ticker__item" data-i18n="ticker_1">委託ドライバー募集中</span>
+    <span class="ticker__item" data-i18n="ticker_2">1個 ¥143〜 完全歩合制</span>
+    <span class="ticker__item" data-i18n="ticker_3">東京 / 世田谷・大田</span>
+    <span class="ticker__item" data-i18n="ticker_4">神奈川 / 横浜・座間</span>
+    <span class="ticker__item" data-i18n="ticker_5">車両リース・制服・社宅契約サポート</span>
+    <span class="ticker__item" data-i18n="ticker_6">未経験歓迎</span>
+    <span class="ticker__item" data-i18n="ticker_7">前借りOK</span>
+    <span class="ticker__item" data-i18n="ticker_8">紹介は継続報酬 ¥22/個</span>
     <!-- duplicate for seamless loop -->
-    <span class="ticker__item">委託ドライバー募集中</span>
-    <span class="ticker__item">1個 ¥143〜 完全歩合制</span>
-    <span class="ticker__item">東京 / 世田谷・大田</span>
-    <span class="ticker__item">神奈川 / 横浜・座間</span>
-    <span class="ticker__item">車両リース・制服・社宅契約サポート</span>
-    <span class="ticker__item">未経験歓迎</span>
-    <span class="ticker__item">前借りOK</span>
-    <span class="ticker__item">紹介は継続報酬 ¥22/個</span>
+    <span class="ticker__item" data-i18n="ticker_1">委託ドライバー募集中</span>
+    <span class="ticker__item" data-i18n="ticker_2">1個 ¥143〜 完全歩合制</span>
+    <span class="ticker__item" data-i18n="ticker_3">東京 / 世田谷・大田</span>
+    <span class="ticker__item" data-i18n="ticker_4">神奈川 / 横浜・座間</span>
+    <span class="ticker__item" data-i18n="ticker_5">車両リース・制服・社宅契約サポート</span>
+    <span class="ticker__item" data-i18n="ticker_6">未経験歓迎</span>
+    <span class="ticker__item" data-i18n="ticker_7">前借りOK</span>
+    <span class="ticker__item" data-i18n="ticker_8">紹介は継続報酬 ¥22/個</span>
   </div>
 </div>
 
@@ -4115,29 +4131,29 @@
     <div class="cm-spots" id="cmSpots">
       <button class="cm-spot-btn active" data-spot="0">
         <span class="cm-spot-btn__num">01</span>
-        <span class="cm-spot-btn__title">正直、単価の話。</span>
+        <span class="cm-spot-btn__title" data-i18n="cm_spot1_title">正直、単価の話。</span>
         <span class="cm-spot-btn__time">00:00 - 00:15</span>
       </button>
       <button class="cm-spot-btn" data-spot="1">
         <span class="cm-spot-btn__num">02</span>
-        <span class="cm-spot-btn__title">1日の流れ。</span>
+        <span class="cm-spot-btn__title" data-i18n="cm_spot2_title">1日の流れ。</span>
         <span class="cm-spot-btn__time">00:15 - 00:30</span>
       </button>
       <button class="cm-spot-btn" data-spot="2">
         <span class="cm-spot-btn__num">03</span>
-        <span class="cm-spot-btn__title">紹介が、続く。</span>
+        <span class="cm-spot-btn__title" data-i18n="cm_spot3_title">紹介が、続く。</span>
         <span class="cm-spot-btn__time">00:30 - 00:45</span>
       </button>
       <button class="cm-spot-btn" data-spot="3">
         <span class="cm-spot-btn__num">04</span>
-        <span class="cm-spot-btn__title">その先の、話。</span>
+        <span class="cm-spot-btn__title" data-i18n="cm_spot4_title">その先の、話。</span>
         <span class="cm-spot-btn__time">00:45 - 01:00</span>
       </button>
     </div>
 
     <div class="cm-frame" id="cmFrame">
       <div class="cm-progress"><div class="cm-progress__fill" id="cmProgress"></div></div>
-      <div class="cm-spot-indicator" id="cmSpotIndicator">正直、単価の話。</div>
+      <div class="cm-spot-indicator" id="cmSpotIndicator" data-i18n="cm_spot1_title">正直、単価の話。</div>
 
       <!-- ============ CHAPTER 1 ============ -->
 
@@ -4305,8 +4321,8 @@
         <div class="cm-ctrl__inner">
           <div class="cm-ctrl__play"></div>
           <div class="cm-ctrl__label">60 SEC COMMERCIAL</div>
-          <div class="cm-ctrl__title">1分でわかる、BURNING BROS.</div>
-          <div class="cm-ctrl__duration">[ タップして再生 / 01:00 ]</div>
+          <div class="cm-ctrl__title" data-i18n="cm_ctrl_title">1分でわかる、BURNING BROS.</div>
+          <div class="cm-ctrl__duration" data-i18n="cm_ctrl_duration">[ タップして再生 / 01:00 ]</div>
         </div>
       </div>
     </div>
@@ -4591,7 +4607,7 @@
           <rect x="112" y="30" width="5" height="6" fill="#ffe08a"/>
         </g>
       </svg>
-      <div class="strip__label"><span class="t">08:00</span><span class="l">朝、走り出す。</span></div>
+      <div class="strip__label"><span class="t">08:00</span><span class="l" data-i18n="strip_morning">朝、走り出す。</span></div>
     </div>
 
     <div class="strip__scene noon">
@@ -4646,7 +4662,7 @@
           <text x="30" y="38" fill="#f3ece0" font-family="Archivo Black" font-size="11">BROS.</text>
         </g>
       </svg>
-      <div class="strip__label"><span class="t">14:00</span><span class="l">昼、ルートを走る。</span></div>
+      <div class="strip__label"><span class="t">14:00</span><span class="l" data-i18n="strip_noon">昼、ルートを走る。</span></div>
     </div>
 
     <div class="strip__scene night">
@@ -4725,17 +4741,17 @@
           <rect x="-2" y="30" width="3" height="5" fill="#ff5533"/>
         </g>
       </svg>
-      <div class="strip__label"><span class="t">20:00</span><span class="l">夜、帰路につく。</span></div>
+      <div class="strip__label"><span class="t">20:00</span><span class="l" data-i18n="strip_night">夜、帰路につく。</span></div>
     </div>
   </div>
-  <div class="strip__caption">朝も、昼も、夜も。走り続けたドライバーに、報酬が積み上がる。</div>
+  <div class="strip__caption" data-i18n="strip_caption">朝も、昼も、夜も。走り続けたドライバーに、報酬が積み上がる。</div>
 </section>
 <section class="pay">
   <div class="container">
     <div class="section-tag">COMPENSATION</div>
     <h2 class="section-title" data-i18n="pay_title" data-i18n-html="1">収入は、<br><span class="fire">3層構造。</span></h2>
 
-    <div class="pay__intro">
+    <div class="pay__intro" data-i18n="pay_intro" data-i18n-html="1">
       <p>単価のみで勝負していない分、BURNING BROS.の報酬設計は少し複雑です。</p>
       <p>でも複雑な分、「働き方」次第で上限は大きく変わります。積み重ねて、受け取る仕組みを見てください。</p>
     </div>
@@ -4746,12 +4762,12 @@
           <div class="layer__num">L<br>01</div>
         </div>
         <div class="layer__body">
-          <div class="layer__tag">配達歩合 / PIECE RATE</div>
-          <h4 class="layer__title">走った個数 × 単価</h4>
+          <div class="layer__tag" data-i18n="layer1_tag">配達歩合 / PIECE RATE</div>
+          <h4 class="layer__title" data-i18n="layer1_title">走った個数 × 単価</h4>
           <div class="layer__math">
-            <span>¥143〜</span> × <span>個数</span> × <span>稼働日数</span>
+            <span data-i18n="layer1_math" data-i18n-html="1"><span>¥143〜</span> × <span>個数</span> × <span>稼働日数</span></span>
           </div>
-          <p class="layer__desc">最もベーシックな報酬軸。配達した荷物の個数に応じた完全歩合制。繁忙期やエリアによって単価は変動します。</p>
+          <p class="layer__desc" data-i18n="layer1_desc">最もベーシックな報酬軸。配達した荷物の個数に応じた完全歩合制。繁忙期やエリアによって単価は変動します。</p>
         </div>
       </div>
 
@@ -4762,12 +4778,12 @@
           <div class="layer__num">L<br>02</div>
         </div>
         <div class="layer__body">
-          <div class="layer__tag">役職インセンティブ / ROLE</div>
-          <h4 class="layer__title">リーダー・管理者報酬</h4>
+          <div class="layer__tag" data-i18n="layer2_tag">役職インセンティブ / ROLE</div>
+          <h4 class="layer__title" data-i18n="layer2_title">リーダー・管理者報酬</h4>
           <div class="layer__math">
-            <span>チーム成績</span> + <span>新人定着</span> + <span>運営貢献</span>
+            <span data-i18n="layer2_math" data-i18n-html="1"><span>チーム成績</span> + <span>新人定着</span> + <span>運営貢献</span></span>
           </div>
-          <p class="layer__desc">配達実績を積めばリーダー推薦、さらに管理者へ。自分の稼働とは別に、チーム運営への貢献に応じた報酬が加わります。</p>
+          <p class="layer__desc" data-i18n="layer2_desc">配達実績を積めばリーダー推薦、さらに管理者へ。自分の稼働とは別に、チーム運営への貢献に応じた報酬が加わります。</p>
         </div>
       </div>
 
@@ -4778,12 +4794,12 @@
           <div class="layer__num">L<br>03</div>
         </div>
         <div class="layer__body">
-          <div class="layer__tag">紹介継続報酬 / RESIDUAL</div>
-          <h4 class="layer__title">紹介先の個数 × ¥22 × 継続</h4>
+          <div class="layer__tag" data-i18n="layer3_tag">紹介継続報酬 / RESIDUAL</div>
+          <h4 class="layer__title" data-i18n="layer3_title">紹介先の個数 × ¥22 × 継続</h4>
           <div class="layer__math">
-            <span>¥22／個</span> × <span>紹介先の配達個数</span> × <span>上限なし</span>
+            <span data-i18n="layer3_math" data-i18n-html="1"><span>¥22／個</span> × <span>紹介先の配達個数</span> × <span>上限なし</span></span>
           </div>
-          <p class="layer__desc">1回払いではなく継続発生。あなたが紹介した人が配達した1個ごとに¥22が毎月入ります。紹介先が走り続ける限り、何ヶ月でも、何年でも。走らなくなっても続く、ストック型の収入軸です。</p>
+          <p class="layer__desc" data-i18n="layer3_desc">1回払いではなく継続発生。あなたが紹介した人が配達した1個ごとに¥22が毎月入ります。紹介先が走り続ける限り、何ヶ月でも、何年でも。走らなくなっても続く、ストック型の収入軸です。</p>
         </div>
       </div>
 
@@ -4794,39 +4810,39 @@
           <div class="layer__num" style="color: var(--ink);">∑</div>
         </div>
         <div class="layer__body">
-          <div class="layer__tag" style="color: var(--ink);">TOTAL INCOME / 合算</div>
-          <h4 class="layer__title" style="color: var(--ink);">重なって、あなたの月収になる</h4>
-          <p class="layer__desc" style="color: var(--ash);">3層の収入は、どれかを選ぶのではなく全て並行して発生します。配達員スタートでL01、半年〜1年でL02、人間関係を築けば自然にL03。長く関わるほど、収入構造は厚くなります。</p>
+          <div class="layer__tag" style="color: var(--ink);" data-i18n="layer_total_tag">TOTAL INCOME / 合算</div>
+          <h4 class="layer__title" style="color: var(--ink);" data-i18n="layer_total_title">重なって、あなたの月収になる</h4>
+          <p class="layer__desc" style="color: var(--ash);" data-i18n="layer_total_desc">3層の収入は、どれかを選ぶのではなく全て並行して発生します。配達員スタートでL01、半年〜1年でL02、人間関係を築けば自然にL03。長く関わるほど、収入構造は厚くなります。</p>
         </div>
       </div>
     </div>
 
-    <h3 class="pay__sub-title">L01単体の月収シミュレーション</h3>
-    <p class="pay__sub-note">※以下は配達歩合のみの試算です。L02・L03の報酬は別途加算されます。</p>
+    <h3 class="pay__sub-title" data-i18n="pay_sim_title">L01単体の月収シミュレーション</h3>
+    <p class="pay__sub-note" data-i18n="pay_sim_note">※以下は配達歩合のみの試算です。L02・L03の報酬は別途加算されます。</p>
 
     <div class="pay__area-note">
       <div class="pay__area-note-label">AREA MATCHING</div>
-      <p>BURNING BROS.では、勤務地やルートによって1日の個数が変わります。だから<strong>「その人に合った個数のエリア」を用意</strong>できるのが強み。週末に少しだけ走りたい人、とにかく個数を回したい人、子育ての合間で働きたい人。あなたのペースに合うエリアにアサインします。</p>
+      <p data-i18n="pay_area_desc" data-i18n-html="1">BURNING BROS.では、勤務地やルートによって1日の個数が変わります。だから<strong>「その人に合った個数のエリア」を用意</strong>できるのが強み。週末に少しだけ走りたい人、とにかく個数を回したい人、子育ての合間で働きたい人。あなたのペースに合うエリアにアサインします。</p>
     </div>
 
     <div class="pay-example">
       <div class="pay-example__row">
-        <h4>週末ワーカー</h4>
+        <h4 data-i18n="pay_ex1_title">週末ワーカー</h4>
         <div class="pay-example__calc">100個 × 8日 × ¥143</div>
         <div class="pay-example__amount">114,400<span class="unit">円</span></div>
       </div>
       <div class="pay-example__row">
-        <h4>フルタイム</h4>
+        <h4 data-i18n="pay_ex2_title">フルタイム</h4>
         <div class="pay-example__calc">150個 × 22日 × ¥143</div>
         <div class="pay-example__amount">471,900<span class="unit">円</span></div>
       </div>
       <div class="pay-example__row">
-        <h4>ガッツリ型</h4>
+        <h4 data-i18n="pay_ex3_title">ガッツリ型</h4>
         <div class="pay-example__calc">180個 × 25日 × ¥143</div>
         <div class="pay-example__amount">643,500<span class="unit">円</span></div>
       </div>
     </div>
-    <div class="pay-note">※上記は配達歩合のみのシミュレーション例。実際の個数はエリア・ルート・繁忙期によって変動します。ここに役職インセンティブ・紹介継続報酬が加わるのがBURNING BROS.の設計です。</div>
+    <div class="pay-note" data-i18n="pay_note">※上記は配達歩合のみのシミュレーション例。実際の個数はエリア・ルート・繁忙期によって変動します。ここに役職インセンティブ・紹介継続報酬が加わるのがBURNING BROS.の設計です。</div>
   </div>
 </section>
 
@@ -4839,25 +4855,25 @@
     <div class="locations__wrap">
       <div>
         <div class="loc-card">
-          <div class="loc-card__region">TOKYO / 東京</div>
+          <div class="loc-card__region" data-i18n="loc_tokyo_region">TOKYO / 東京</div>
           <div class="loc-card__name" data-i18n="loc_tokyo_name">世田谷区・大田区</div>
           <div class="loc-card__areas">
-            <span class="loc-tag fire">世田谷区</span>
-            <span class="loc-tag fire">大田区</span>
+            <span class="loc-tag fire" data-i18n="loc_setagaya">世田谷区</span>
+            <span class="loc-tag fire" data-i18n="loc_ota">大田区</span>
           </div>
           <p style="margin-top: 18px; font-size: 13px; color: var(--smoke); line-height: 1.7;">
-            住宅密集エリア。1件あたりの移動距離が短く、個数を伸ばしやすい特性があります。
+            <span data-i18n="loc_tokyo_desc">住宅密集エリア。1件あたりの移動距離が短く、個数を伸ばしやすい特性があります。</span>
           </p>
         </div>
         <div class="loc-card">
-          <div class="loc-card__region">KANAGAWA / 神奈川</div>
+          <div class="loc-card__region" data-i18n="loc_kanagawa_region">KANAGAWA / 神奈川</div>
           <div class="loc-card__name" data-i18n="loc_kanagawa_name">横浜市・座間市</div>
           <div class="loc-card__areas">
-            <span class="loc-tag">横浜市</span>
-            <span class="loc-tag">座間市</span>
+            <span class="loc-tag" data-i18n="loc_yokohama">横浜市</span>
+            <span class="loc-tag" data-i18n="loc_zama">座間市</span>
           </div>
           <p style="margin-top: 18px; font-size: 13px; color: var(--smoke); line-height: 1.7;">
-            郊外エリア。一便あたりの単価効率が良く、安定したペースで働けます。
+            <span data-i18n="loc_kanagawa_desc">郊外エリア。一便あたりの単価効率が良く、安定したペースで働けます。</span>
           </p>
         </div>
       </div>
@@ -4936,43 +4952,43 @@
       <div class="who__item">
         <div class="who__num">01</div>
         <div class="who__text">
-          <h4>とにかく稼ぎたい人</h4>
-          <p>時給ではなく個数で評価される世界。頑張った分だけ、数字になって返ってくる働き方に燃える人、歓迎します。</p>
+          <h4 data-i18n="who1_title">とにかく稼ぎたい人</h4>
+          <p data-i18n="who1_desc">時給ではなく個数で評価される世界。頑張った分だけ、数字になって返ってくる働き方に燃える人、歓迎します。</p>
         </div>
       </div>
       <div class="who__item">
         <div class="who__num">02</div>
         <div class="who__text">
-          <h4>自分のペースで働きたい人</h4>
-          <p>シフトは自分で決める。事務所に長時間いるのも、指示される人間関係も苦手。一人で集中して走りたい人向け。</p>
+          <h4 data-i18n="who2_title">自分のペースで働きたい人</h4>
+          <p data-i18n="who2_desc">シフトは自分で決める。事務所に長時間いるのも、指示される人間関係も苦手。一人で集中して走りたい人向け。</p>
         </div>
       </div>
       <div class="who__item">
         <div class="who__num">03</div>
         <div class="who__text">
-          <h4>体を動かすのが好きな人</h4>
-          <p>デスクワークがしんどい、じっとしていられない。そんな人にとって、軽貨物配送は天職になる可能性があります。</p>
+          <h4 data-i18n="who3_title">体を動かすのが好きな人</h4>
+          <p data-i18n="who3_desc">デスクワークがしんどい、じっとしていられない。そんな人にとって、軽貨物配送は天職になる可能性があります。</p>
         </div>
       </div>
       <div class="who__item">
         <div class="who__num">04</div>
         <div class="who__text">
-          <h4>未経験だけど変わりたい人</h4>
-          <p>前職は関係ない。必要なのは普通免許と、やる気だけ。最初の1ヶ月は先輩ドライバーが同行してサポートします。</p>
+          <h4 data-i18n="who4_title">未経験だけど変わりたい人</h4>
+          <p data-i18n="who4_desc">前職は関係ない。必要なのは普通免許と、やる気だけ。最初の1ヶ月は先輩ドライバーが同行してサポートします。</p>
         </div>
       </div>
       <div class="who__item">
         <div class="who__num">05</div>
         <div class="who__text">
-          <h4>学生・主婦・副業も歓迎</h4>
-          <p>完全シフト制なので、学業や家事の合間でも働けます。週2日から始めて、慣れてきたら増やすのもアリ。</p>
+          <h4 data-i18n="who5_title">学生・主婦・副業も歓迎</h4>
+          <p data-i18n="who5_desc">完全シフト制なので、学業や家事の合間でも働けます。週2日から始めて、慣れてきたら増やすのもアリ。</p>
         </div>
       </div>
       <div class="who__item">
         <div class="who__num">06</div>
         <div class="who__text">
-          <h4>将来、独立を考えている人</h4>
-          <p>配送の実務から車両運用、チーム管理まで学べる環境。ここで経験を積んで、自分の事業を立ち上げた先輩もいます。</p>
+          <h4 data-i18n="who6_title">将来、独立を考えている人</h4>
+          <p data-i18n="who6_desc">配送の実務から車両運用、チーム管理まで学べる環境。ここで経験を積んで、自分の事業を立ち上げた先輩もいます。</p>
         </div>
       </div>
     </div>
@@ -4985,7 +5001,7 @@
     <div class="section-tag">REFERRAL REWARD / 紹介報酬</div>
     <div class="referral__head">
       <h2 class="section-title" data-i18n="referral_title" data-i18n-html="1">一度呼んだら、<br><span style="color:var(--fire);">ずっと、続く。</span></h2>
-      <div class="lead">
+      <div class="lead" data-i18n="referral_lead" data-i18n-html="1">
         <p>BURNING BROS.の紹介報酬は、一回払いで終わるボーナスではありません。</p>
         <p>あなたが紹介した人が配達する1個ごとに、あなたに報酬が発生し続ける仕組み。</p>
         <p>紹介した仲間が現場で走り続ける限り、毎月入り続けます。</p>
@@ -4994,11 +5010,11 @@
 
     <div class="referral__hero">
       <div class="referral__hero-inner">
-        <div class="referral__hero-label">ONGOING RESIDUAL / 1個あたり</div>
+        <div class="referral__hero-label" data-i18n="referral_hero_label">ONGOING RESIDUAL / 1個あたり</div>
         <div class="referral__hero-amount">
           <span class="prefix">¥</span>22<span class="unit">／個</span>
         </div>
-        <div class="referral__hero-note">
+        <div class="referral__hero-note" data-i18n="referral_hero_note">
           × 紹介先が配達した個数 × 紹介先が走り続ける限り、毎月発生
         </div>
       </div>
@@ -5007,37 +5023,37 @@
     <div class="referral__mechanics">
       <div class="rm-card">
         <div class="rm-card__num">01</div>
-        <h4 class="rm-card__title">1個ごとに、発生</h4>
-        <p class="rm-card__text">単発ボーナスではなく、紹介先が配達した荷物1個につき¥22が紹介者に加算されます。紹介先の働きが、そのままあなたの報酬になります。</p>
+        <h4 class="rm-card__title" data-i18n="rm1_title">1個ごとに、発生</h4>
+        <p class="rm-card__text" data-i18n="rm1_text">単発ボーナスではなく、紹介先が配達した荷物1個につき¥22が紹介者に加算されます。紹介先の働きが、そのままあなたの報酬になります。</p>
       </div>
       <div class="rm-card">
         <div class="rm-card__num">02</div>
-        <h4 class="rm-card__title">走り続ける限り、続く</h4>
-        <p class="rm-card__text">3ヶ月で終わり、ではありません。紹介先がBURNING BROS.で稼働している限り、紹介報酬は月次で発生し続けます。</p>
+        <h4 class="rm-card__title" data-i18n="rm2_title">走り続ける限り、続く</h4>
+        <p class="rm-card__text" data-i18n="rm2_text">3ヶ月で終わり、ではありません。紹介先がBURNING BROS.で稼働している限り、紹介報酬は月次で発生し続けます。</p>
       </div>
       <div class="rm-card">
         <div class="rm-card__num">03</div>
-        <h4 class="rm-card__title">人数制限なし</h4>
-        <p class="rm-card__text">何人紹介してもOK。紹介した人が増えれば増えるほど、あなたの継続収入のベースが積み上がっていきます。</p>
+        <h4 class="rm-card__title" data-i18n="rm3_title">人数制限なし</h4>
+        <p class="rm-card__text" data-i18n="rm3_text">何人紹介してもOK。紹介した人が増えれば増えるほど、あなたの継続収入のベースが積み上がっていきます。</p>
       </div>
     </div>
 
-    <h3 class="referral__sim-title">紹介報酬シミュレーション</h3>
-    <p class="referral__sim-sub">※紹介先が月に3,300個（150個×22日）配達した場合の想定</p>
+    <h3 class="referral__sim-title" data-i18n="referral_sim_title">紹介報酬シミュレーション</h3>
+    <p class="referral__sim-sub" data-i18n="referral_sim_sub">※紹介先が月に3,300個（150個×22日）配達した場合の想定</p>
 
     <div class="referral__sim">
       <div class="rs">
-        <div class="rs__label">1人紹介</div>
+        <div class="rs__label" data-i18n="rs_1person">1人紹介</div>
         <div class="rs__calc">3,300個 × ¥22</div>
         <div class="rs__amount">72,600<span class="per">／月</span></div>
       </div>
       <div class="rs">
-        <div class="rs__label">3人紹介</div>
+        <div class="rs__label" data-i18n="rs_3person">3人紹介</div>
         <div class="rs__calc">9,900個 × ¥22</div>
         <div class="rs__amount">217,800<span class="per">／月</span></div>
       </div>
       <div class="rs rs--big">
-        <div class="rs__label">10人紹介</div>
+        <div class="rs__label" data-i18n="rs_10person">10人紹介</div>
         <div class="rs__calc">33,000個 × ¥22</div>
         <div class="rs__amount">726,000<span class="per">／月</span></div>
       </div>
@@ -5046,12 +5062,12 @@
     <div class="referral__notes">
       <div class="referral__notes-title">TERMS</div>
       <ul>
-        <li>紹介先の配達個数に応じて、紹介者に¥22／個の報酬が毎月加算されます。</li>
-        <li>紹介先が稼働している限り、報酬は継続して発生します（期間の上限なし）。</li>
-        <li>紹介人数に上限はありません。何人でも紹介できます。</li>
-        <li>紹介報酬は会社から支払うもので、紹介先ドライバーの歩合（¥143〜）から引かれるものではありません。</li>
-        <li>紹介される方は、本人の意思で応募していただく必要があります。</li>
-        <li>単価や支払いタイミングの詳細は、面談時にご説明いたします。</li>
+        <li data-i18n="ref_note1">紹介先の配達個数に応じて、紹介者に¥22／個の報酬が毎月加算されます。</li>
+        <li data-i18n="ref_note2">紹介先が稼働している限り、報酬は継続して発生します（期間の上限なし）。</li>
+        <li data-i18n="ref_note3">紹介人数に上限はありません。何人でも紹介できます。</li>
+        <li data-i18n="ref_note4">紹介報酬は会社から支払うもので、紹介先ドライバーの歩合（¥143〜）から引かれるものではありません。</li>
+        <li data-i18n="ref_note5">紹介される方は、本人の意思で応募していただく必要があります。</li>
+        <li data-i18n="ref_note6">単価や支払いタイミングの詳細は、面談時にご説明いたします。</li>
       </ul>
     </div>
   </div>
@@ -5063,7 +5079,7 @@
     <div class="section-tag">CAREER PATH / その先の設計</div>
     <h2 class="section-title" data-i18n="career_title" data-i18n-html="1">配達員で、<br><span class="fire">終わらせない。</span></h2>
 
-    <div class="career__intro">
+    <div class="career__intro" data-i18n="career_intro" data-i18n-html="1">
       <p>配達だけで完結する関係ではなく、段階的にステップアップできる構造を社内に置いています。</p>
       <p>どこで止まってもいい。でも、止まりたくなければ、次のステージが必ず用意されている。それがBURNING BROS.の設計です。</p>
     </div>
@@ -5109,11 +5125,11 @@
     <div class="story-feature__inner">
       <div class="story-feature__left">
         <div class="section-tag">STORY / ドライバーの話</div>
-        <h2 class="story-feature__title">
+        <h2 class="story-feature__title" data-i18n="story_title" data-i18n-html="1">
           スマホとPCだけ持って、<br>
           神奈川に<span class="fire">向かった。</span>
         </h2>
-        <p class="story-feature__lead">
+        <p class="story-feature__lead" data-i18n="story_lead">
           23歳まで山口で建設業をしていた男が、1本の古いブログをきっかけに、着替えも持たず神奈川にやって来た。8年目の今、神奈川リーダーとして何を考えているのか——。
         </p>
         <div class="story-feature__excerpt">
@@ -5121,7 +5137,7 @@
           <p>3年前の投稿。ってことは、もう法人になってるよな——そう思って、最新のブログを開いた。ちゃんと、法人化されていた。</p>
         </div>
         <a href="driver-story.html" class="story-feature__cta">
-          続きを読む
+          <span data-i18n="story_cta">続きを読む</span>
           <span class="arrow"></span>
         </a>
       </div>
@@ -5196,6 +5212,32 @@
   </div>
 </section>
 
+<!-- ============== FOREIGN BENEFITS ============== -->
+<section class="foreign-benefits" id="foreignBenefits">
+  <div class="container">
+    <div class="section-tag">FOR FOREIGN DRIVERS</div>
+    <h2 class="foreign-benefits__title" data-i18n="fb_title">外国人ドライバーが選ぶ理由</h2>
+    <div class="foreign-benefits__grid">
+      <div class="fb-card">
+        <h3 class="fb-card__title" data-i18n="fb_card1_title">家族を呼べる</h3>
+        <p class="fb-card__desc" data-i18n="fb_card1_desc">安定した収入と確定申告の実績があれば、家族を日本に呼び寄せることができます。</p>
+      </div>
+      <div class="fb-card">
+        <h3 class="fb-card__title" data-i18n="fb_card2_title">会社名義で住居契約</h3>
+        <p class="fb-card__desc" data-i18n="fb_card2_desc">会社名義で賃貸契約を代行。保証人不要、差別なし。</p>
+      </div>
+      <div class="fb-card">
+        <h3 class="fb-card__title" data-i18n="fb_card3_title">同郷コミュニティ</h3>
+        <p class="fb-card__desc" data-i18n="fb_card3_desc">同じ国の仲間と一緒に働けます。ベトナム、ネパール、インドネシアなどのコミュニティがあります。</p>
+      </div>
+      <div class="fb-card">
+        <h3 class="fb-card__title" data-i18n="fb_card4_title">キャリア成長</h3>
+        <p class="fb-card__desc" data-i18n="fb_card4_desc">ドライバーからスタートし、管理者へ成長。成功したドライバーは自分の配送会社を立ち上げました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== FAQ ============== -->
 <section class="faq">
   <div class="container">
@@ -5209,7 +5251,7 @@
           <span class="txt" data-i18n="faq_q1">他社と比べて、配達単価はどうですか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">
+        <div class="faq-item__a" data-i18n="faq_a1" data-i18n-html="1">
           <p>正直に言うと、1個あたり¥143〜という単価は、業界の中で飛び抜けて高い数字ではありません。</p>
           <p>高単価だけで選ぶなら、他社の方が良いケースもあります。</p>
           <p>ただしBURNING BROS.は、配達歩合（L01）だけでなく、役職インセンティブ（L02）、紹介継続報酬（L03）という複数の収入軸を重ねる設計です。特に紹介報酬は1回払いではなく、紹介先の稼働に応じて毎月入り続ける継続型。</p>
@@ -5223,7 +5265,7 @@
           <span class="txt" data-i18n="faq_q2">普通免許しか持っていませんが、応募できますか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">もちろんOKです。軽貨物配送は普通自動車免許（AT限定可）があれば始められます。大型免許や特殊資格は不要です。</div>
+        <div class="faq-item__a" data-i18n="faq_a2">もちろんOKです。軽貨物配送は普通自動車免許（AT限定可）があれば始められます。大型免許や特殊資格は不要です。</div>
       </details>
 
       <details class="faq-item">
@@ -5232,7 +5274,7 @@
           <span class="txt" data-i18n="faq_q3">未経験ですが、本当に大丈夫ですか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">全く問題ありません。むしろ未経験スタートのドライバーが多数です。最初の期間は先輩が同行し、ルートの覚え方、積込みのコツ、お客様対応までしっかりお伝えします。</div>
+        <div class="faq-item__a" data-i18n="faq_a3">全く問題ありません。むしろ未経験スタートのドライバーが多数です。最初の期間は先輩が同行し、ルートの覚え方、積込みのコツ、お客様対応までしっかりお伝えします。</div>
       </details>
 
       <details class="faq-item">
@@ -5241,7 +5283,7 @@
           <span class="txt" data-i18n="faq_q4">リーダーや管理者には、どれくらいでなれますか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">稼働状況とチーム内での関わり方によりますが、半年〜1年でリーダー候補、1〜2年で管理者を目指すのが一般的なペースです。もちろん「配達員として走り続けたい」という選択も尊重します。キャリアは本人の希望ありきで設計します。</div>
+        <div class="faq-item__a" data-i18n="faq_a4">稼働状況とチーム内での関わり方によりますが、半年〜1年でリーダー候補、1〜2年で管理者を目指すのが一般的なペースです。もちろん「配達員として走り続けたい」という選択も尊重します。キャリアは本人の希望ありきで設計します。</div>
       </details>
 
       <details class="faq-item">
@@ -5250,7 +5292,7 @@
           <span class="txt" data-i18n="faq_q5">自分の車や軽バンを持っていませんが、働けますか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">車両リース制度をご用意しています。自己資金なしで車両を用意できるため、手持ちがなくても始められます。リース料は業務委託料から差し引く方式で、無理なく利用できます。</div>
+        <div class="faq-item__a" data-i18n="faq_a5">車両リース制度をご用意しています。自己資金なしで車両を用意できるため、手持ちがなくても始められます。リース料は業務委託料から差し引く方式で、無理なく利用できます。</div>
       </details>
 
       <details class="faq-item">
@@ -5259,7 +5301,7 @@
           <span class="txt" data-i18n="faq_q6">初期費用はどのくらいかかりますか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">基本的に初期費用は不要です。制服支給、車両リース利用であれば、手ぶらで始められます。自己所有の車両で始めたい方のみ、車両準備が必要になります。</div>
+        <div class="faq-item__a" data-i18n="faq_a6">基本的に初期費用は不要です。制服支給、車両リース利用であれば、手ぶらで始められます。自己所有の車両で始めたい方のみ、車両準備が必要になります。</div>
       </details>
 
       <details class="faq-item">
@@ -5268,7 +5310,7 @@
           <span class="txt" data-i18n="faq_q7">地方在住ですが、応募できますか？社宅は用意されますか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">ご応募は歓迎です。なお、当社の「社宅制度」は家賃補助つきの寮ではなく、賃貸の審査が通りづらい方のために<strong>会社名義で契約を代行する</strong>制度です。家賃そのものはご自身の負担となります。上京と同時に住まいと仕事の両方をスタートしたい方は、ぜひご相談ください。</div>
+        <div class="faq-item__a" data-i18n="faq_a7" data-i18n-html="1">ご応募は歓迎です。なお、当社の「社宅制度」は家賃補助つきの寮ではなく、賃貸の審査が通りづらい方のために<strong>会社名義で契約を代行する</strong>制度です。家賃そのものはご自身の負担となります。上京と同時に住まいと仕事の両方をスタートしたい方は、ぜひご相談ください。</div>
       </details>
 
       <details class="faq-item">
@@ -5277,7 +5319,7 @@
           <span class="txt" data-i18n="faq_q8">紹介報酬の仕組みを、もう少し詳しく教えてください。</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">
+        <div class="faq-item__a" data-i18n="faq_a8" data-i18n-html="1">
           <p>紹介報酬は1回払いのボーナスではなく、<strong>継続型</strong>です。</p>
           <p>あなたが紹介した人がBURNING BROS.で配達した荷物1個につき¥22が、紹介者であるあなたに毎月支払われます。紹介した人が現場で走り続けている限り、何ヶ月・何年でも入り続ける仕組みです。</p>
           <p>紹介人数に上限はなく、人数が増えるほど継続収入のベースが積み上がります。</p>
@@ -5291,7 +5333,7 @@
           <span class="txt" data-i18n="faq_q9">給与の支払いはいつですか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">月1回の月末締め、翌月指定日払いとなります。生活費などでどうしても必要な場合は、一定条件で前借り制度もご利用いただけます。</div>
+        <div class="faq-item__a" data-i18n="faq_a9">月1回の月末締め、翌月指定日払いとなります。生活費などでどうしても必要な場合は、一定条件で前借り制度もご利用いただけます。</div>
       </details>
 
       <details class="faq-item">
@@ -5300,7 +5342,7 @@
           <span class="txt" data-i18n="faq_q10">週何日から働けますか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">完全シフト制のため、ご相談の上で決定します。週末のみ、平日のみ、フルタイム、いずれも対応可能です。続けやすいペースからスタートしましょう。</div>
+        <div class="faq-item__a" data-i18n="faq_a10">完全シフト制のため、ご相談の上で決定します。週末のみ、平日のみ、フルタイム、いずれも対応可能です。続けやすいペースからスタートしましょう。</div>
       </details>
 
       <details class="faq-item">
@@ -5309,7 +5351,7 @@
           <span class="txt" data-i18n="faq_q11">女性でも働けますか？</span>
           <span class="arrow">▸</span>
         </summary>
-        <div class="faq-item__a">もちろんです。軽貨物の荷物は比較的軽量のものが中心で、女性ドライバーも活躍しています。主婦の方で、子育ての合間に働かれる方もいらっしゃいます。</div>
+        <div class="faq-item__a" data-i18n="faq_a11">もちろんです。軽貨物の荷物は比較的軽量のものが中心で、女性ドライバーも活躍しています。主婦の方で、子育ての合間に働かれる方もいらっしゃいます。</div>
       </details>
     </div>
   </div>
@@ -5363,40 +5405,36 @@
   <div class="footer__inner">
     <div>
       <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/logo2.png" alt="BURNING BROS." class="footer__logo" loading="lazy">
-      <div class="footer__brand" style="margin-top: 14px;">
-        BURNING BROS.
-        <span class="ja">バーニングブロス株式会社</span>
-      </div>
       <p style="margin-top: 20px; font-size: 13px; max-width: 360px; line-height: 1.8;" data-i18n="footer_desc">
         東京・神奈川を拠点に、軽貨物配送事業を展開。一緒に走る仲間を募集中。
       </p>
-      <a href="https://burning-bros.com" target="_blank" rel="noopener" class="footer__site-link">
+      <a href="https://burning-bros.com" target="_blank" rel="noopener" class="footer__site-link" data-i18n="footer_site_link">
         ▸ コーポレートサイト burning-bros.com
       </a>
     </div>
     <div class="footer__info">
       <div class="footer__info-block">
         <div class="footer__info-head">COMPANY</div>
-        <div class="footer__info-body">
+        <div class="footer__info-body" data-i18n="footer_company" data-i18n-html="1">
           BURNING BROS. 株式会社<br>
           〒252-0318 神奈川県相模原市南区上鶴間本町3-18-27<br>
           <a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>
         </div>
       </div>
       <div class="footer__info-block">
-        <div class="footer__info-head">LOADING AREAS / 荷積み・勤務エリア</div>
-        <div class="footer__info-body">
+        <div class="footer__info-head" data-i18n="footer_areas_head">LOADING AREAS / 荷積み・勤務エリア</div>
+        <div class="footer__info-body" data-i18n="footer_areas" data-i18n-html="1">
           東京都：世田谷区 / 大田区<br>
           神奈川県：横浜市 / 座間市
         </div>
       </div>
       <div class="footer__info-block">
         <div class="footer__info-head">CONTRACT / 契約形態</div>
-        <div class="footer__info-body">業務委託契約</div>
+        <div class="footer__info-body" data-i18n="footer_contract">業務委託契約</div>
       </div>
       <div class="footer__info-block">
         <div class="footer__info-head">APPLY / 応募</div>
-        <div class="footer__info-body">LINE・お電話にて受付</div>
+        <div class="footer__info-body" data-i18n="footer_apply">LINE・お電話にて受付</div>
       </div>
     </div>
   </div>
@@ -5483,6 +5521,7 @@
       { start: 30000, end: 45000, title: '紹介が、続く。' },
       { start: 45000, end: 60000, title: 'その先の、話。' }
     ];
+    window._cmSpotBounds = spotBounds;
     const totalMs = 60000;
 
     let rafId = null;
@@ -5711,7 +5750,118 @@
       cta_sub: '<p>BURNING BROS.株式会社は、本気で稼ぎたい仲間を募集しています。</p><p>まずは話を聞いてみるだけでもOK。気軽にご連絡ください。</p>',
       cta_line: "LINEで応募する",
       cta_phone: "電話で問い合わせる",
-      footer_desc: "東京・神奈川を拠点に、軽貨物配送事業を展開。一緒に走る仲間を募集中。"
+      footer_desc: "東京・神奈川を拠点に、軽貨物配送事業を展開。一緒に走る仲間を募集中。",
+      cm_spot1_title: '正直、単価の話。',
+      cm_spot2_title: '1日の流れ。',
+      cm_spot3_title: '紹介が、続く。',
+      cm_spot4_title: 'その先の、話。',
+      cm_ctrl_title: '1分でわかる、BURNING BROS.',
+      cm_ctrl_duration: '[ タップして再生 / 01:00 ]',
+      ticker_1: '委託ドライバー募集中',
+      ticker_2: '1個 ¥143〜 完全歩合制',
+      ticker_3: '東京 / 世田谷・大田',
+      ticker_4: '神奈川 / 横浜・座間',
+      ticker_5: '車両リース・制服・社宅契約サポート',
+      ticker_6: '未経験歓迎',
+      ticker_7: '前借りOK',
+      ticker_8: '紹介は継続報酬 ¥22/個',
+      pay_intro: '<p>単価のみで勝負していない分、BURNING BROS.の報酬設計は少し複雑です。</p><p>でも複雑な分、「働き方」次第で上限は大きく変わります。積み重ねて、受け取る仕組みを見てください。</p>',
+      layer1_tag: '配達歩合 / PIECE RATE',
+      layer1_title: '走った個数 × 単価',
+      layer1_math: '<span>¥143〜</span> × <span>個数</span> × <span>稼働日数</span>',
+      layer1_desc: '最もベーシックな報酬軸。配達した荷物の個数に応じた完全歩合制。繁忙期やエリアによって単価は変動します。',
+      layer2_tag: '役職インセンティブ / ROLE',
+      layer2_title: 'リーダー・管理者報酬',
+      layer2_math: '<span>チーム成績</span> + <span>新人定着</span> + <span>運営貢献</span>',
+      layer2_desc: '配達実績を積めばリーダー推薦、さらに管理者へ。自分の稼働とは別に、チーム運営への貢献に応じた報酬が加わります。',
+      layer3_tag: '紹介継続報酬 / RESIDUAL',
+      layer3_title: '紹介先の個数 × ¥22 × 継続',
+      layer3_math: '<span>¥22／個</span> × <span>紹介先の配達個数</span> × <span>上限なし</span>',
+      layer3_desc: '1回払いではなく継続発生。あなたが紹介した人が配達した1個ごとに¥22が毎月入ります。紹介先が走り続ける限り、何ヶ月でも、何年でも。走らなくなっても続く、ストック型の収入軸です。',
+      layer_total_tag: 'TOTAL INCOME / 合算',
+      layer_total_title: '重なって、あなたの月収になる',
+      layer_total_desc: '3層の収入は、どれかを選ぶのではなく全て並行して発生します。配達員スタートでL01、半年〜1年でL02、人間関係を築けば自然にL03。長く関わるほど、収入構造は厚くなります。',
+      pay_sim_title: 'L01単体の月収シミュレーション',
+      pay_sim_note: '※以下は配達歩合のみの試算です。L02・L03の報酬は別途加算されます。',
+      pay_area_desc: 'BURNING BROS.では、勤務地やルートによって1日の個数が変わります。だから<strong>「その人に合った個数のエリア」を用意</strong>できるのが強み。週末に少しだけ走りたい人、とにかく個数を回したい人、子育ての合間で働きたい人。あなたのペースに合うエリアにアサインします。',
+      pay_ex1_title: '週末ワーカー',
+      pay_ex2_title: 'フルタイム',
+      pay_ex3_title: 'ガッツリ型',
+      pay_note: '※上記は配達歩合のみのシミュレーション例。実際の個数はエリア・ルート・繁忙期によって変動します。ここに役職インセンティブ・紹介継続報酬が加わるのがBURNING BROS.の設計です。',
+      strip_morning: '朝、走り出す。',
+      strip_noon: '昼、ルートを走る。',
+      strip_night: '夜、帰路につく。',
+      strip_caption: '朝も、昼も、夜も。走り続けたドライバーに、報酬が積み上がる。',
+      loc_tokyo_region: 'TOKYO / 東京',
+      loc_kanagawa_region: 'KANAGAWA / 神奈川',
+      loc_setagaya: '世田谷区',
+      loc_ota: '大田区',
+      loc_yokohama: '横浜市',
+      loc_zama: '座間市',
+      loc_tokyo_desc: '住宅密集エリア。1件あたりの移動距離が短く、個数を伸ばしやすい特性があります。',
+      loc_kanagawa_desc: '郊外エリア。一便あたりの単価効率が良く、安定したペースで働けます。',
+      who1_title: 'とにかく稼ぎたい人',
+      who1_desc: '時給ではなく個数で評価される世界。頑張った分だけ、数字になって返ってくる働き方に燃える人、歓迎します。',
+      who2_title: '自分のペースで働きたい人',
+      who2_desc: 'シフトは自分で決める。事務所に長時間いるのも、指示される人間関係も苦手。一人で集中して走りたい人向け。',
+      who3_title: '体を動かすのが好きな人',
+      who3_desc: 'デスクワークがしんどい、じっとしていられない。そんな人にとって、軽貨物配送は天職になる可能性があります。',
+      who4_title: '未経験だけど変わりたい人',
+      who4_desc: '前職は関係ない。必要なのは普通免許と、やる気だけ。最初の1ヶ月は先輩ドライバーが同行してサポートします。',
+      who5_title: '学生・主婦・副業も歓迎',
+      who5_desc: '完全シフト制なので、学業や家事の合間でも働けます。週2日から始めて、慣れてきたら増やすのもアリ。',
+      who6_title: '将来、独立を考えている人',
+      who6_desc: '配送の実務から車両運用、チーム管理まで学べる環境。ここで経験を積んで、自分の事業を立ち上げた先輩もいます。',
+      referral_lead: '<p>BURNING BROS.の紹介報酬は、一回払いで終わるボーナスではありません。</p><p>あなたが紹介した人が配達する1個ごとに、あなたに報酬が発生し続ける仕組み。</p><p>紹介した仲間が現場で走り続ける限り、毎月入り続けます。</p>',
+      referral_hero_label: 'ONGOING RESIDUAL / 1個あたり',
+      referral_hero_note: '× 紹介先が配達した個数 × 紹介先が走り続ける限り、毎月発生',
+      rm1_title: '1個ごとに、発生',
+      rm1_text: '単発ボーナスではなく、紹介先が配達した荷物1個につき¥22が紹介者に加算されます。紹介先の働きが、そのままあなたの報酬になります。',
+      rm2_title: '走り続ける限り、続く',
+      rm2_text: '3ヶ月で終わり、ではありません。紹介先がBURNING BROS.で稼働している限り、紹介報酬は月次で発生し続けます。',
+      rm3_title: '人数制限なし',
+      rm3_text: '何人紹介してもOK。紹介した人が増えれば増えるほど、あなたの継続収入のベースが積み上がっていきます。',
+      referral_sim_title: '紹介報酬シミュレーション',
+      referral_sim_sub: '※紹介先が月に3,300個（150個×22日）配達した場合の想定',
+      rs_1person: '1人紹介',
+      rs_3person: '3人紹介',
+      rs_10person: '10人紹介',
+      ref_note1: '紹介先の配達個数に応じて、紹介者に¥22／個の報酬が毎月加算されます。',
+      ref_note2: '紹介先が稼働している限り、報酬は継続して発生します（期間の上限なし）。',
+      ref_note3: '紹介人数に上限はありません。何人でも紹介できます。',
+      ref_note4: '紹介報酬は会社から支払うもので、紹介先ドライバーの歩合（¥143〜）から引かれるものではありません。',
+      ref_note5: '紹介される方は、本人の意思で応募していただく必要があります。',
+      ref_note6: '単価や支払いタイミングの詳細は、面談時にご説明いたします。',
+      career_intro: '<p>配達だけで完結する関係ではなく、段階的にステップアップできる構造を社内に置いています。</p><p>どこで止まってもいい。でも、止まりたくなければ、次のステージが必ず用意されている。それがBURNING BROS.の設計です。</p>',
+      faq_a1: '<p>正直に言うと、1個あたり¥143〜という単価は、業界の中で飛び抜けて高い数字ではありません。</p><p>高単価だけで選ぶなら、他社の方が良いケースもあります。</p><p>ただしBURNING BROS.は、配達歩合（L01）だけでなく、役職インセンティブ（L02）、紹介継続報酬（L03）という複数の収入軸を重ねる設計です。特に紹介報酬は1回払いではなく、紹介先の稼働に応じて毎月入り続ける継続型。</p><p>半年〜1年単位で比較した時の総額で判断してもらいたい、というのが私たちの考えです。</p>',
+      faq_a2: 'もちろんOKです。軽貨物配送は普通自動車免許（AT限定可）があれば始められます。大型免許や特殊資格は不要です。',
+      faq_a3: '全く問題ありません。むしろ未経験スタートのドライバーが多数です。最初の期間は先輩が同行し、ルートの覚え方、積込みのコツ、お客様対応までしっかりお伝えします。',
+      faq_a4: '稼働状況とチーム内での関わり方によりますが、半年〜1年でリーダー候補、1〜2年で管理者を目指すのが一般的なペースです。もちろん「配達員として走り続けたい」という選択も尊重します。キャリアは本人の希望ありきで設計します。',
+      faq_a5: '車両リース制度をご用意しています。自己資金なしで車両を用意できるため、手持ちがなくても始められます。リース料は業務委託料から差し引く方式で、無理なく利用できます。',
+      faq_a6: '基本的に初期費用は不要です。制服支給、車両リース利用であれば、手ぶらで始められます。自己所有の車両で始めたい方のみ、車両準備が必要になります。',
+      faq_a7: 'ご応募は歓迎です。なお、当社の「社宅制度」は家賃補助つきの寮ではなく、賃貸の審査が通りづらい方のために<strong>会社名義で契約を代行する</strong>制度です。家賃そのものはご自身の負担となります。上京と同時に住まいと仕事の両方をスタートしたい方は、ぜひご相談ください。',
+      faq_a8: '<p>紹介報酬は1回払いのボーナスではなく、<strong>継続型</strong>です。</p><p>あなたが紹介した人がBURNING BROS.で配達した荷物1個につき¥22が、紹介者であるあなたに毎月支払われます。紹介した人が現場で走り続けている限り、何ヶ月・何年でも入り続ける仕組みです。</p><p>紹介人数に上限はなく、人数が増えるほど継続収入のベースが積み上がります。</p><p>なお、この¥22は会社から支払うもので、紹介された方の歩合（¥143〜）から差し引かれるものではありません。</p>',
+      faq_a9: '月1回の月末締め、翌月指定日払いとなります。生活費などでどうしても必要な場合は、一定条件で前借り制度もご利用いただけます。',
+      faq_a10: '完全シフト制のため、ご相談の上で決定します。週末のみ、平日のみ、フルタイム、いずれも対応可能です。続けやすいペースからスタートしましょう。',
+      faq_a11: 'もちろんです。軽貨物の荷物は比較的軽量のものが中心で、女性ドライバーも活躍しています。主婦の方で、子育ての合間に働かれる方もいらっしゃいます。',
+      footer_site_link: '▸ コーポレートサイト burning-bros.com',
+      footer_company: 'BURNING BROS. 株式会社<br>〒252-0318 神奈川県相模原市南区上鶴間本町3-18-27<br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>',
+      footer_areas_head: 'LOADING AREAS / 荷積み・勤務エリア',
+      footer_areas: '東京都：世田谷区 / 大田区<br>神奈川県：横浜市 / 座間市',
+      footer_contract: '業務委託契約',
+      footer_apply: 'LINE・お電話にて受付',
+      story_title: 'スマホとPCだけ持って、<br>神奈川に<span class="fire">向かった。</span>',
+      story_lead: '23歳まで山口で建設業をしていた男が、1本の古いブログをきっかけに、着替えも持たず神奈川にやって来た。8年目の今、神奈川リーダーとして何を考えているのか——。',
+      story_cta: '続きを読む',
+      fb_title: '外国人ドライバーが選ぶ理由',
+      fb_card1_title: '家族を呼べる',
+      fb_card1_desc: '安定した収入と確定申告の実績があれば、家族を日本に呼び寄せることができます。',
+      fb_card2_title: '会社名義で住居契約',
+      fb_card2_desc: '会社名義で賃貸契約を代行。保証人不要、差別なし。',
+      fb_card3_title: '同郷コミュニティ',
+      fb_card3_desc: '同じ国の仲間と一緒に働けます。ベトナム、ネパール、インドネシアなどのコミュニティがあります。',
+      fb_card4_title: 'キャリア成長',
+      fb_card4_desc: 'ドライバーからスタートし、管理者へ成長。成功したドライバーは自分の配送会社を立ち上げました。'
     },
     en: {
       nav_cta: "Apply Now",
@@ -5809,7 +5959,118 @@
       cta_sub: '<p>BURNING BROS. is looking for serious earners.</p><p>Just want to hear more? That\'s fine too. Contact us anytime.</p>',
       cta_line: "Apply via LINE",
       cta_phone: "Call us",
-      footer_desc: "Freelance delivery company based in Tokyo & Kanagawa. Looking for drivers to run with us."
+      footer_desc: "Freelance delivery company based in Tokyo & Kanagawa. Looking for drivers to run with us.",
+      cm_spot1_title: 'Honest rate talk.',
+      cm_spot2_title: 'A day in the life.',
+      cm_spot3_title: 'Referrals keep going.',
+      cm_spot4_title: 'What comes next.',
+      cm_ctrl_title: 'BURNING BROS. in 60 seconds',
+      cm_ctrl_duration: '[ Tap to play / 01:00 ]',
+      ticker_1: 'Freelance drivers wanted',
+      ticker_2: '¥143~/pkg fully commission-based',
+      ticker_3: 'Tokyo / Setagaya & Ota',
+      ticker_4: 'Kanagawa / Yokohama & Zama',
+      ticker_5: 'Vehicle lease / uniform / housing support',
+      ticker_6: 'No experience needed',
+      ticker_7: 'Advance pay available',
+      ticker_8: 'Referral residual ¥22/pkg',
+      pay_intro: '<p>Because we don\'t compete on rate alone, BURNING BROS.\' pay structure is a bit complex.</p><p>But that complexity means your earning potential changes dramatically based on how you work. Stack up, and receive — see the system.</p>',
+      layer1_tag: 'PIECE RATE',
+      layer1_title: 'Packages delivered x Rate',
+      layer1_math: '<span>¥143~</span> x <span>Packages</span> x <span>Work days</span>',
+      layer1_desc: 'The most basic pay axis. Fully commission-based on the number of packages delivered. Rate varies by season and area.',
+      layer2_tag: 'ROLE INCENTIVE',
+      layer2_title: 'Leader & Manager rewards',
+      layer2_math: '<span>Team results</span> + <span>New driver retention</span> + <span>Operations</span>',
+      layer2_desc: 'Build your delivery record and get recommended for leader, then manager. On top of your own driving, you earn from team performance.',
+      layer3_tag: 'REFERRAL RESIDUAL',
+      layer3_title: 'Referral packages x ¥22 x Ongoing',
+      layer3_math: '<span>¥22/pkg</span> x <span>Referral deliveries</span> x <span>No limit</span>',
+      layer3_desc: 'Not one-time — ongoing. ¥22 for every package your referral delivers, every month. As long as they keep running, for months, for years. Income that continues even after you stop driving.',
+      layer_total_tag: 'TOTAL INCOME',
+      layer_total_title: 'Stacked together = your monthly income',
+      layer_total_desc: 'All 3 layers run in parallel, not either/or. Start with L01 as a driver, add L02 in 6-12 months, build L03 through relationships. The longer you stay, the thicker your income structure.',
+      pay_sim_title: 'L01 Monthly Income Simulation',
+      pay_sim_note: '* Below is piece rate only. L02 and L03 rewards are added separately.',
+      pay_area_desc: 'At BURNING BROS., daily package counts vary by location and route. Our strength is <strong>matching the right area to each person</strong>. Weekend-only runners, max-volume chasers, parents working between childcare — we assign the area that fits your pace.',
+      pay_ex1_title: 'Weekend Worker',
+      pay_ex2_title: 'Full-time',
+      pay_ex3_title: 'Heavy Hitter',
+      pay_note: '* Above are piece rate simulations only. Actual numbers vary by area, route, and season. Role incentives + referral residuals stack on top — that\'s the BURNING BROS. design.',
+      strip_morning: 'Morning. Start running.',
+      strip_noon: 'Afternoon. Running routes.',
+      strip_night: 'Night. Heading home.',
+      strip_caption: 'Morning, noon, and night. Rewards stack for drivers who keep running.',
+      loc_tokyo_region: 'TOKYO',
+      loc_kanagawa_region: 'KANAGAWA',
+      loc_setagaya: 'Setagaya',
+      loc_ota: 'Ota',
+      loc_yokohama: 'Yokohama',
+      loc_zama: 'Zama',
+      loc_tokyo_desc: 'Dense residential area. Short distances between stops make it easy to increase your package count.',
+      loc_kanagawa_desc: 'Suburban area. Good rate efficiency per round with a steady work pace.',
+      who1_title: 'People who want to earn',
+      who1_desc: 'A world where you\'re evaluated by volume, not hourly pay. If you get fired up seeing your effort become numbers, welcome.',
+      who2_title: 'People who want their own pace',
+      who2_desc: 'Set your own schedule. No long office hours, no forced team dynamics. For those who want to focus and run solo.',
+      who3_title: 'People who love moving',
+      who3_desc: 'Desk work is draining, can\'t sit still — for people like that, delivery driving could be a perfect fit.',
+      who4_title: 'Newcomers ready to change',
+      who4_desc: 'Your past job doesn\'t matter. All you need is a regular driver\'s license and motivation. Senior drivers will ride along for your first month.',
+      who5_title: 'Students, homemakers, side jobs welcome',
+      who5_desc: 'Fully flexible scheduling means you can work between school or housework. Start with 2 days a week and add more as you get comfortable.',
+      who6_title: 'Future business owners',
+      who6_desc: 'Learn everything from delivery operations to fleet management to team leadership. Some alumni have started their own businesses from here.',
+      referral_lead: '<p>BURNING BROS.\' referral reward is not a one-time bonus.</p><p>For every package your referral delivers, you earn — continuously.</p><p>As long as your friend keeps running, it keeps coming in every month.</p>',
+      referral_hero_label: 'ONGOING RESIDUAL / Per package',
+      referral_hero_note: 'x Packages your referral delivers x As long as they keep running, every month',
+      rm1_title: 'Per package, earned',
+      rm1_text: 'Not a one-time bonus. ¥22 is added to the referrer for every package their referral delivers. Their work becomes your reward.',
+      rm2_title: 'Continues as long as they run',
+      rm2_text: 'Doesn\'t end in 3 months. As long as your referral is active at BURNING BROS., the referral reward continues monthly.',
+      rm3_title: 'No limit on referrals',
+      rm3_text: 'Refer as many people as you want. The more referrals, the bigger your ongoing income base grows.',
+      referral_sim_title: 'Referral Reward Simulation',
+      referral_sim_sub: '* Assuming each referral delivers 3,300 pkgs/month (150/day x 22 days)',
+      rs_1person: '1 referral',
+      rs_3person: '3 referrals',
+      rs_10person: '10 referrals',
+      ref_note1: '¥22 per package is added monthly to the referrer based on the referral\'s delivery count.',
+      ref_note2: 'Rewards continue as long as the referral is active (no time limit).',
+      ref_note3: 'No limit on the number of referrals.',
+      ref_note4: 'The ¥22 referral reward is paid by the company and is NOT deducted from the referral\'s rate (¥143~).',
+      ref_note5: 'Referred persons must apply of their own free will.',
+      ref_note6: 'Details on rate and payment timing will be explained at the interview.',
+      career_intro: '<p>Not a relationship that ends at delivery — we built a structure for step-by-step advancement within the company.</p><p>You can stop anywhere. But if you don\'t want to stop, the next stage is always ready. That\'s the BURNING BROS. design.</p>',
+      faq_a1: '<p>Honestly, ¥143~ per package is not the highest rate in the industry.</p><p>If you choose solely by rate, other companies may be better.</p><p>However, BURNING BROS. layers multiple income streams: piece rate (L01), role incentives (L02), and ongoing referral rewards (L03). The referral reward especially is not one-time but continuous, coming in monthly based on referral activity.</p><p>We want you to judge by the total over 6-12 months, not just the per-package number.</p>',
+      faq_a2: 'Absolutely. Light delivery only requires a regular driver\'s license (automatic OK). No special licenses needed.',
+      faq_a3: 'No problem at all. Most of our drivers started with zero experience. Senior drivers ride along at first, teaching routes, loading tips, and customer interaction.',
+      faq_a4: 'It depends on your activity and team involvement, but typically 6-12 months for leader candidate, 1-2 years for manager. Of course, choosing to stay as a driver is respected too. Career paths are designed around your wishes.',
+      faq_a5: 'We offer a vehicle lease program. Start with zero capital. Lease fees are deducted from your commission for easy management.',
+      faq_a6: 'Basically no initial costs. With uniform provided and vehicle lease, you can start with nothing. Only those wanting to use their own vehicle need to prepare one.',
+      faq_a7: 'Applications are welcome. Our "company housing" is not a subsidized dorm — it\'s a system where we <strong>sign the rental contract under our company name</strong> for those who have difficulty passing rental screening. Rent itself is your responsibility. Great for those starting work and housing simultaneously.',
+      faq_a8: '<p>Referral rewards are not a one-time bonus but <strong>ongoing</strong>.</p><p>¥22 per package your referral delivers at BURNING BROS. is paid to you monthly. As long as they keep driving, it keeps coming — for months, for years.</p><p>No limit on referral count; the more you refer, the bigger your ongoing income base.</p><p>This ¥22 is paid by the company and is NOT deducted from the referral\'s rate (¥143~).</p>',
+      faq_a9: 'Monthly closing at month-end, paid on a designated date the following month. If you absolutely need funds, advance pay is available under certain conditions.',
+      faq_a10: 'Fully flexible scheduling — decided through consultation. Weekends only, weekdays only, full-time — all possible. Start at a pace that works for you.',
+      faq_a11: 'Of course. Light delivery packages are relatively lightweight, and women drivers are active here. Some are homemakers working between childcare.',
+      footer_site_link: '▸ Corporate site burning-bros.com',
+      footer_company: 'BURNING BROS. Inc.<br>3-18-27 Kamitsurumahoncho, Minami-ku, Sagamihara, Kanagawa 252-0318<br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>',
+      footer_areas_head: 'LOADING AREAS',
+      footer_areas: 'Tokyo: Setagaya / Ota<br>Kanagawa: Yokohama / Zama',
+      footer_contract: 'Freelance contract',
+      footer_apply: 'Apply via LINE or phone',
+      story_title: 'With just a phone and laptop,<br>he headed to <span class="fire">Kanagawa.</span>',
+      story_lead: 'A man who worked construction in Yamaguchi until age 23, inspired by one old blog post, came to Kanagawa with nothing but the clothes on his back. Now in his 8th year as Kanagawa team leader.',
+      story_cta: 'Read the full story',
+      fb_title: 'Why Foreign Drivers Choose Us',
+      fb_card1_title: 'Bring Your Family',
+      fb_card1_desc: 'With stable income and proper tax filing, you can sponsor family members to join you in Japan.',
+      fb_card2_title: 'Company Housing',
+      fb_card2_desc: 'We sign the lease under our company name. No guarantor needed, no discrimination.',
+      fb_card3_title: 'Community',
+      fb_card3_desc: 'Work alongside drivers from your home country. We have Vietnamese, Nepali, Indonesian, and other communities.',
+      fb_card4_title: 'Career Growth',
+      fb_card4_desc: 'Start as a driver, grow into management. Successful drivers have started their own delivery companies.'
     },
     vi: {
       nav_cta: "\u1ee8ng tuy\u1ec3n ngay",
@@ -5907,7 +6168,118 @@
       cta_sub: '<p>BURNING BROS. \u0111ang t\u00ecm nh\u1eefng ng\u01b0\u1eddi nghi\u00eam t\u00fac mu\u1ed1n ki\u1ebfm ti\u1ec1n.</p><p>Ch\u1ec9 mu\u1ed1n nghe th\u00eam? C\u0169ng \u0111\u01b0\u1ee3c. Li\u00ean h\u1ec7 b\u1ea5t c\u1ee9 l\u00fac n\u00e0o.</p>',
       cta_line: "\u1ee8ng tuy\u1ec3n qua LINE",
       cta_phone: "G\u1ecdi \u0111i\u1ec7n",
-      footer_desc: "C\u00f4ng ty giao h\u00e0ng t\u1ef1 do t\u1ea1i Tokyo & Kanagawa. Tuy\u1ec3n t\u00e0i x\u1ebf \u0111\u1ed3ng h\u00e0nh."
+      footer_desc: "C\u00f4ng ty giao h\u00e0ng t\u1ef1 do t\u1ea1i Tokyo & Kanagawa. Tuy\u1ec3n t\u00e0i x\u1ebf \u0111\u1ed3ng h\u00e0nh.",
+      cm_spot1_title: 'Thật lòng về đơn giá.',
+      cm_spot2_title: 'Một ngày làm việc.',
+      cm_spot3_title: 'Giới thiệu, tiếp tục.',
+      cm_spot4_title: 'Câu chuyện tiếp theo.',
+      cm_ctrl_title: 'BURNING BROS. trong 60 giây',
+      cm_ctrl_duration: '[ Chạm để phát / 01:00 ]',
+      ticker_1: 'Tuyển tài xế giao hàng',
+      ticker_2: '¥143~/kiện hoa hồng 100%',
+      ticker_3: 'Tokyo / Setagaya & Ota',
+      ticker_4: 'Kanagawa / Yokohama & Zama',
+      ticker_5: 'Thuê xe / đồng phục / hỗ trợ nhà ở',
+      ticker_6: 'Không cần kinh nghiệm',
+      ticker_7: 'Ứng lương trước OK',
+      ticker_8: 'Giới thiệu nhận ¥22/kiện liên tục',
+      pay_intro: '<p>Vì không cạnh tranh bằng đơn giá, cấu trúc lương của BURNING BROS. hơi phức tạp.</p><p>Nhưng chính sự phức tạp đó cho phép thu nhập thay đổi lớn tùy cách làm việc.</p>',
+      layer1_tag: 'GIAO HÀNG THEO KIỆN',
+      layer1_title: 'Số kiện × Đơn giá',
+      layer1_math: '<span>¥143~</span> × <span>Số kiện</span> × <span>Ngày làm</span>',
+      layer1_desc: 'Trục lương cơ bản nhất. Hoa hồng 100% theo số kiện giao.',
+      layer2_tag: 'THƯỞng VAI TRÒ',
+      layer2_title: 'Thưởng trưởng nhóm & quản lý',
+      layer2_math: '<span>Kết quả nhóm</span> + <span>Giữ chân người mới</span> + <span>Vận hành</span>',
+      layer2_desc: 'Tích lũy thành tích giao hàng để được đề cử trưởng nhóm, rồi quản lý.',
+      layer3_tag: 'THU NHẬP GIỚI THIỆU',
+      layer3_title: 'Kiện giới thiệu × ¥22 × Liên tục',
+      layer3_math: '<span>¥22/kiện</span> × <span>Kiện người giới thiệu giao</span> × <span>Không giới hạn</span>',
+      layer3_desc: 'Không phải trả một lần mà liên tục. ¥22 cho mỗi kiện người bạn giới thiệu giao, hàng tháng.',
+      layer_total_tag: 'TỔNG THU NHẬP',
+      layer_total_title: 'Chồng lên nhau = thu nhập hàng tháng',
+      layer_total_desc: 'Cả 3 tầng chạy song song. Bắt đầu L01, thêm L02 sau 6-12 tháng, xây L03 qua quan hệ.',
+      pay_sim_title: 'Mô phỏng thu nhập L01',
+      pay_sim_note: '* Chỉ tính hoa hồng giao hàng. L02 & L03 cộng thêm riêng.',
+      pay_area_desc: 'Tại BURNING BROS., <strong>giao khu vực phù hợp từng người</strong>.',
+      pay_ex1_title: 'Cuối tuần',
+      pay_ex2_title: 'Toàn thời gian',
+      pay_ex3_title: 'Tối đa',
+      pay_note: '* Trên đây chỉ là mô phỏng hoa hồng. Thêm thưởng vai trò + giới thiệu = thiết kế BURNING BROS.',
+      strip_morning: 'Sáng. Bắt đầu chạy.',
+      strip_noon: 'Trưa. Chạy tuyến.',
+      strip_night: 'Tối. Trở về.',
+      strip_caption: 'Sáng, trưa, tối. Thưởng tích lũy cho tài xế kiên trì.',
+      loc_tokyo_region: 'TOKYO',
+      loc_kanagawa_region: 'KANAGAWA',
+      loc_setagaya: 'Setagaya',
+      loc_ota: 'Ota',
+      loc_yokohama: 'Yokohama',
+      loc_zama: 'Zama',
+      loc_tokyo_desc: 'Khu dân cư dày đặc. Khoảng cách ngắn giữa các điểm giao.',
+      loc_kanagawa_desc: 'Khu ngoại ô. Hiệu suất đơn giá tốt, nhịp làm việc ổn định.',
+      who1_title: 'Người muốn kiếm tiền',
+      who1_desc: 'Được đánh giá theo số lượng, không theo giờ.',
+      who2_title: 'Người muốn tự do',
+      who2_desc: 'Tự sắp lịch. Dành cho ai thích tập trung chạy một mình.',
+      who3_title: 'Người thích vận động',
+      who3_desc: 'Ngồi bàn mệt mỏi? Giao hàng nhẹ có thể là công việc lý tưởng.',
+      who4_title: 'Người mới muốn thay đổi',
+      who4_desc: 'Không cần kinh nghiệm. Chỉ cần bằng lái và quyết tâm.',
+      who5_title: 'Sinh viên, nội trợ, nghề phụ',
+      who5_desc: 'Lịch linh hoạt, làm từ 2 ngày/tuần rồi tăng dần.',
+      who6_title: 'Người muốn tự kinh doanh',
+      who6_desc: 'Học mọi thứ từ vận hành đến quản lý đội.',
+      referral_lead: '<p>Thưởng giới thiệu của BURNING BROS. không phải trả một lần.</p><p>Mỗi kiện người bạn giới thiệu giao, bạn nhận — liên tục.</p><p>Miễn họ còn chạy, bạn còn nhận hàng tháng.</p>',
+      referral_hero_label: 'THU NHẬP LIÊN TỤC / Mỗi kiện',
+      referral_hero_note: '× Số kiện người giới thiệu giao × Hàng tháng miễn họ còn chạy',
+      rm1_title: 'Mỗi kiện, nhận thưởng',
+      rm1_text: 'Không phải bonus một lần. ¥22 cho mỗi kiện người giới thiệu giao.',
+      rm2_title: 'Còn chạy, còn nhận',
+      rm2_text: 'Không kết thúc sau 3 tháng. Miễn người giới thiệu còn hoạt động.',
+      rm3_title: 'Không giới hạn số người',
+      rm3_text: 'Giới thiệu bao nhiêu cũng được. Càng nhiều, thu nhập nền càng lớn.',
+      referral_sim_title: 'Mô phỏng thưởng giới thiệu',
+      referral_sim_sub: '* Giả sử mỗi người giới thiệu giao 3.300 kiện/tháng',
+      rs_1person: '1 người',
+      rs_3person: '3 người',
+      rs_10person: '10 người',
+      ref_note1: '¥22/kiện được cộng hàng tháng cho người giới thiệu.',
+      ref_note2: 'Thưởng tiếp tục miễn người giới thiệu còn hoạt động.',
+      ref_note3: 'Không giới hạn số lượng giới thiệu.',
+      ref_note4: '¥22 do công ty trả, KHÔNG trừ từ hoa hồng người được giới thiệu.',
+      ref_note5: 'Người được giới thiệu phải tự nguyện ứng tuyển.',
+      ref_note6: 'Chi tiết về đơn giá và lịch thanh toán sẽ giải thích khi phỏng vấn.',
+      career_intro: '<p>Không chỉ giao hàng — chúng tôi xây dựng cấu trúc thăng tiến từng bước.</p><p>Dừng ở đâu cũng được. Nhưng nếu muốn tiến, bước tiếp theo luôn sẵn sàng.</p>',
+      faq_a1: '<p>Thật lòng, ¥143~/kiện không phải cao nhất ngành.</p><p>Chỉ so đơn giá thì có thể nơi khác tốt hơn.</p><p>Nhưng BURNING BROS. chồng nhiều nguồn thu: hoa hồng (L01), thưởng vai trò (L02), giới thiệu liên tục (L03).</p><p>Hãy so tổng thu nhập 6-12 tháng.</p>',
+      faq_a2: 'Hoàn toàn OK. Chỉ cần bằng lái thường (số tự động OK).',
+      faq_a3: 'Không vấn đề. Phần lớn tài xế bắt đầu không kinh nghiệm.',
+      faq_a4: 'Tùy hoạt động, thường 6-12 tháng lên trưởng nhóm, 1-2 năm lên quản lý.',
+      faq_a5: 'Có chương trình thuê xe. Bắt đầu không cần vốn.',
+      faq_a6: 'Cơ bản không tốn chi phí ban đầu.',
+      faq_a7: 'Hoan nghênh. <strong>Công ty đứng tên thuê nhà</strong> cho ai khó qua thẩm định. Tiền thuê do bạn trả.',
+      faq_a8: '<p>Thưởng giới thiệu không phải một lần mà <strong>liên tục</strong>.</p><p>¥22/kiện người giới thiệu giao, hàng tháng.</p><p>Không giới hạn.</p><p>¥22 do công ty trả.</p>',
+      faq_a9: 'Chốt cuối tháng, trả vào ngày chỉ định tháng sau.',
+      faq_a10: 'Lịch linh hoạt. Cuối tuần, ngày thường, toàn thời gian đều được.',
+      faq_a11: 'Tất nhiên. Hàng nhẹ, nhiều nữ tài xế đang hoạt động.',
+      footer_site_link: '▸ Trang công ty burning-bros.com',
+      footer_company: 'Công ty BURNING BROS.<br>3-18-27 Kamitsurumahoncho, Minami-ku, Sagamihara, Kanagawa 252-0318<br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>',
+      footer_areas_head: 'KHU VỰC LÀM VIỆC',
+      footer_areas: 'Tokyo: Setagaya / Ota<br>Kanagawa: Yokohama / Zama',
+      footer_contract: 'Hợp đồng dịch vụ tự do',
+      footer_apply: 'Ứng tuyển qua LINE hoặc điện thoại',
+      story_title: 'Chỉ mang theo điện thoại và laptop,<br>anh ấy đi đến <span class="fire">Kanagawa.</span>',
+      story_lead: 'Một người làm xây dựng ở Yamaguchi đến 23 tuổi, nhờ một bài blog cũ, đã đến Kanagawa tay trắng.',
+      story_cta: 'Đọc tiếp',
+      fb_title: 'Tại sao tài xế nước ngoài chọn chúng tôi',
+      fb_card1_title: 'Đưa gia đình sang',
+      fb_card1_desc: 'Với thu nhập ổn định và khai thuế đúng quy định, bạn có thể bảo lãnh gia đình sang Nhật.',
+      fb_card2_title: 'Nhà ở công ty',
+      fb_card2_desc: 'Chúng tôi ký hợp đồng thuê dưới tên công ty. Không cần người bảo lãnh, không bị phân biệt.',
+      fb_card3_title: 'Cộng đồng',
+      fb_card3_desc: 'Làm việc cùng tài xế đồng hương. Có cộng đồng Việt Nam, Nepal, Indonesia.',
+      fb_card4_title: 'Phát triển sự nghiệp',
+      fb_card4_desc: 'Bắt đầu là tài xế, phát triển lên quản lý. Nhiều tài xế thành công đã mở công ty riêng.'
     },
     ne: {
       nav_cta: "\u0905\u0939\u093f\u0932\u0947 \u0906\u0935\u0947\u0926\u0928 \u0926\u093f\u0928\u0941\u0939\u094b\u0938\u094d",
@@ -5998,7 +6370,118 @@
       cta_sub: '<p>BURNING BROS. \u0932\u0947 \u0917\u092e\u094d\u092d\u0940\u0930 \u0915\u092e\u093e\u0909\u0928\u0947\u0939\u0930\u0942 \u0916\u094b\u091c\u093f\u0930\u0939\u0947\u0915\u094b \u091b\u0964</p><p>\u0915\u0941\u0930\u093e \u0917\u0930\u094d\u0928 \u091a\u093e\u0939\u0928\u0941\u0939\u0941\u0928\u094d\u091b? \u0938\u092e\u094d\u092a\u0930\u094d\u0915 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d\u0964</p>',
       cta_line: "LINE \u092e\u093e \u0906\u0935\u0947\u0926\u0928",
       cta_phone: "\u092b\u094b\u0928 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
-      footer_desc: "\u091f\u094b\u0915\u093f\u092f\u094b \u0930 \u0915\u093e\u0928\u093e\u0917\u093e\u0935\u093e\u092e\u093e \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0915\u092e\u094d\u092a\u0928\u0940\u0964 \u0939\u093e\u092e\u0940\u0938\u0901\u0917 \u0926\u094c\u0921\u094d\u0928\u0947 \u0921\u094d\u0930\u093e\u0907\u092d\u0930 \u0916\u094b\u091c\u093f\u0930\u0939\u0947\u0915\u094b \u091b\u0964"
+      footer_desc: "\u091f\u094b\u0915\u093f\u092f\u094b \u0930 \u0915\u093e\u0928\u093e\u0917\u093e\u0935\u093e\u092e\u093e \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0915\u092e\u094d\u092a\u0928\u0940\u0964 \u0939\u093e\u092e\u0940\u0938\u0901\u0917 \u0926\u094c\u0921\u094d\u0928\u0947 \u0921\u094d\u0930\u093e\u0907\u092d\u0930 \u0916\u094b\u091c\u093f\u0930\u0939\u0947\u0915\u094b \u091b\u0964",
+      cm_spot1_title: 'दरको कुरा।',
+      cm_spot2_title: 'एक दिनको कार्यक्रम।',
+      cm_spot3_title: 'सिफारिस, जारी।',
+      cm_spot4_title: 'अर्को कथा।',
+      cm_ctrl_title: '60 सेकेन्डमा BURNING BROS.',
+      cm_ctrl_duration: '[ प्ले गर्न ट्याप गर्नुहोस् / 01:00 ]',
+      ticker_1: 'फ्रिल्यान्स ड्राइभर भर्ती',
+      ticker_2: '¥143~/प्याकेज पूर्ण कमिसन',
+      ticker_3: 'टोकियो / सेतागाया र ओटा',
+      ticker_4: 'कानागावा / योकोहामा र ज़ामा',
+      ticker_5: 'गाडी लिज / युनिफर्म / आवास सहयोग',
+      ticker_6: 'अनुभव नचाहिने',
+      ticker_7: 'अग्रिम भुक्तानी OK',
+      ticker_8: 'सिफारिस ¥22/प्याकेज निरन्तर',
+      pay_intro: '<p>दरमा मात्र प्रतिस्पर्धा नगरेको हुनाले BURNING BROS. को तलब संरचना अलि जटिल छ।</p><p>तर यो जटिलताले काम गर्ने तरिकाअनुसार आम्दानी ठूलो बदलिन्छ।</p>',
+      layer1_tag: 'प्रति प्याकेज',
+      layer1_title: 'प्याकेज × दर',
+      layer1_math: '<span>¥143~</span> × <span>प्याकेज</span> × <span>काम दिन</span>',
+      layer1_desc: 'सबैभन्दा आधारभूत आम्दानी। डेलिभरी गरेको प्याकेज अनुसार पूर्ण कमिसन।',
+      layer2_tag: 'भूमिका बोनस',
+      layer2_title: 'लिडर र प्रबन्धक पुरस्कार',
+      layer2_math: '<span>टिम परिणाम</span> + <span>नयाँ ड्राइभर</span> + <span>सञ्चालन</span>',
+      layer2_desc: 'डेलिभरी रेकर्ड बनाउनुहोस् र लिडर, त्यसपछि प्रबन्धक बन्नुहोस्।',
+      layer3_tag: 'सिफारिस आम्दानी',
+      layer3_title: 'सिफारिस प्याकेज × ¥22 × निरन्तर',
+      layer3_math: '<span>¥22/प्याकेज</span> × <span>सिफारिस डेलिभरी</span> × <span>सीमा छैन</span>',
+      layer3_desc: 'एक पटक होइन — निरन्तर। तपाईंले सिफारिस गरेका ड्राइभरले डेलिभर गरेको प्रति प्याकेजमा ¥22 हरेक महिना।',
+      layer_total_tag: 'कुल आम्दानी',
+      layer_total_title: 'सबै मिलेर = तपाईंको मासिक आय',
+      layer_total_desc: '3 तह समानान्तर चल्छन्।',
+      pay_sim_title: 'L01 मासिक आम्दानी सिमुलेसन',
+      pay_sim_note: '* तल प्रति प्याकेज मात्र। L02 र L03 अलग जोडिन्छ।',
+      pay_area_desc: 'BURNING BROS. मा <strong>प्रत्येक व्यक्तिलाई उपयुक्त क्षेत्र</strong> दिन्छौं।',
+      pay_ex1_title: 'सप्ताहन्त',
+      pay_ex2_title: 'पूर्णकालीन',
+      pay_ex3_title: 'अधिकतम',
+      pay_note: '* माथि प्रति प्याकेज मात्र। भूमिका + सिफारिस थपिन्छ।',
+      strip_morning: 'बिहान। दौड सुरु।',
+      strip_noon: 'दिउँसो। रुट दौड।',
+      strip_night: 'राति। घर फर्कने।',
+      strip_caption: 'बिहान, दिउँसो, राति। दगुरिरहने ड्राइभरलाई पुरस्कार बढ्छ।',
+      loc_tokyo_region: 'टोकियो',
+      loc_kanagawa_region: 'कानागावा',
+      loc_setagaya: 'सेतागाया',
+      loc_ota: 'ओटा',
+      loc_yokohama: 'योकोहामा',
+      loc_zama: 'ज़ामा',
+      loc_tokyo_desc: 'घना आवासीय क्षेत्र। छोटो दूरीमा धेरै प्याकेज।',
+      loc_kanagawa_desc: 'उपनगरीय क्षेत्र। राम्रो दर दक्षता, स्थिर गतिमा काम।',
+      who1_title: 'कमाउन चाहने',
+      who1_desc: 'घण्टाको होइन, संख्याले मूल्याङ्कन। मेहनत = आम्दानी।',
+      who2_title: 'आफ्नो गतिमा काम गर्ने',
+      who2_desc: 'आफ्नो तालिका बनाउनुहोस्। एक्लै केन्द्रित भएर दौड्ने।',
+      who3_title: 'हिँड्न मन पर्ने',
+      who3_desc: 'डेस्कमा बस्न गाह्रो? डेलिभरी उत्तम हुन सक्छ।',
+      who4_title: 'नयाँ, परिवर्तन चाहने',
+      who4_desc: 'अनुभव चाहिँदैन। लाइसेन्स र उत्साह मात्र।',
+      who5_title: 'विद्यार्थी, गृहिणी, साइड जब',
+      who5_desc: 'लचिलो तालिका। हप्तामा 2 दिनबाट सुरु।',
+      who6_title: 'भविष्यमा स्वतन्त्र',
+      who6_desc: 'सञ्चालनदेखि व्यवस्थापनसम्म सिक्ने। केहीले यहाँबाट आफ्नै व्यवसाय सुरु गरे।',
+      referral_lead: '<p>BURNING BROS. को सिफारिस पुरस्कार एक पटक होइन।</p><p>तपाईंले सिफारिस गरेका व्यक्तिले गरेको प्रत्येक डेलिभरीमा — निरन्तर।</p><p>उनी दगुरिरहेसम्म, हरेक महिना आउँछ।</p>',
+      referral_hero_label: 'निरन्तर आम्दानी / प्रति प्याकेज',
+      referral_hero_note: '× सिफारिसले डेलिभरी गरेको × हरेक महिना',
+      rm1_title: 'प्रत्येक प्याकेजमा',
+      rm1_text: 'एक पटक होइन। सिफारिसले गरेको प्रत्येक प्याकेजमा ¥22।',
+      rm2_title: 'दगुरिरहेसम्म जारी',
+      rm2_text: '3 महिनामा सकिँदैन। सिफारिस सक्रिय भएसम्म।',
+      rm3_title: 'सीमा छैन',
+      rm3_text: 'जतिसुकै सिफारिस गर्नुहोस्। जति बढी, उति बढी आम्दानी।',
+      referral_sim_title: 'सिफारिस पुरस्कार सिमुलेसन',
+      referral_sim_sub: '* प्रत्येक सिफारिसले 3,300 प्याकेज/महिना गरेको मानिएको',
+      rs_1person: '1 सिफारिस',
+      rs_3person: '3 सिफारिस',
+      rs_10person: '10 सिफारिस',
+      ref_note1: 'सिफारिसको डेलिभरी अनुसार ¥22/प्याकेज मासिक।',
+      ref_note2: 'सिफारिस सक्रिय भएसम्म जारी।',
+      ref_note3: 'सिफारिस संख्यामा सीमा छैन।',
+      ref_note4: '¥22 कम्पनीले दिन्छ, सिफारिसको कमिसनबाट कटिँदैन।',
+      ref_note5: 'सिफारिस गरिएको व्यक्तिले स्वेच्छाले आवेदन दिनुपर्छ।',
+      ref_note6: 'दर र भुक्तानी तालिकाको विवरण अन्तर्वार्तामा।',
+      career_intro: '<p>डेलिभरीमा मात्र सीमित नभई — चरणबद्ध उन्नतिको संरचना छ।</p><p>कहाँ रोक्ने तपाईंको हो। तर अगाडि बढ्न चाहनुहुन्छ भने, अर्को चरण सधैं तयार छ।</p>',
+      faq_a1: '<p>इमानदारीमा, ¥143~/प्याकेज उद्योगमा सबैभन्दा उच्च होइन।</p><p>दर मात्र हेर्ने हो भने अरू राम्रो हुन सक्छ।</p><p>तर BURNING BROS. ले कमिसन (L01), भूमिका (L02), सिफारिस (L03) — धेरै आम्दानी तह चलाउँछ।</p><p>6-12 महिनाको कुलमा हेर्नुहोस्।</p>',
+      faq_a2: 'साधारण लाइसेन्स (अटोमेटिक OK) मात्र चाहिन्छ।',
+      faq_a3: 'कुनै समस्या छैन। धेरैजसो ड्राइभर शून्यबाट सुरु गरे। सिनियरले साथ दिन्छ।',
+      faq_a4: 'सामान्यतया 6-12 महिनामा लिडर, 1-2 वर्षमा प्रबन्धक। ड्राइभरमै रहने पनि हुन्छ।',
+      faq_a5: 'गाडी लिज कार्यक्रम छ। शून्य पुँजीमा सुरु।',
+      faq_a6: 'प्रारम्भिक खर्च छैन। युनिफर्म र लिज छ भने तयारी बिना सुरु।',
+      faq_a7: '<strong>कम्पनी नाममा भाडा सम्झौता</strong> जसलाई भाडा स्क्रिनिङ गाह्रो छ। भाडा तपाईंको जिम्मेवारी।',
+      faq_a8: '<p>सिफारिस पुरस्कार एक पटक होइन, <strong>निरन्तर</strong>।</p><p>¥22/प्याकेज सिफारिसले गरेको, हरेक महिना।</p><p>सीमा छैन।</p><p>कम्पनीले दिन्छ, सिफारिसको कमिसनबाट कटिँदैन।</p>',
+      faq_a9: 'महिनाको अन्तमा बन्द, अर्को महिनाको तोकिएको मितिमा भुक्तानी। अग्रिम सम्भव।',
+      faq_a10: 'लचिलो तालिका। सप्ताहन्त, हप्ताको दिन, पूर्णकालीन — सबै सम्भव।',
+      faq_a11: 'अवश्य। हलुका सामान, महिला ड्राइभर सक्रिय छन्।',
+      footer_site_link: '▸ कम्पनी साइट burning-bros.com',
+      footer_company: 'BURNING BROS. कम्पनी<br>3-18-27 Kamitsurumahoncho, Minami-ku, Sagamihara, Kanagawa 252-0318<br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>',
+      footer_areas_head: 'काम क्षेत्र',
+      footer_areas: 'टोकियो: सेतागाया / ओटा<br>कानागावा: योकोहामा / ज़ामा',
+      footer_contract: 'फ्रिल्यान्स सम्झौता',
+      footer_apply: 'LINE वा फोनबाट आवेदन',
+      story_title: 'फोन र ल्यापटप मात्र लिएर,<br><span class="fire">कानागावा</span> गए।',
+      story_lead: '23 वर्षसम्म यामागुचीमा निर्माण कामदार, एउटा पुरानो ब्लगले प्रेरित भएर कानागावा आए। 8 औं वर्षमा कानागावा टिम लिडर।',
+      story_cta: 'पूरा पढ्नुहोस्',
+      fb_title: 'विदेशी ड्राइभरले हामीलाई किन रोज्छन्',
+      fb_card1_title: 'परिवार ल्याउनुहोस्',
+      fb_card1_desc: 'स्थिर आम्दानी र उचित कर दाखिलाले, तपाईं परिवारलाई जापानमा बोलाउन सक्नुहुन्छ।',
+      fb_card2_title: 'कम्पनी नामको आवास',
+      fb_card2_desc: 'हामी कम्पनी नाममा भाडा सम्झौता गर्छौं। जमानी चाहिँदैन, भेदभाव छैन।',
+      fb_card3_title: 'समुदाय',
+      fb_card3_desc: 'आफ्नै देशका ड्राइभरसँग काम गर्नुहोस्। भियतनामी, नेपाली, इन्डोनेसियन समुदाय छ।',
+      fb_card4_title: 'क्यारियर वृद्धि',
+      fb_card4_desc: 'ड्राइभरबाट सुरु गरेर प्रबन्धकमा बढ्नुहोस्। सफल ड्राइभरहरूले आफ्नै डेलिभरी कम्पनी सुरु गरेका छन्।'
     },
     id: {
       nav_cta: "Lamar Sekarang",
@@ -6089,7 +6572,522 @@
       cta_sub: '<p>BURNING BROS. mencari orang yang serius ingin menghasilkan.</p><p>Hanya ingin tahu lebih lanjut? Boleh juga. Hubungi kami kapan saja.</p>',
       cta_line: "Lamar via LINE",
       cta_phone: "Telepon kami",
-      footer_desc: "Perusahaan pengiriman freelance di Tokyo & Kanagawa. Mencari driver untuk bergabung."
+      footer_desc: "Perusahaan pengiriman freelance di Tokyo & Kanagawa. Mencari driver untuk bergabung.",
+      cm_spot1_title: 'Jujur soal tarif.',
+      cm_spot2_title: 'Sehari bekerja.',
+      cm_spot3_title: 'Referral terus berjalan.',
+      cm_spot4_title: 'Cerita selanjutnya.',
+      cm_ctrl_title: 'BURNING BROS. dalam 60 detik',
+      cm_ctrl_duration: '[ Ketuk untuk putar / 01:00 ]',
+      ticker_1: 'Rekrutmen driver pengiriman',
+      ticker_2: '¥143~/paket komisi penuh',
+      ticker_3: 'Tokyo / Setagaya & Ota',
+      ticker_4: 'Kanagawa / Yokohama & Zama',
+      ticker_5: 'Sewa kendaraan / seragam / dukungan tempat tinggal',
+      ticker_6: 'Tanpa pengalaman OK',
+      ticker_7: 'Uang muka tersedia',
+      ticker_8: 'Referral berkelanjutan ¥22/paket',
+      pay_intro: '<p>Karena tidak bersaing di tarif saja, struktur gaji BURNING BROS. sedikit kompleks.</p><p>Tapi kompleksitas itu berarti potensi penghasilan berubah besar tergantung cara kerja Anda.</p>',
+      layer1_tag: 'PER PAKET',
+      layer1_title: 'Jumlah paket x Tarif',
+      layer1_math: '<span>¥143~</span> x <span>Paket</span> x <span>Hari kerja</span>',
+      layer1_desc: 'Sumbu penghasilan paling dasar. Komisi penuh berdasarkan jumlah paket. Tarif bervariasi menurut musim dan area.',
+      layer2_tag: 'BONUS JABATAN',
+      layer2_title: 'Reward ketua tim & manajer',
+      layer2_math: '<span>Hasil tim</span> + <span>Retensi driver baru</span> + <span>Operasi</span>',
+      layer2_desc: 'Bangun rekam jejak lalu naik ke ketua tim, kemudian manajer. Selain penghasilan sendiri, dapat bonus dari kinerja tim.',
+      layer3_tag: 'PENDAPATAN REFERRAL',
+      layer3_title: 'Paket referral x ¥22 x Berkelanjutan',
+      layer3_math: '<span>¥22/paket</span> x <span>Pengiriman referral</span> x <span>Tanpa batas</span>',
+      layer3_desc: 'Bukan sekali bayar — berkelanjutan. ¥22 untuk setiap paket yang diantar referral Anda, setiap bulan, selama mereka masih mengantar.',
+      layer_total_tag: 'TOTAL PENGHASILAN',
+      layer_total_title: 'Ditumpuk = penghasilan bulanan Anda',
+      layer_total_desc: 'Ketiga lapis berjalan paralel. Mulai L01, tambah L02 dalam 6-12 bulan, bangun L03 lewat hubungan. Semakin lama, semakin tebal.',
+      pay_sim_title: 'Simulasi Penghasilan Bulanan L01',
+      pay_sim_note: '* Hanya tarif per paket. L02 & L03 ditambahkan terpisah.',
+      pay_area_desc: 'Di BURNING BROS., <strong>kami mencocokkan area yang tepat untuk setiap orang</strong>.',
+      pay_ex1_title: 'Akhir Pekan',
+      pay_ex2_title: 'Full-time',
+      pay_ex3_title: 'Maksimal',
+      pay_note: '* Di atas hanya simulasi per paket. Bonus jabatan + referral = desain BURNING BROS.',
+      strip_morning: 'Pagi. Mulai jalan.',
+      strip_noon: 'Siang. Jalan rute.',
+      strip_night: 'Malam. Pulang.',
+      strip_caption: 'Pagi, siang, malam. Reward menumpuk untuk driver yang terus jalan.',
+      loc_tokyo_region: 'TOKYO',
+      loc_kanagawa_region: 'KANAGAWA',
+      loc_setagaya: 'Setagaya',
+      loc_ota: 'Ota',
+      loc_yokohama: 'Yokohama',
+      loc_zama: 'Zama',
+      loc_tokyo_desc: 'Area perumahan padat. Jarak pendek antar titik, mudah menambah jumlah paket.',
+      loc_kanagawa_desc: 'Area pinggiran. Efisiensi tarif baik, tempo kerja stabil.',
+      who1_title: 'Yang ingin menghasilkan',
+      who1_desc: 'Dinilai berdasarkan volume, bukan per jam. Usaha = angka = penghasilan.',
+      who2_title: 'Yang ingin tempo sendiri',
+      who2_desc: 'Atur jadwal sendiri. Untuk yang suka fokus dan jalan sendiri.',
+      who3_title: 'Yang suka bergerak',
+      who3_desc: 'Tidak suka duduk di meja? Pengiriman bisa jadi pekerjaan ideal.',
+      who4_title: 'Pendatang baru siap berubah',
+      who4_desc: 'Tidak perlu pengalaman. Cukup SIM dan semangat. Bulan pertama ada senior mendampingi.',
+      who5_title: 'Mahasiswa, ibu rumah tangga, sampingan',
+      who5_desc: 'Jadwal fleksibel. Mulai dari 2 hari/minggu.',
+      who6_title: 'Calon pengusaha',
+      who6_desc: 'Belajar semua dari operasi hingga manajemen tim. Beberapa alumni sudah memulai bisnis sendiri.',
+      referral_lead: '<p>Reward referral BURNING BROS. bukan bonus sekali.</p><p>Setiap paket yang diantar referral Anda, Anda mendapat — berkelanjutan.</p><p>Selama teman Anda masih jalan, terus masuk setiap bulan.</p>',
+      referral_hero_label: 'PENDAPATAN BERKELANJUTAN / Per paket',
+      referral_hero_note: 'x Paket yang diantar referral x Setiap bulan selama masih aktif',
+      rm1_title: 'Per paket, didapat',
+      rm1_text: 'Bukan bonus sekali. ¥22 untuk setiap paket yang diantar referral.',
+      rm2_title: 'Selama masih jalan, berlanjut',
+      rm2_text: 'Tidak berakhir 3 bulan. Selama referral aktif di BURNING BROS.',
+      rm3_title: 'Tanpa batas jumlah',
+      rm3_text: 'Referensikan berapa pun. Semakin banyak, semakin besar basis penghasilan.',
+      referral_sim_title: 'Simulasi Reward Referral',
+      referral_sim_sub: '* Asumsi setiap referral mengantar 3.300 paket/bulan',
+      rs_1person: '1 referral',
+      rs_3person: '3 referral',
+      rs_10person: '10 referral',
+      ref_note1: '¥22/paket ditambahkan bulanan ke pemberi referral.',
+      ref_note2: 'Reward berlanjut selama referral aktif.',
+      ref_note3: 'Tidak ada batas jumlah referral.',
+      ref_note4: '¥22 dibayar perusahaan, TIDAK dipotong dari komisi referral.',
+      ref_note5: 'Yang direferensikan harus melamar atas kemauan sendiri.',
+      ref_note6: 'Detail tarif dan jadwal pembayaran dijelaskan saat wawancara.',
+      career_intro: '<p>Bukan hubungan yang berakhir di pengiriman — kami membangun struktur kemajuan bertahap.</p><p>Anda bisa berhenti di mana saja. Tapi jika ingin maju, tahap berikutnya selalu siap.</p>',
+      faq_a1: '<p>Jujur, ¥143~/paket bukan tertinggi di industri.</p><p>Kalau hanya bandingkan tarif, perusahaan lain mungkin lebih baik.</p><p>Tapi BURNING BROS. menumpuk komisi (L01), bonus jabatan (L02), dan referral berkelanjutan (L03).</p><p>Bandingkan total 6-12 bulan.</p>',
+      faq_a2: 'Tentu saja. Cukup SIM biasa (otomatis OK). Tidak perlu lisensi khusus.',
+      faq_a3: 'Tidak masalah. Sebagian besar driver mulai tanpa pengalaman. Senior mendampingi di awal.',
+      faq_a4: 'Biasanya 6-12 bulan jadi ketua tim, 1-2 tahun jadi manajer. Tetap sebagai driver juga dihormati.',
+      faq_a5: 'Ada program sewa kendaraan. Mulai tanpa modal. Biaya sewa dipotong dari komisi.',
+      faq_a6: 'Pada dasarnya tanpa biaya awal. Ada seragam dan sewa kendaraan — mulai tanpa persiapan.',
+      faq_a7: 'Silakan melamar. "Tempat tinggal perusahaan" berarti <strong>perusahaan menandatangani kontrak sewa</strong> untuk yang sulit lolos screening. Sewa tanggung jawab Anda.',
+      faq_a8: '<p>Reward referral bukan sekali tapi <strong>berkelanjutan</strong>.</p><p>¥22/paket yang diantar referral, setiap bulan, selama masih aktif.</p><p>Tanpa batas jumlah.</p><p>¥22 dibayar perusahaan, tidak dipotong dari komisi referral.</p>',
+      faq_a9: 'Tutup buku akhir bulan, dibayar tanggal tertentu bulan berikutnya. Uang muka tersedia jika diperlukan.',
+      faq_a10: 'Jadwal fleksibel. Akhir pekan, hari kerja, full-time — semua bisa.',
+      faq_a11: 'Tentu saja. Paket ringan, banyak driver wanita aktif.',
+      footer_site_link: '▸ Situs perusahaan burning-bros.com',
+      footer_company: 'PT BURNING BROS.<br>3-18-27 Kamitsurumahoncho, Minami-ku, Sagamihara, Kanagawa 252-0318<br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>',
+      footer_areas_head: 'AREA KERJA',
+      footer_areas: 'Tokyo: Setagaya / Ota<br>Kanagawa: Yokohama / Zama',
+      footer_contract: 'Kontrak freelance',
+      footer_apply: 'Lamar via LINE atau telepon',
+      story_title: 'Hanya bawa HP dan laptop,<br>dia menuju <span class="fire">Kanagawa.</span>',
+      story_lead: 'Seorang pekerja konstruksi di Yamaguchi sampai usia 23, terinspirasi satu postingan blog lama, datang ke Kanagawa tanpa apa-apa. Tahun ke-8, dia jadi ketua tim Kanagawa.',
+      story_cta: 'Baca selengkapnya',
+      fb_title: 'Mengapa driver asing memilih kami',
+      fb_card1_title: 'Bawa keluarga Anda',
+      fb_card1_desc: 'Dengan penghasilan stabil dan pelaporan pajak yang benar, Anda bisa mensponsori keluarga ke Jepang.',
+      fb_card2_title: 'Tempat tinggal perusahaan',
+      fb_card2_desc: 'Kami tanda tangan kontrak sewa atas nama perusahaan. Tidak perlu penjamin, tidak ada diskriminasi.',
+      fb_card3_title: 'Komunitas',
+      fb_card3_desc: 'Bekerja bersama driver dari negara Anda. Ada komunitas Vietnam, Nepal, Indonesia.',
+      fb_card4_title: 'Pertumbuhan karir',
+      fb_card4_desc: 'Mulai sebagai driver, tumbuh jadi manajer. Driver sukses sudah mendirikan perusahaan pengiriman sendiri.'
+    },
+    zh: {
+      nav_cta: "立即申请",
+      hero_kicker: "招聘 / 自由配送司机招募中",
+      hero_headline: '<span class="line">你的路</span><span class="line">从<span class="fire">这里</span>开始。</span>',
+      hero_lead: '<p>BURNING BROS. 是一家位于东京和神奈川的自由配送公司。</p><p>坦白说，<strong>我们的单件配送费并不是行业最高的。</strong></p><p>但我们在构建的不是"按件计酬"的工作——而是<strong>一套完整的职业体系</strong>。多层收入结构、领导岗位、持续推荐奖励、管理职位以及独立创业支持。我们认真打造一个可以与你长期并肩的体系。</p>',
+      hero_income_label: "收入结构 / 3层",
+      hero_income_piece: "按件计酬",
+      hero_income_role: "职务奖励",
+      hero_income_residual: "推荐持续收入",
+      hero_income_total: "叠加——休息日也能持续获得收入。",
+      housing_badge: "我们以公司名义签订租房合同。",
+      housing_title: "公司住房支持",
+      housing_desc: "租房审核通不过？我们以公司名义签约。你只需专注配送。",
+      visa_title: "签证状态确认",
+      visa_subtitle: "选择你的签证类型，查看是否符合条件",
+      visa_eligible: "你可以申请！",
+      visa_not_eligible: "很抱歉，该签证类型不能用于自由配送工作。",
+      visa_special: "你的签证需要单独审核。请联系我们。",
+      visa_types_ok: ["永久居留者", "永久居留者配偶", "日本国民配偶", "长期居留者", "特别永久居留者", "工作假期", "指定活动（视情况而定）"],
+      visa_types_ng: ["留学", "技能实习", "特定技能", "工程师/专家/国际服务", "家属"],
+      numbers_title: '用数字看，<br>BURNING BROS. 的<span class="fire">体系。</span>',
+      numbers_layers: '3<span class="unit">层</span>',
+      numbers_layers_label: "收入是叠加构建的",
+      numbers_residual: '<span class="prefix">¥</span>22<span class="unit">/件</span>',
+      numbers_residual_label: "推荐件数持续产生",
+      numbers_steps: '4<span class="unit">阶段</span>',
+      numbers_steps_label: "司机 → 组长 → 管理者 → 独立",
+      numbers_areas: '4<span class="unit">区域</span>',
+      numbers_areas_label: "东京2区 + 神奈川2市",
+      philosophy_title: '不靠单价，<br>靠<span class="fire">体系</span>取胜。',
+      philosophy_intro: '<p>配送行业往往是"价格战"——谁的单件价格最高。</p><p>但如果只按这个逻辑选公司，<span class="highlight">3到5年后剩下的只是疲惫的身体</span>。</p><p>BURNING BROS. 的设计是让配送不是"终点"而是"起点"。能跑的时候赚钱，跑的时候找到下一个位置，不跑了也有可以参与的岗位。</p>',
+      phil_card1_title: '在单价之上<br>叠加收入',
+      phil_card1_text: "我们的单件价格不是最高的。但我们叠加了职务奖励、推荐报酬和管理奖金。多条收入渠道随时间积累。",
+      phil_card2_title: '为配送之后<br>做好准备',
+      phil_card2_text: "体力工作有极限。受伤、衰老、家庭。没有'下一步'的公司留不住人。我们提供组长、管理者和独立创业路径。",
+      phil_card3_title: '推荐变成<br>持续收入',
+      phil_card3_text: "推荐奖励不是一次性的。你推荐的人每配送一件就产生¥22，只要他们继续配送，你就持续获得收入。",
+      schedule_title: '一天的<span class="fire">工作流程。</span>',
+      schedule_0800_title: "装货", schedule_0800_desc: "到达站点。按路线将包裹装车。",
+      schedule_0900_title: "开始配送", schedule_0900_desc: "上午配送。主要是住宅区，站点间距短。",
+      schedule_1300_title: "午休 & 补货", schedule_1300_desc: "回站点休息。吃午饭并装下午的包裹。",
+      schedule_1400_title: "下午配送", schedule_1400_desc: "开始下午配送。重新投递上午未成功的包裹。",
+      schedule_1700_title: "最后装货", schedule_1700_desc: "最后一次装货。傍晚在家率更高。",
+      schedule_1800_title: "晚间配送", schedule_1800_desc: "最后一轮。更多人在家，完成更顺畅。",
+      schedule_2000_title: "收工", schedule_2000_desc: "处理单据、整理车辆、汇报，收工。",
+      benefits_title: '工作轻松的<br><span class="fire">真正原因。</span>',
+      bene1_title: "车辆租赁", bene1_desc: "没有自己的车？没关系。使用我们的租赁计划，零资金起步。",
+      bene2_title: "提供工服", bene2_desc: "免费提供 BURNING BROS. 原创工作服。",
+      bene3_title: "住房支持", bene3_desc: "公司名义签订租赁合同（房租由你承担）。",
+      bene4_title: "预支工资", bene4_desc: "突发支出？跟我们说。有预支制度。",
+      bene5_title: "管理层奖励", bene5_desc: "晋升组长或管理者，获得额外的团队绩效奖励。",
+      bene6_title: "灵活排班", bene6_desc: "全职、只做周末、按你的生活方式自由安排。",
+      pay_title: '收入<br><span class="fire">3层结构。</span>',
+      locations_title: '工作区域：<br>东京 × <span class="fire">神奈川</span>。',
+      loc_tokyo_name: "世田谷区 & 大田区",
+      loc_kanagawa_name: "横滨市 & 座间市",
+      who_title: '我们想要<br><span style="color:var(--hazard);">这样的人。</span>',
+      referral_title: '推荐一次，<br><span style="color:var(--fire);">持续获益。</span>',
+      career_title: '不要止步于<br><span class="fire">配送。</span>',
+      career_step1: "配送司机", career_step1_desc: "跟随前辈学习路线，然后独立。用L01建立收入基础。",
+      career_step2: "组长", career_step2_desc: "培训新司机，优化路线。L02职务奖励开始生效。",
+      career_step3: "区域管理者", career_step3_desc: "管理区域运营和所有司机。收入从配送转向管理。",
+      career_step4: "独立创业", career_step4_desc: "支持你开创自己的配送事业。包括离开公司独立的选项。",
+      japanese_title: "所需日语水平",
+      japanese_desc: "不需要JLPT证书。只需以下实际技能：",
+      japanese_check1: "能用日语阅读配送APP",
+      japanese_check2: "能读懂地址（包括汉字）",
+      japanese_check3: "能说基本问候语（"这是您的快递"、"请在这里签名"）",
+      japanese_check4: "能在电话中简单说明情况",
+      japanese_check5: "能读懂交通标志",
+      japanese_unsure: "不确定？在LINE上做个简单测试吧！",
+      tax_title: "报税支持",
+      tax_desc: "作为自由职业者需要报税。别担心——经验丰富的司机会指导你完成第一次申报。这对签证续签也很重要。",
+      faq_title: '所有疑问，<br><span class="fire">提前解答。</span>',
+      faq_q1: "需要自己有车吗？",
+      faq_q2: "需要什么证件？",
+      faq_q3: "可以选择工作日吗？",
+      faq_q4: "有培训吗？",
+      faq_q5: "多快可以开始？",
+      faq_q6: "可以兼职吗？",
+      faq_q7: "保险怎么办？",
+      faq_q8: "怎么发工资？",
+      faq_q9: "发薪日是哪天？",
+      faq_q10: "每周至少工作几天？",
+      faq_q11: "女性可以做吗？",
+      cta_big: '<span class="fire">燃烧。</span><br><span class="stroke">奔跑。</span><br>赚取。',
+      cta_sub: '<p>BURNING BROS. 正在寻找认真想赚钱的伙伴。</p><p>只是想了解一下？也没关系。随时联系我们。</p>',
+      cta_line: "通过LINE申请",
+      cta_phone: "电话咨询",
+      footer_desc: "立足东京与神奈川的自由配送公司。寻找一起奔跑的司机。",
+      cm_spot1_title: '坦诚聊费率。',
+      cm_spot2_title: '一天的工作。',
+      cm_spot3_title: '推荐持续生效。',
+      cm_spot4_title: '下一个故事。',
+      cm_ctrl_title: '60秒了解 BURNING BROS.',
+      cm_ctrl_duration: '[ 点击播放 / 01:00 ]',
+      ticker_1: '招募自由配送司机',
+      ticker_2: '¥143~/件 全额提成',
+      ticker_3: '东京 / 世田谷·大田',
+      ticker_4: '神奈川 / 横滨·座间',
+      ticker_5: '车辆租赁 / 工服 / 住房支持',
+      ticker_6: '无需经验',
+      ticker_7: '可预支工资',
+      ticker_8: '推荐持续奖励 ¥22/件',
+      pay_intro: '<p>因为不单靠费率竞争，BURNING BROS. 的薪酬结构稍显复杂。</p><p>但正是这种复杂性，让你的收入潜力根据工作方式大幅变化。</p>',
+      layer1_tag: '按件计酬',
+      layer1_title: '配送件数 × 单价',
+      layer1_math: '<span>¥143~</span> × <span>件数</span> × <span>工作天数</span>',
+      layer1_desc: '最基础的收入轴。按配送件数的全额提成制。单价因季节和区域变动。',
+      layer2_tag: '职务奖励',
+      layer2_title: '组长 & 管理者奖励',
+      layer2_math: '<span>团队业绩</span> + <span>新人留存</span> + <span>运营贡献</span>',
+      layer2_desc: '积累配送业绩后晋升组长，再到管理者。除自身配送外，获得团队绩效奖励。',
+      layer3_tag: '推荐持续收入',
+      layer3_title: '推荐件数 × ¥22 × 持续',
+      layer3_math: '<span>¥22/件</span> × <span>被推荐人配送件数</span> × <span>无上限</span>',
+      layer3_desc: '不是一次性的——是持续的。你推荐的人每配送一件，你每月获得¥22。只要他们继续配送，月月如此，年年如此。',
+      layer_total_tag: '总收入',
+      layer_total_title: '叠加起来 = 你的月收入',
+      layer_total_desc: '3层收入并行运作。从L01开始，6-12个月加入L02，通过人脉建立L03。越久越厚。',
+      pay_sim_title: 'L01月收入模拟',
+      pay_sim_note: '※以下仅为按件提成。L02和L03另外叠加。',
+      pay_area_desc: '在 BURNING BROS.，<strong>为每个人匹配合适的区域</strong>。',
+      pay_ex1_title: '周末兼职',
+      pay_ex2_title: '全职',
+      pay_ex3_title: '全力型',
+      pay_note: '※以上仅为按件提成模拟。加上职务奖励+推荐奖励才是 BURNING BROS. 的完整设计。',
+      strip_morning: '早晨。开始奔跑。',
+      strip_noon: '中午。跑路线。',
+      strip_night: '夜晚。回家。',
+      strip_caption: '早、中、晚。坚持跑的司机，奖励不断积累。',
+      loc_tokyo_region: '东京',
+      loc_kanagawa_region: '神奈川',
+      loc_setagaya: '世田谷',
+      loc_ota: '大田',
+      loc_yokohama: '横滨',
+      loc_zama: '座间',
+      loc_tokyo_desc: '住宅密集区。站点间距短，便于提高件数。',
+      loc_kanagawa_desc: '郊区。单价效率好，工作节奏稳定。',
+      who1_title: '想赚钱的人',
+      who1_desc: '不按小时而按件数评价。努力=数字=收入。',
+      who2_title: '想自主安排的人',
+      who2_desc: '自己定排班。适合喜欢独立专注工作的人。',
+      who3_title: '喜欢活动的人',
+      who3_desc: '坐办公室太累？轻货配送可能是你的理想工作。',
+      who4_title: '新手也想改变',
+      who4_desc: '不需要经验。只要驾照和干劲。第一个月有前辈陪跑。',
+      who5_title: '学生、家庭主妇、副业',
+      who5_desc: '完全弹性排班。从每周2天开始也行。',
+      who6_title: '将来想独立创业',
+      who6_desc: '从运营到团队管理全部能学到。有前辈从这里起步创办了自己的公司。',
+      referral_lead: '<p>BURNING BROS. 的推荐奖励不是一次性的。</p><p>你推荐的人每配送一件，你就获得收入——持续不断。</p><p>只要朋友继续跑，每月都有。</p>',
+      referral_hero_label: '持续收入 / 每件',
+      referral_hero_note: '× 被推荐人配送件数 × 每月持续',
+      rm1_title: '每件都有',
+      rm1_text: '不是一次性奖金。被推荐人每配送一件就给推荐人¥22。',
+      rm2_title: '只要在跑就持续',
+      rm2_text: '不是3个月就结束。只要被推荐人在BURNING BROS.活跃，就持续产生。',
+      rm3_title: '推荐人数无上限',
+      rm3_text: '推荐多少人都行。人越多，持续收入基础越大。',
+      referral_sim_title: '推荐奖励模拟',
+      referral_sim_sub: '※假设每位被推荐人月配送3,300件（150件×22天）',
+      rs_1person: '推荐1人',
+      rs_3person: '推荐3人',
+      rs_10person: '推荐10人',
+      ref_note1: '根据被推荐人配送件数，每月向推荐人支付¥22/件。',
+      ref_note2: '被推荐人活跃期间奖励持续（无时间限制）。',
+      ref_note3: '推荐人数无上限。',
+      ref_note4: '¥22由公司支付，不从被推荐人的提成（¥143~）中扣除。',
+      ref_note5: '被推荐人须自愿申请。',
+      ref_note6: '费率和支付时间的详细信息将在面谈时说明。',
+      career_intro: '<p>不是止步于配送的关系——我们构建了逐步晋升的体系。</p><p>停在哪里都行。但如果你不想停，下一个阶段永远准备好了。</p>',
+      faq_a1: '<p>坦白说，¥143~/件不是行业最高的。</p><p>只比单价的话，其他公司可能更好。</p><p>但BURNING BROS.叠加了提成(L01)、职务奖励(L02)和持续推荐收入(L03)。</p><p>请看6-12个月的总额。</p>',
+      faq_a2: '当然可以。只需普通驾照（自动挡OK）。不需要特殊资格。',
+      faq_a3: '完全没问题。大部分司机都是零经验起步。开始有前辈陪同。',
+      faq_a4: '根据活跃度，一般6-12个月可升组长，1-2年可升管理者。选择继续当司机也尊重。',
+      faq_a5: '有车辆租赁计划。零资金起步。租赁费从提成中扣除。',
+      faq_a6: '基本无初始费用。有工服和车辆租赁就可以空手起步。',
+      faq_a7: '欢迎申请。<strong>公司名义签租房合同</strong>，帮助审核困难者。房租由你承担。',
+      faq_a8: '<p>推荐奖励不是一次性的，而是<strong>持续的</strong>。</p><p>被推荐人每配送一件¥22，每月支付。</p><p>无上限。</p><p>¥22由公司支付，不扣被推荐人提成。</p>',
+      faq_a9: '月末结算，次月指定日支付。紧急情况可预支。',
+      faq_a10: '完全弹性排班。周末、工作日、全职均可。',
+      faq_a11: '当然可以。包裹较轻，已有很多女司机活跃中。',
+      footer_site_link: '▸ 公司官网 burning-bros.com',
+      footer_company: 'BURNING BROS. 株式会社<br>〒252-0318 神奈川县相模原市南区上�的间本町3-18-27<br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>',
+      footer_areas_head: '工作区域',
+      footer_areas: '东京：世田谷区 / 大田区<br>神奈川：横滨市 / 座间市',
+      footer_contract: '自由业务委托合同',
+      footer_apply: '通过LINE或电话申请',
+      story_title: '只带着手机和电脑，<br>奔向了<span class="fire">神奈川。</span>',
+      story_lead: '一个23岁前在山口做建筑的男人，因为一篇旧博客，空手来到了神奈川。如今第8年，他是神奈川团队的负责人。',
+      story_cta: '阅读全文',
+      fb_title: '外国司机选择我们的理由',
+      fb_card1_title: '带家人来日本',
+      fb_card1_desc: '有了稳定收入和正规报税记录，你可以为家人办理来日手续，在日本团聚。',
+      fb_card2_title: '公司名义住房',
+      fb_card2_desc: '我们以公司名义签订租赁合同。不需要担保人，不会遭受歧视。',
+      fb_card3_title: '同胞社区',
+      fb_card3_desc: '和来自你家乡的司机一起工作。我们有越南、尼泊尔、印尼等国家的司机社区。',
+      fb_card4_title: '职业成长',
+      fb_card4_desc: '从司机起步，成长为管理者。已有成功的司机创办了自己的配送公司。'
+    },
+    ko: {
+      nav_cta: "지금 지원",
+      hero_kicker: "채용 / 프리랜서 배송 드라이버 모집",
+      hero_headline: '<span class="line">당신의 길은</span><span class="line"><span class="fire">여기서</span> 시작됩니다.</span>',
+      hero_lead: '<p>BURNING BROS.는 도쿄와 가나가와에 기반을 둔 프리랜서 배송 회사입니다.</p><p>솔직히 말하면, <strong>저희 건당 단가가 업계 최고는 아닙니다.</strong></p><p>하지만 저희가 구축하고 있는 것은 "건당" 일이 아닌 <strong>완전한 커리어 시스템</strong>입니다. 다층 수입 구조, 리더십 역할, 지속적 추천 보상, 관리직 그리고 독립 지원까지.</p>',
+      hero_income_label: "수입 구조 / 3계층",
+      hero_income_piece: "건당 수수료",
+      hero_income_role: "직책 인센티브",
+      hero_income_residual: "추천 지속 수입",
+      hero_income_total: "계층형 — 쉬는 날에도 수입이 계속됩니다.",
+      housing_badge: "저희가 임대 계약을 대신 합니다.",
+      housing_title: "회사 주거 지원",
+      housing_desc: "임대 심사가 안 되시나요? 회사 이름으로 계약합니다. 배송에만 집중하세요.",
+      visa_title: "비자 상태 확인",
+      visa_subtitle: "본인의 비자 유형을 선택하여 지원 가능 여부를 확인하세요",
+      visa_eligible: "지원 가능합니다!",
+      visa_not_eligible: "죄송합니다. 이 비자 유형으로는 프리랜서 배송 업무가 불가합니다.",
+      visa_special: "개별 심사가 필요한 비자입니다. 문의해 주세요.",
+      visa_types_ok: ["영주자", "영주자의 배우자", "일본인의 배우자", "정주자", "특별영주자", "워킹홀리데이", "특정활동(개별 판단)"],
+      visa_types_ng: ["유학", "기능실습", "특정기능", "기술·인문지식·국제업무", "가족체류"],
+      numbers_title: '숫자로 보는<br>BURNING BROS. <span class="fire">시스템.</span>',
+      numbers_layers: '3<span class="unit">계층</span>',
+      numbers_layers_label: "수입은 쌓아서 만든다",
+      numbers_residual: '<span class="prefix">¥</span>22<span class="unit">/건</span>',
+      numbers_residual_label: "추천 건당 지속 발생",
+      numbers_steps: '4<span class="unit">단계</span>',
+      numbers_steps_label: "드라이버 → 리더 → 관리자 → 독립",
+      numbers_areas: '4<span class="unit">지역</span>',
+      numbers_areas_label: "도쿄 2구 + 가나가와 2시",
+      philosophy_title: '단가가 아닌<br><span class="fire">시스템</span>으로.',
+      philosophy_intro: '<p>배송 업계는 보통 "가격 전쟁"입니다 — 건당 얼마를 주느냐.</p><p>하지만 그 논리만으로 회사를 고르면, <span class="highlight">3~5년 후 남는 건 지친 몸뿐</span>입니다.</p><p>BURNING BROS.는 배송을 "끝"이 아닌 "시작점"으로 만듭니다. 뛸 수 있을 때 벌고, 뛰면서 다음 포지션을 찾고, 뛰지 않을 때도 자리가 있는 구조입니다.</p>',
+      phil_card1_title: '단가 너머<br>수입을 쌓다',
+      phil_card1_text: "건당 단가가 업계 최고는 아닙니다. 대신 직책 인센티브, 추천 보상, 관리 보너스를 쌓습니다. 시간이 지날수록 늘어나는 다중 수입원.",
+      phil_card2_title: '배송 그 이후를<br>준비하다',
+      phil_card2_text: "체력 노동에는 한계가 있습니다. 부상, 노화, 가정 사정. 리더, 관리자, 독립 경로를 내부에 마련해 두었습니다.",
+      phil_card3_title: '추천이<br>지속 수입이 되다',
+      phil_card3_text: "추천 보상은 일회성이 아닙니다. 추천한 사람이 배송하는 건마다 ¥22가 지속적으로 발생합니다.",
+      schedule_title: '하루의 <span class="fire">일과.</span>',
+      schedule_0800_title: "상차", schedule_0800_desc: "영업소 도착. 노선에 맞게 택배를 차에 싣습니다.",
+      schedule_0900_title: "배송 시작", schedule_0900_desc: "오전 배송. 주로 주택가, 짧은 이동 거리.",
+      schedule_1300_title: "점심 & 재상차", schedule_1300_desc: "영업소로 돌아와 휴식. 식사 후 오후 물량 상차.",
+      schedule_1400_title: "오후 배송", schedule_1400_desc: "오후 배송 시작. 오전 부재 건도 재배송.",
+      schedule_1700_title: "마지막 상차", schedule_1700_desc: "마지막 상차. 저녁에는 재택률이 높아집니다.",
+      schedule_1800_title: "저녁 배송", schedule_1800_desc: "마지막 라운드. 재택자가 많아 완료가 빠릅니다.",
+      schedule_2000_title: "마무리", schedule_2000_desc: "전표 처리, 차량 정리, 보고 후 퇴근.",
+      benefits_title: '일하기 좋은<br><span class="fire">진짜 이유.</span>',
+      bene1_title: "차량 리스", bene1_desc: "자기 차가 없어도 OK. 리스 프로그램으로 자본금 없이 시작.",
+      bene2_title: "유니폼 지급", bene2_desc: "BURNING BROS. 오리지널 작업복 무료 지급.",
+      bene3_title: "주거 지원", bene3_desc: "회사 이름으로 임대 계약 체결 (월세는 본인 부담).",
+      bene4_title: "선불 제도", bene4_desc: "급한 지출? 상담하세요. 선불 제도가 있습니다.",
+      bene5_title: "리더·관리자 인센티브", bene5_desc: "리더나 관리자로 성장하면 팀 성과 인센티브 추가.",
+      bene6_title: "유연한 스케줄", bene6_desc: "풀타임, 주말만, 자유롭게 설정.",
+      pay_title: '수입은<br><span class="fire">3계층 구조.</span>',
+      locations_title: '근무 지역:<br>도쿄 × <span class="fire">가나가와</span>.',
+      loc_tokyo_name: "세타가야구 & 오타구",
+      loc_kanagawa_name: "요코하마시 & 자마시",
+      who_title: '이런 분을<br><span style="color:var(--hazard);">찾습니다.</span>',
+      referral_title: '한 번 추천하면<br><span style="color:var(--fire);">계속 수입.</span>',
+      career_title: '배송에서<br><span class="fire">끝내지 마세요.</span>',
+      career_step1: "배송 드라이버", career_step1_desc: "선배와 함께 노선 학습 후 독립. L01으로 수입 기반 구축.",
+      career_step2: "팀 리더", career_step2_desc: "신입 교육, 노선 최적화. L02 직책 인센티브 시작.",
+      career_step3: "지역 관리자", career_step3_desc: "지역 운영 및 전체 드라이버 관리. 수입이 관리 쪽으로 이동.",
+      career_step4: "독립 사업", career_step4_desc: "자신의 배송 사업 시작 지원. 회사에서 독립하는 선택지 포함.",
+      japanese_title: "필요한 일본어 수준",
+      japanese_desc: "JLPT 불필요. 다음 실무 능력만 있으면 됩니다:",
+      japanese_check1: "배송 앱을 일본어로 읽을 수 있음",
+      japanese_check2: "주소를 읽을 수 있음 (한자 포함)",
+      japanese_check3: "기본 인사 가능 ('택배입니다', '여기에 서명해 주세요')",
+      japanese_check4: "전화로 간단한 상황 설명 가능",
+      japanese_check5: "도로 표지판을 읽을 수 있음",
+      japanese_unsure: "자신 없으신가요? LINE에서 간단 테스트 가능!",
+      tax_title: "세금 신고 지원",
+      tax_desc: "프리랜서로서 확정신고가 필요합니다. 걱정 마세요 — 경험 많은 드라이버가 첫 신고를 안내합니다. 비자 갱신에도 중요합니다.",
+      faq_title: '모든 궁금증<br><span class="fire">미리 해결.</span>',
+      faq_q1: "자기 차가 필요한가요?",
+      faq_q2: "어떤 서류가 필요한가요?",
+      faq_q3: "근무일을 선택할 수 있나요?",
+      faq_q4: "교육이 있나요?",
+      faq_q5: "얼마나 빨리 시작할 수 있나요?",
+      faq_q6: "파트타임도 되나요?",
+      faq_q7: "보험은 어떻게 되나요?",
+      faq_q8: "급여는 어떻게 받나요?",
+      faq_q9: "급여일은 언제인가요?",
+      faq_q10: "주 최소 며칠 근무?",
+      faq_q11: "여성도 가능한가요?",
+      cta_big: '<span class="fire">불태워라.</span><br><span class="stroke">달려라.</span><br>벌어라.',
+      cta_sub: '<p>BURNING BROS.는 진지하게 돈을 벌고 싶은 동료를 찾고 있습니다.</p><p>이야기만 들어보고 싶으시다고요? 그것도 괜찮습니다. 언제든 연락주세요.</p>',
+      cta_line: "LINE으로 지원",
+      cta_phone: "전화 문의",
+      footer_desc: "도쿄와 가나가와 기반의 프리랜서 배송 회사. 함께 뛸 드라이버를 찾습니다.",
+      cm_spot1_title: '단가 솔직 토크.',
+      cm_spot2_title: '하루 일과.',
+      cm_spot3_title: '추천은 계속된다.',
+      cm_spot4_title: '그 다음 이야기.',
+      cm_ctrl_title: '60초로 보는 BURNING BROS.',
+      cm_ctrl_duration: '[ 탭하여 재생 / 01:00 ]',
+      ticker_1: '프리랜서 드라이버 모집',
+      ticker_2: '¥143~/건 완전 성과급',
+      ticker_3: '도쿄 / 세타가야·오타',
+      ticker_4: '가나가와 / 요코하마·자마',
+      ticker_5: '차량 리스 / 유니폼 / 주거 지원',
+      ticker_6: '경험 불필요',
+      ticker_7: '선불 가능',
+      ticker_8: '추천 지속 보상 ¥22/건',
+      pay_intro: '<p>단가만으로 경쟁하지 않기에 BURNING BROS.의 급여 구조는 조금 복잡합니다.</p><p>하지만 그 복잡함 덕분에 일하는 방식에 따라 수입 가능성이 크게 달라집니다.</p>',
+      layer1_tag: '건당 수수료',
+      layer1_title: '배송 건수 × 단가',
+      layer1_math: '<span>¥143~</span> × <span>건수</span> × <span>근무일수</span>',
+      layer1_desc: '가장 기본적인 수입축. 배송 건수에 따른 완전 성과급. 단가는 시즌과 지역에 따라 변동.',
+      layer2_tag: '직책 인센티브',
+      layer2_title: '리더 & 관리자 보상',
+      layer2_math: '<span>팀 성과</span> + <span>신인 정착</span> + <span>운영 기여</span>',
+      layer2_desc: '배송 실적을 쌓고 리더, 관리자로 승진. 본인 배송 외에 팀 성과에 따른 보상.',
+      layer3_tag: '추천 지속 수입',
+      layer3_title: '추천 건수 × ¥22 × 지속',
+      layer3_math: '<span>¥22/건</span> × <span>추천인 배송 건수</span> × <span>무제한</span>',
+      layer3_desc: '일회성이 아닌 지속형. 추천한 사람이 배송하는 건마다 ¥22가 매월 들어옵니다. 몇 달이든, 몇 년이든.',
+      layer_total_tag: '총 수입',
+      layer_total_title: '합쳐서 = 당신의 월수입',
+      layer_total_desc: '3계층이 병행 운영됩니다. L01로 시작, 6~12개월에 L02 추가, 인맥으로 L03 구축. 오래 할수록 두꺼워집니다.',
+      pay_sim_title: 'L01 월수입 시뮬레이션',
+      pay_sim_note: '※ 아래는 건당 수수료만 해당. L02, L03는 별도 추가.',
+      pay_area_desc: 'BURNING BROS.에서는 <strong>각자에게 맞는 지역을 배정</strong>합니다.',
+      pay_ex1_title: '주말 근무자',
+      pay_ex2_title: '풀타임',
+      pay_ex3_title: '풀가동',
+      pay_note: '※ 위는 건당 수수료 시뮬레이션. 직책 인센티브 + 추천 보상이 더해지는 게 BURNING BROS.의 설계.',
+      strip_morning: '아침. 달리기 시작.',
+      strip_noon: '낮. 루트를 달린다.',
+      strip_night: '밤. 귀갓길.',
+      strip_caption: '아침, 낮, 밤. 계속 달리는 드라이버에게 보상이 쌓인다.',
+      loc_tokyo_region: '도쿄',
+      loc_kanagawa_region: '가나가와',
+      loc_setagaya: '세타가야',
+      loc_ota: '오타',
+      loc_yokohama: '요코하마',
+      loc_zama: '자마',
+      loc_tokyo_desc: '주택 밀집 지역. 정류장 간 거리가 짧아 건수를 늘리기 쉬움.',
+      loc_kanagawa_desc: '교외 지역. 단가 효율이 좋고 안정적인 근무 페이스.',
+      who1_title: '돈을 벌고 싶은 사람',
+      who1_desc: '시급이 아닌 건수로 평가. 노력 = 숫자 = 수입.',
+      who2_title: '자기 페이스로 일하고 싶은 사람',
+      who2_desc: '스케줄은 자기가 정한다. 혼자 집중해서 달리고 싶은 사람.',
+      who3_title: '몸 움직이기 좋아하는 사람',
+      who3_desc: '책상 앞이 힘든 사람? 배송이 천직일 수 있습니다.',
+      who4_title: '초보자도 변화를 원하면',
+      who4_desc: '경험 불필요. 면허와 의지만 있으면 됩니다. 첫 달은 선배가 동행.',
+      who5_title: '학생, 주부, 부업도 환영',
+      who5_desc: '완전 유연 스케줄. 주 2일부터 시작.',
+      who6_title: '미래에 독립 사업을 꿈꾸는 사람',
+      who6_desc: '운영부터 팀 관리까지 전부 배울 수 있는 환경. 여기서 시작해 독립한 선배도.',
+      referral_lead: '<p>BURNING BROS.의 추천 보상은 일회성 보너스가 아닙니다.</p><p>추천한 사람이 배송하는 건마다 수입 발생 — 지속적으로.</p><p>친구가 계속 뛰는 한, 매월 들어옵니다.</p>',
+      referral_hero_label: '지속 수입 / 건당',
+      referral_hero_note: '× 추천인 배송 건수 × 매월 지속',
+      rm1_title: '건마다 발생',
+      rm1_text: '일회성 보너스가 아닙니다. 추천인이 배송하는 건마다 ¥22가 추천자에게.',
+      rm2_title: '뛰는 한 계속',
+      rm2_text: '3개월로 끝이 아닙니다. 추천인이 활동하는 한 계속.',
+      rm3_title: '추천 인원 무제한',
+      rm3_text: '몇 명이든 추천 가능. 많을수록 지속 수입 기반이 커집니다.',
+      referral_sim_title: '추천 보상 시뮬레이션',
+      referral_sim_sub: '※ 추천인 1인당 월 3,300건 배송 가정 (150건×22일)',
+      rs_1person: '1명 추천',
+      rs_3person: '3명 추천',
+      rs_10person: '10명 추천',
+      ref_note1: '추천인의 배송 건수에 따라 ¥22/건이 매월 추천자에게 지급.',
+      ref_note2: '추천인 활동 중인 한 보상은 계속 (기간 제한 없음).',
+      ref_note3: '추천 인원에 제한 없음.',
+      ref_note4: '¥22는 회사가 지급하며 추천인의 수수료(¥143~)에서 공제되지 않음.',
+      ref_note5: '추천받은 분은 본인 의사로 지원해야 합니다.',
+      ref_note6: '단가 및 지급 시기 상세는 면담 시 설명합니다.',
+      career_intro: '<p>배송에서 끝나는 관계가 아닌 — 단계별 성장 구조를 갖추고 있습니다.</p><p>어디서 멈춰도 됩니다. 하지만 멈추고 싶지 않다면, 다음 단계가 항상 준비되어 있습니다.</p>',
+      faq_a1: '<p>솔직히 ¥143~/건은 업계 최고가 아닙니다.</p><p>단가만 비교하면 다른 회사가 나을 수 있습니다.</p><p>하지만 BURNING BROS.는 수수료(L01), 직책 인센티브(L02), 지속 추천 수입(L03)을 쌓습니다.</p><p>6~12개월 총액으로 비교해 주세요.</p>',
+      faq_a2: '물론입니다. 보통 면허(자동 OK)만 있으면 됩니다.',
+      faq_a3: '전혀 문제없습니다. 대부분의 드라이버가 무경험 시작. 선배가 초기 동행.',
+      faq_a4: '보통 6~12개월에 리더, 1~2년에 관리자. 드라이버를 계속하겠다는 선택도 존중.',
+      faq_a5: '차량 리스 프로그램이 있습니다. 자본금 없이 시작.',
+      faq_a6: '기본적으로 초기 비용 없음. 유니폼과 리스가 있으면 빈손으로 시작.',
+      faq_a7: '지원 환영합니다. <strong>회사 이름으로 임대 계약</strong>을 체결하여 심사가 어려운 분을 돕습니다. 월세는 본인 부담.',
+      faq_a8: '<p>추천 보상은 일회성이 아닌 <strong>지속형</strong>입니다.</p><p>추천인 배송 건당 ¥22, 매월 지급.</p><p>인원 무제한.</p><p>¥22는 회사 지급, 추천인 수수료에서 공제 안 됨.</p>',
+      faq_a9: '월말 마감, 다음 달 지정일 지급. 긴급 시 선불 가능.',
+      faq_a10: '완전 유연 스케줄. 주말만, 평일만, 풀타임 모두 가능.',
+      faq_a11: '물론입니다. 가벼운 택배 위주, 여성 드라이버도 활약 중.',
+      footer_site_link: '▸ 회사 홈페이지 burning-bros.com',
+      footer_company: 'BURNING BROS. 주식회사<br>〒252-0318 가나가와현 사가미하라시 미나미구 가미쓰루마혼초 3-18-27<br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a>',
+      footer_areas_head: '근무 지역',
+      footer_areas: '도쿄: 세타가야구 / 오타구<br>가나가와: 요코하마시 / 자마시',
+      footer_contract: '프리랜서 업무위탁 계약',
+      footer_apply: 'LINE 또는 전화로 지원',
+      story_title: '스마트폰과 노트북만 들고<br><span class="fire">가나가와</span>로 향했다.',
+      story_lead: '23세까지 야마구치에서 건설업을 하던 남자가, 하나의 오래된 블로그를 계기로 아무것도 없이 가나가와에 왔다. 8년째, 가나가와 팀 리더.',
+      story_cta: '전체 읽기',
+      fb_title: '외국인 드라이버가 우리를 선택하는 이유',
+      fb_card1_title: '가족을 데려오세요',
+      fb_card1_desc: '안정적인 수입과 정상적인 세금 신고가 있으면 가족을 일본에 초청할 수 있습니다.',
+      fb_card2_title: '회사 명의 주거',
+      fb_card2_desc: '회사 이름으로 임대 계약을 합니다. 보증인이 필요 없고 차별도 없습니다.',
+      fb_card3_title: '동포 커뮤니티',
+      fb_card3_desc: '같은 나라 출신 드라이버와 함께 일하세요. 베트남, 네팔, 인도네시아 등의 커뮤니티가 있습니다.',
+      fb_card4_title: '커리어 성장',
+      fb_card4_desc: '드라이버로 시작해서 관리자로 성장. 성공한 드라이버는 자기 배송 회사를 창업했습니다.'
     }
   };
 
@@ -6110,12 +7108,12 @@
     });
 
     // Update lang switcher display
-    var names = {ja:'JP',en:'EN',vi:'VI',ne:'NE',id:'ID'};
+    var names = {ja:'JP',en:'EN',vi:'VI',ne:'NE',id:'ID',zh:'中文',ko:'한국'};
     document.querySelector('.lang-switcher button').textContent = '\ud83c\udf10 ' + (names[lang]||lang) + ' \u25be';
     document.getElementById('lang-menu').classList.remove('show');
 
     // Show/hide foreign-worker-specific sections
-    var foreignSections = ['housingSupport', 'visaCheck', 'japaneseLevel', 'taxSupport'];
+    var foreignSections = ['housingSupport', 'visaCheck', 'japaneseLevel', 'taxSupport', 'foreignBenefits'];
     foreignSections.forEach(function(id) {
       var el = document.getElementById(id);
       if (el) {
@@ -6126,6 +7124,16 @@
         }
       }
     });
+
+    // Update CM spot buttons and indicator
+    var spotTitles = [t.cm_spot1_title, t.cm_spot2_title, t.cm_spot3_title, t.cm_spot4_title];
+    var spotBtnsAll = document.querySelectorAll('.cm-spot-btn__title[data-i18n]');
+    // Also update the JS spotBounds array titles for the CM playback
+    if (window._cmSpotBounds) {
+      for (var si = 0; si < Math.min(spotTitles.length, window._cmSpotBounds.length); si++) {
+        if (spotTitles[si]) window._cmSpotBounds[si].title = spotTitles[si];
+      }
+    }
 
     // Populate visa lists
     if (t.visa_types_ok) {
