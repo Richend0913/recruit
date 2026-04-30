@@ -888,6 +888,82 @@
     font-size: 14px;
   }
 
+  /* ========== VEHICLE LEASE ========== */
+  .lease-section {
+    padding: 100px 0;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .lease-card {
+    max-width: 640px;
+    margin: 0 auto;
+    background: rgba(243, 236, 224, 0.04);
+    border: 1px solid rgba(243, 236, 224, 0.12);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .lease-price {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(48px, 8vw, 80px);
+    color: var(--fire);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .lease-price span {
+    font-size: 0.3em;
+    color: var(--paper);
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700;
+    vertical-align: baseline;
+    margin-left: 4px;
+  }
+  .lease-card h3 {
+    font-family: "Shippori Mincho B1", serif;
+    font-weight: 800;
+    font-size: clamp(22px, 4vw, 32px);
+    margin-bottom: 16px;
+    color: var(--paper);
+  }
+  .lease-card p {
+    font-size: 15px;
+    color: #b8b0a4;
+    line-height: 1.9;
+    margin-bottom: 28px;
+  }
+  .lease-card ul {
+    list-style: none;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .lease-card li {
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--paper);
+    border-bottom: 1px solid rgba(243, 236, 224, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lease-card li::before {
+    content: "✓";
+    background: var(--fire);
+    color: var(--paper);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .lease-card { padding: 36px 24px; }
+  }
+
   /* ========== LOCATIONS ========== */
   .locations {
     padding: 140px 0;
@@ -4846,6 +4922,22 @@
   </div>
 </section>
 
+<!-- ============== VEHICLE LEASE ============== -->
+<section class="lease-section" id="leaseInfo">
+  <div class="container">
+    <div class="lease-card">
+      <div class="lease-price">¥39,000<span>/month</span></div>
+      <h3 data-i18n="lease_title">Vehicle Lease — All Inclusive</h3>
+      <p data-i18n="lease_desc">Insurance, maintenance, and everything included. Just get in and drive.</p>
+      <ul>
+        <li data-i18n="lease_item1">Vehicle insurance included</li>
+        <li data-i18n="lease_item2">Maintenance & repairs covered</li>
+        <li data-i18n="lease_item3">No upfront purchase needed</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- ============== LOCATIONS ============== -->
 <section class="locations">
   <div class="container">
@@ -5861,7 +5953,12 @@
       fb_card3_title: '同郷コミュニティ',
       fb_card3_desc: '同じ国の仲間と一緒に働けます。ベトナム、ネパール、インドネシアなどのコミュニティがあります。',
       fb_card4_title: 'キャリア成長',
-      fb_card4_desc: 'ドライバーからスタートし、管理者へ成長。成功したドライバーは自分の配送会社を立ち上げました。'
+      fb_card4_desc: 'ドライバーからスタートし、管理者へ成長。成功したドライバーは自分の配送会社を立ち上げました。',
+      lease_title: '車両リース — 全部コミコミ',
+      lease_desc: '保険、メンテナンス全て込み。乗って走るだけ。',
+      lease_item1: '車両保険込み',
+      lease_item2: 'メンテナンス・修理込み',
+      lease_item3: '車両購入不要'
     },
     en: {
       nav_cta: "Apply Now",
@@ -6070,7 +6167,12 @@
       fb_card3_title: 'Community',
       fb_card3_desc: 'Work alongside drivers from your home country. We have Vietnamese, Nepali, Indonesian, and other communities.',
       fb_card4_title: 'Career Growth',
-      fb_card4_desc: 'Start as a driver, grow into management. Successful drivers have started their own delivery companies.'
+      fb_card4_desc: 'Start as a driver, grow into management. Successful drivers have started their own delivery companies.',
+      lease_title: 'Vehicle Lease — All Inclusive',
+      lease_desc: 'Insurance, maintenance, and everything included. Just get in and drive.',
+      lease_item1: 'Vehicle insurance included',
+      lease_item2: 'Maintenance & repairs covered',
+      lease_item3: 'No upfront purchase needed'
     },
     vi: {
       nav_cta: "\u1ee8ng tuy\u1ec3n ngay",
@@ -6279,7 +6381,12 @@
       fb_card3_title: 'Cộng đồng',
       fb_card3_desc: 'Làm việc cùng tài xế đồng hương. Có cộng đồng Việt Nam, Nepal, Indonesia.',
       fb_card4_title: 'Phát triển sự nghiệp',
-      fb_card4_desc: 'Bắt đầu là tài xế, phát triển lên quản lý. Nhiều tài xế thành công đã mở công ty riêng.'
+      fb_card4_desc: 'Bắt đầu là tài xế, phát triển lên quản lý. Nhiều tài xế thành công đã mở công ty riêng.',
+      lease_title: 'Thuê xe — Trọn gói',
+      lease_desc: 'Bảo hiểm, bảo trì, tất cả đã bao gồm. Chỉ cần lên xe và chạy.',
+      lease_item1: 'Đã bao gồm bảo hiểm xe',
+      lease_item2: 'Bảo trì & sửa chữa miễn phí',
+      lease_item3: 'Không cần mua xe trước'
     },
     ne: {
       nav_cta: "\u0905\u0939\u093f\u0932\u0947 \u0906\u0935\u0947\u0926\u0928 \u0926\u093f\u0928\u0941\u0939\u094b\u0938\u094d",
@@ -6481,7 +6588,12 @@
       fb_card3_title: 'समुदाय',
       fb_card3_desc: 'आफ्नै देशका ड्राइभरसँग काम गर्नुहोस्। भियतनामी, नेपाली, इन्डोनेसियन समुदाय छ।',
       fb_card4_title: 'क्यारियर वृद्धि',
-      fb_card4_desc: 'ड्राइभरबाट सुरु गरेर प्रबन्धकमा बढ्नुहोस्। सफल ड्राइभरहरूले आफ्नै डेलिभरी कम्पनी सुरु गरेका छन्।'
+      fb_card4_desc: 'ड्राइभरबाट सुरु गरेर प्रबन्धकमा बढ्नुहोस्। सफल ड्राइभरहरूले आफ्नै डेलिभरी कम्पनी सुरु गरेका छन्।',
+      lease_title: 'गाडी लिज — सबै समावेश',
+      lease_desc: 'बीमा, मर्मत, सबै समावेश। बस चढ्नुहोस् र चलाउनुहोस्।',
+      lease_item1: 'गाडी बीमा समावेश',
+      lease_item2: 'मर्मत र मरम्मत समावेश',
+      lease_item3: 'गाडी किन्नु पर्दैन'
     },
     id: {
       nav_cta: "Lamar Sekarang",
@@ -6683,7 +6795,12 @@
       fb_card3_title: 'Komunitas',
       fb_card3_desc: 'Bekerja bersama driver dari negara Anda. Ada komunitas Vietnam, Nepal, Indonesia.',
       fb_card4_title: 'Pertumbuhan karir',
-      fb_card4_desc: 'Mulai sebagai driver, tumbuh jadi manajer. Driver sukses sudah mendirikan perusahaan pengiriman sendiri.'
+      fb_card4_desc: 'Mulai sebagai driver, tumbuh jadi manajer. Driver sukses sudah mendirikan perusahaan pengiriman sendiri.',
+      lease_title: 'Sewa Kendaraan — Semua Termasuk',
+      lease_desc: 'Asuransi, perawatan, semuanya sudah termasuk. Tinggal naik dan jalan.',
+      lease_item1: 'Asuransi kendaraan termasuk',
+      lease_item2: 'Perawatan & perbaikan ditanggung',
+      lease_item3: 'Tidak perlu beli kendaraan'
     },
     zh: {
       nav_cta: "立即申请",
@@ -6885,7 +7002,12 @@
       fb_card3_title: '同胞社区',
       fb_card3_desc: '和来自你家乡的司机一起工作。我们有越南、尼泊尔、印尼等国家的司机社区。',
       fb_card4_title: '职业成长',
-      fb_card4_desc: '从司机起步，成长为管理者。已有成功的司机创办了自己的配送公司。'
+      fb_card4_desc: '从司机起步，成长为管理者。已有成功的司机创办了自己的配送公司。',
+      lease_title: '车辆租赁 — 全包',
+      lease_desc: '保险、维护全部包含。上车就走。',
+      lease_item1: '车辆保险包含',
+      lease_item2: '维护和维修包含',
+      lease_item3: '无需购买车辆'
     },
     ko: {
       nav_cta: "지금 지원",
@@ -7087,7 +7209,12 @@
       fb_card3_title: '동포 커뮤니티',
       fb_card3_desc: '같은 나라 출신 드라이버와 함께 일하세요. 베트남, 네팔, 인도네시아 등의 커뮤니티가 있습니다.',
       fb_card4_title: '커리어 성장',
-      fb_card4_desc: '드라이버로 시작해서 관리자로 성장. 성공한 드라이버는 자기 배송 회사를 창업했습니다.'
+      fb_card4_desc: '드라이버로 시작해서 관리자로 성장. 성공한 드라이버는 자기 배송 회사를 창업했습니다.',
+      lease_title: '차량 리스 — 올인클루시브',
+      lease_desc: '보험, 정비 모두 포함. 타고 달리기만 하면 됩니다.',
+      lease_item1: '차량 보험 포함',
+      lease_item2: '정비 및 수리 포함',
+      lease_item3: '차량 구매 불필요'
     }
   };
 
