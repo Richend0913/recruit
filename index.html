@@ -99,6 +99,55 @@
     box-shadow: 4px 4px 0 var(--paper);
   }
   .nav__cta:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--paper); }
+  .nav__right { display: flex; align-items: center; gap: 14px; }
+  .lang-switcher { position: relative; }
+  .lang-switcher button { background: transparent; border: 1px solid rgba(243,236,224,0.2); color: var(--paper); padding: 8px 14px; cursor: pointer; font-size: 13px; font-weight: 600; border-radius: 0; font-family: "Zen Kaku Gothic New", sans-serif; }
+  .lang-switcher button:hover { border-color: rgba(243,236,224,0.4); }
+  .lang-dropdown { display: none; position: absolute; right: 0; top: 100%; background: var(--ink); border: 1px solid rgba(243,236,224,0.1); min-width: 160px; z-index: 200; }
+  .lang-dropdown.show { display: block; }
+  .lang-dropdown a { display: block; padding: 10px 16px; color: var(--paper); cursor: pointer; font-size: 13px; text-decoration: none; }
+  .lang-dropdown a:hover { background: rgba(243,236,224,0.05); }
+
+  /* ========== HOUSING SUPPORT ========== */
+  .housing-support { padding: 60px 0; background: var(--hazard); color: var(--ink); text-align: center; display: none; }
+  .housing-support.i18n-visible { display: block; }
+  .housing-support__badge { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .housing-support__title { font-family: "Shippori Mincho B1", serif; font-weight: 800; font-size: clamp(28px, 5vw, 48px); margin-bottom: 14px; }
+  .housing-support__desc { max-width: 600px; margin: 0 auto; font-size: 15px; line-height: 1.9; }
+
+  /* ========== VISA CHECK ========== */
+  .visa-check { padding: 100px 0; background: var(--ink); color: var(--paper); display: none; }
+  .visa-check.i18n-visible { display: block; }
+  .visa-check .section-title { color: var(--paper); }
+  .visa-check .section-tag { color: var(--hazard); }
+  .visa-check .section-tag::before { background: var(--hazard); }
+  .visa-check__subtitle { color: #b8b0a4; font-size: 15px; margin-bottom: 40px; }
+  .visa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; }
+  .visa-col h4 { font-family: "Shippori Mincho B1", serif; font-weight: 800; font-size: 20px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--fire); }
+  .visa-col.ok h4 { color: var(--hazard); }
+  .visa-col.ng h4 { color: var(--fire); }
+  .visa-col ul { list-style: none; }
+  .visa-col li { padding: 8px 0; font-size: 14px; color: #b8b0a4; border-bottom: 1px solid rgba(243,236,224,0.08); }
+  .visa-col.ok li::before { content: "✓ "; color: var(--hazard); font-weight: 700; }
+  .visa-col.ng li::before { content: "✕ "; color: var(--fire); font-weight: 700; }
+  .visa-special-note { margin-top: 24px; padding: 16px 20px; background: rgba(255,199,0,0.08); border-left: 3px solid var(--hazard); color: #b8b0a4; font-size: 14px; max-width: 800px; }
+
+  /* ========== JAPANESE LEVEL ========== */
+  .japanese-level { padding: 100px 0; background: var(--paper-deep); display: none; }
+  .japanese-level.i18n-visible { display: block; }
+  .japanese-level__desc { color: var(--ash); font-size: 15px; margin-bottom: 32px; }
+  .japanese-checks { max-width: 700px; }
+  .japanese-checks li { padding: 14px 0; font-size: 15px; font-weight: 700; color: var(--ink); border-bottom: 1px solid rgba(10,9,6,0.12); display: flex; align-items: center; gap: 12px; }
+  .japanese-checks li::before { content: "✓"; background: var(--fire); color: var(--paper); width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; flex-shrink: 0; }
+  .japanese-unsure { margin-top: 24px; padding: 16px 24px; background: var(--hazard); font-weight: 900; font-size: 15px; display: inline-block; }
+
+  /* ========== TAX SUPPORT ========== */
+  .tax-support { padding: 80px 0; background: var(--ink); color: var(--paper); display: none; }
+  .tax-support.i18n-visible { display: block; }
+  .tax-support .section-tag { color: var(--hazard); }
+  .tax-support .section-tag::before { background: var(--hazard); }
+  .tax-support__title { font-family: "Shippori Mincho B1", serif; font-weight: 800; font-size: clamp(28px, 5vw, 42px); margin-bottom: 16px; color: var(--paper); }
+  .tax-support__desc { color: #b8b0a4; font-size: 15px; line-height: 1.9; max-width: 700px; }
 
   /* ========== HERO ========== */
   .hero {
@@ -3760,7 +3809,10 @@
     .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
     .nav { padding: 14px 20px; }
     .nav__brand { font-size: 15px; }
+    .nav__right { gap: 8px; }
     .nav__cta { padding: 8px 14px; font-size: 12px; }
+    .lang-switcher button { padding: 6px 10px; font-size: 11px; }
+    .visa-grid { grid-template-columns: 1fr; }
     .container { padding: 0 20px; }
     .cta__contacts { grid-template-columns: 1fr; display: grid; width: 100%; max-width: 360px; margin-left: auto; margin-right: auto; }
     .cta__contact { border-right: none; border-bottom: 1px solid rgba(243, 236, 224, 0.2); text-align: center; }
@@ -3862,7 +3914,19 @@
     <span class="mark"></span>
     BURNING BROS.
   </div>
-  <a href="#apply" class="nav__cta" id="navApplyBtn">応募する</a>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      <button onclick="document.getElementById('lang-menu').classList.toggle('show')">🌐 JP ▾</button>
+      <div id="lang-menu" class="lang-dropdown">
+        <a onclick="setLang('ja')">日本語</a>
+        <a onclick="setLang('en')">English</a>
+        <a onclick="setLang('vi')">Tiếng Việt</a>
+        <a onclick="setLang('ne')">नेपाली</a>
+        <a onclick="setLang('id')">Bahasa Indonesia</a>
+      </div>
+    </div>
+    <a href="#apply" class="nav__cta" id="navApplyBtn" data-i18n="nav_cta">応募する</a>
+  </div>
 </nav>
 
 <!-- ================= HERO ================= -->
@@ -3947,16 +4011,16 @@
   <div class="hero__main">
     <div class="hero__kicker">
       <span class="dot"></span>
-      RECRUIT / 業務委託配送ドライバー募集中
+      <span data-i18n="hero_kicker">RECRUIT / 業務委託配送ドライバー募集中</span>
     </div>
-    <h1 class="hero__headline">
+    <h1 class="hero__headline" data-i18n="hero_headline" data-i18n-html="1">
       <span class="line">運ぶ、</span>
       <span class="line">その<span class="fire">先</span>まで、</span>
       <span class="line stroke">考える。</span>
     </h1>
 
     <div class="hero__sub">
-      <div class="hero__lead">
+      <div class="hero__lead" data-i18n="hero_lead" data-i18n-html="1">
         <p>
           BURNING BROS.株式会社は、東京・神奈川で軽貨物配送を手がける会社です。
         </p>
@@ -3968,23 +4032,23 @@
         </p>
       </div>
       <div class="hero__income">
-        <div class="hero__income-label">INCOME STRUCTURE / 収入は3層構造</div>
+        <div class="hero__income-label" data-i18n="hero_income_label">INCOME STRUCTURE / 収入は3層構造</div>
         <div class="hero__income-row">
           <span class="hero__income-num">01</span>
-          <span class="hero__income-txt">配達歩合</span>
+          <span class="hero__income-txt" data-i18n="hero_income_piece">配達歩合</span>
           <span class="hero__income-en">PIECE</span>
         </div>
         <div class="hero__income-row">
           <span class="hero__income-num">02</span>
-          <span class="hero__income-txt">役職インセンティブ</span>
+          <span class="hero__income-txt" data-i18n="hero_income_role">役職インセンティブ</span>
           <span class="hero__income-en">ROLE</span>
         </div>
         <div class="hero__income-row">
           <span class="hero__income-num">03</span>
-          <span class="hero__income-txt">紹介継続報酬</span>
+          <span class="hero__income-txt" data-i18n="hero_income_residual">紹介継続報酬</span>
           <span class="hero__income-en">RESIDUAL</span>
         </div>
-        <div class="hero__income-total">
+        <div class="hero__income-total" data-i18n="hero_income_total">
           LAYERED — 走らない日にも、入り続ける。
         </div>
       </div>
@@ -4014,6 +4078,35 @@
     <span class="ticker__item">紹介は継続報酬 ¥22/個</span>
   </div>
 </div>
+
+<!-- ============== HOUSING SUPPORT (i18n) ============== -->
+<section class="housing-support" id="housingSupport">
+  <div class="container">
+    <div class="housing-support__badge" data-i18n="housing_badge">会社名義で契約代行</div>
+    <h2 class="housing-support__title" data-i18n="housing_title">社宅契約サポート</h2>
+    <p class="housing-support__desc" data-i18n="housing_desc">賃貸の審査が不安な方のために、会社名義で契約を代行します。家賃はご自身の負担ですが、住まいの心配なく仕事をスタートできます。</p>
+  </div>
+</section>
+
+<!-- ============== VISA CHECK (i18n) ============== -->
+<section class="visa-check" id="visaCheck">
+  <div class="container">
+    <div class="section-tag">VISA CHECK</div>
+    <h2 class="section-title" data-i18n="visa_title">在留資格チェック</h2>
+    <p class="visa-check__subtitle" data-i18n="visa_subtitle">あなたのビザタイプを確認してください</p>
+    <div class="visa-grid">
+      <div class="visa-col ok">
+        <h4 data-i18n="visa_eligible">応募可能です!</h4>
+        <ul id="visaOkList"></ul>
+      </div>
+      <div class="visa-col ng">
+        <h4 data-i18n="visa_not_eligible">この在留資格では応募できません</h4>
+        <ul id="visaNgList"></ul>
+      </div>
+    </div>
+    <div class="visa-special-note" data-i18n="visa_special">個別審査が必要なビザタイプです。お問い合わせください。</div>
+  </div>
+</section>
 
 <!-- ============== CM ============== -->
 <section class="cm">
@@ -4226,31 +4319,31 @@
 <section class="numbers">
   <div class="container">
     <div class="section-tag">BY THE NUMBERS</div>
-    <h2 class="section-title">数字で見る、<br>BURNING BROS.の<span class="fire">仕組み。</span></h2>
+    <h2 class="section-title" data-i18n="numbers_title" data-i18n-html="1">数字で見る、<br>BURNING BROS.の<span class="fire">仕組み。</span></h2>
 
     <div class="numbers__grid">
       <div class="num">
         <div class="num__index">01 / INCOME LAYERS</div>
-        <div class="num__big">3<span class="unit">層</span></div>
-        <div class="num__label">収入は積み重ねで作る</div>
+        <div class="num__big" data-i18n="numbers_layers" data-i18n-html="1">3<span class="unit">層</span></div>
+        <div class="num__label" data-i18n="numbers_layers_label">収入は積み重ねで作る</div>
         <div class="num__sub">PIECE + ROLE + REFERRAL</div>
       </div>
       <div class="num">
         <div class="num__index">02 / RESIDUAL</div>
-        <div class="num__big"><span class="prefix">¥</span>22<span class="unit">／個</span></div>
-        <div class="num__label">紹介先の個数に継続発生</div>
+        <div class="num__big" data-i18n="numbers_residual" data-i18n-html="1"><span class="prefix">¥</span>22<span class="unit">／個</span></div>
+        <div class="num__label" data-i18n="numbers_residual_label">紹介先の個数に継続発生</div>
         <div class="num__sub">ONGOING × NO LIMIT</div>
       </div>
       <div class="num">
         <div class="num__index">03 / CAREER STEPS</div>
-        <div class="num__big">4<span class="unit">段階</span></div>
-        <div class="num__label">配達員→リーダー→管理者→独立</div>
+        <div class="num__big" data-i18n="numbers_steps" data-i18n-html="1">4<span class="unit">段階</span></div>
+        <div class="num__label" data-i18n="numbers_steps_label">配達員→リーダー→管理者→独立</div>
         <div class="num__sub">LONG-TERM CAREER PATH</div>
       </div>
       <div class="num">
         <div class="num__index">04 / AREA</div>
-        <div class="num__big">4<span class="unit">エリア</span></div>
-        <div class="num__label">東京2区・神奈川2市</div>
+        <div class="num__big" data-i18n="numbers_areas" data-i18n-html="1">4<span class="unit">エリア</span></div>
+        <div class="num__label" data-i18n="numbers_areas_label">東京2区・神奈川2市</div>
         <div class="num__sub">SETAGAYA / OTA / YOKOHAMA / ZAMA</div>
       </div>
     </div>
@@ -4261,9 +4354,9 @@
 <section class="philosophy">
   <div class="container">
     <div class="section-tag">OUR PHILOSOPHY / 私たちの考え</div>
-    <h2 class="section-title">単価じゃなく、<br><span class="fire">仕組み</span>で選ばれたい。</h2>
+    <h2 class="section-title" data-i18n="philosophy_title" data-i18n-html="1">単価じゃなく、<br><span class="fire">仕組み</span>で選ばれたい。</h2>
 
-    <div class="philosophy__intro">
+    <div class="philosophy__intro" data-i18n="philosophy_intro" data-i18n-html="1">
       <p>
         軽貨物配送の世界は、ぶっちゃけ「単価勝負」になりがちです。
       </p>
@@ -4278,18 +4371,18 @@
     <div class="philosophy__grid">
       <div class="ph-card">
         <div class="ph-card__num">01</div>
-        <h3 class="ph-card__title">単価以外に、<br>収入軸を重ねる</h3>
-        <p class="ph-card__text">配達歩合は業界で飛び抜けて高い数字ではありません。代わりに、役職インセンティブ、紹介報酬、マネジメント報酬。複数の収入源が積み重なる設計にしています。単価だけで比べると、見えない部分です。</p>
+        <h3 class="ph-card__title" data-i18n="phil_card1_title" data-i18n-html="1">単価以外に、<br>収入軸を重ねる</h3>
+        <p class="ph-card__text" data-i18n="phil_card1_text">配達歩合は業界で飛び抜けて高い数字ではありません。代わりに、役職インセンティブ、紹介報酬、マネジメント報酬。複数の収入源が積み重なる設計にしています。単価だけで比べると、見えない部分です。</p>
       </div>
       <div class="ph-card">
         <div class="ph-card__num">02</div>
-        <h3 class="ph-card__title">配達員の、<br>その先を用意する</h3>
-        <p class="ph-card__text">体力仕事にはいつか限界が来ます。怪我、加齢、家庭の事情。その時に「次がない」会社は長く関われない。リーダー、管理者、独立支援まで、複数の選択肢を社内に置いています。</p>
+        <h3 class="ph-card__title" data-i18n="phil_card2_title" data-i18n-html="1">配達員の、<br>その先を用意する</h3>
+        <p class="ph-card__text" data-i18n="phil_card2_text">体力仕事にはいつか限界が来ます。怪我、加齢、家庭の事情。その時に「次がない」会社は長く関われない。リーダー、管理者、独立支援まで、複数の選択肢を社内に置いています。</p>
       </div>
       <div class="ph-card">
         <div class="ph-card__num">03</div>
-        <h3 class="ph-card__title">紹介は、<br>継続収入になる</h3>
-        <p class="ph-card__text">紹介報酬は1回払いではなく、紹介した人が配達した1個ごとに¥22が発生し続ける継続型。仲間が走り続ける限り、紹介した人にも毎月入り続ける。走らなくなった後にも残る収入源になります。</p>
+        <h3 class="ph-card__title" data-i18n="phil_card3_title" data-i18n-html="1">紹介は、<br>継続収入になる</h3>
+        <p class="ph-card__text" data-i18n="phil_card3_text">紹介報酬は1回払いではなく、紹介した人が配達した1個ごとに¥22が発生し続ける継続型。仲間が走り続ける限り、紹介した人にも毎月入り続ける。走らなくなった後にも残る収入源になります。</p>
       </div>
     </div>
   </div>
@@ -4299,15 +4392,15 @@
 <section class="schedule">
   <div class="container">
     <div class="section-tag">DAILY SCHEDULE</div>
-    <h2 class="section-title">1日の<span class="fire">流れ。</span></h2>
+    <h2 class="section-title" data-i18n="schedule_title" data-i18n-html="1">1日の<span class="fire">流れ。</span></h2>
 
     <div class="timeline">
 
       <div class="tl-row">
         <div class="tl-time">08:00<small>START</small></div>
         <div class="tl-body">
-          <h3 class="tl-title">積込み</h3>
-          <p class="tl-desc">営業所に集合。当日の配達荷物をルートに合わせて車両に積み込みます。効率の良い積み方をマスターすれば、午後がグッとラクになります。</p>
+          <h3 class="tl-title" data-i18n="schedule_0800_title">積込み</h3>
+          <p class="tl-desc" data-i18n="schedule_0800_desc">営業所に集合。当日の配達荷物をルートに合わせて車両に積み込みます。効率の良い積み方をマスターすれば、午後がグッとラクになります。</p>
           <span class="tl-badge">LOADING</span>
         </div>
       </div>
@@ -4315,8 +4408,8 @@
       <div class="tl-row">
         <div class="tl-time">09:00<small>1ST</small></div>
         <div class="tl-body">
-          <h3 class="tl-title">一便配達開始</h3>
-          <p class="tl-desc">午前中に配達する荷物を順番に回ります。住宅街中心で、1個あたりの移動距離は短め。ペースを掴んでいきましょう。</p>
+          <h3 class="tl-title" data-i18n="schedule_0900_title">一便配達開始</h3>
+          <p class="tl-desc" data-i18n="schedule_0900_desc">午前中に配達する荷物を順番に回ります。住宅街中心で、1個あたりの移動距離は短め。ペースを掴んでいきましょう。</p>
           <span class="tl-badge">DELIVERY - MORNING</span>
         </div>
       </div>
@@ -4324,8 +4417,8 @@
       <div class="tl-row">
         <div class="tl-time">13:00<small>BREAK</small></div>
         <div class="tl-body">
-          <h3 class="tl-title">昼休憩 &amp; 二便積込み</h3>
-          <p class="tl-desc">営業所に戻ってしっかり休憩。食事を取りながら午後の荷物を積み込みます。自由時間なので、仮眠を取るドライバーも多いです。</p>
+          <h3 class="tl-title" data-i18n="schedule_1300_title">昼休憩 &amp; 二便積込み</h3>
+          <p class="tl-desc" data-i18n="schedule_1300_desc">営業所に戻ってしっかり休憩。食事を取りながら午後の荷物を積み込みます。自由時間なので、仮眠を取るドライバーも多いです。</p>
           <span class="tl-badge">REST &amp; RELOAD</span>
         </div>
       </div>
@@ -4333,8 +4426,8 @@
       <div class="tl-row">
         <div class="tl-time">14:00<small>2ND</small></div>
         <div class="tl-body">
-          <h3 class="tl-title">二便配達開始</h3>
-          <p class="tl-desc">午後の配達スタート。不在で戻ってきた荷物も、このタイミングで再配達します。個数が伸びる時間帯です。</p>
+          <h3 class="tl-title" data-i18n="schedule_1400_title">二便配達開始</h3>
+          <p class="tl-desc" data-i18n="schedule_1400_desc">午後の配達スタート。不在で戻ってきた荷物も、このタイミングで再配達します。個数が伸びる時間帯です。</p>
           <span class="tl-badge">DELIVERY - AFTERNOON</span>
         </div>
       </div>
@@ -4342,8 +4435,8 @@
       <div class="tl-row">
         <div class="tl-time">17:00<small>RELOAD</small></div>
         <div class="tl-body">
-          <h3 class="tl-title">三便積込み</h3>
-          <p class="tl-desc">営業所で最後の積込み。夕方から夜にかけて在宅率が上がる時間帯なので、配達完了率も自然と高くなります。</p>
+          <h3 class="tl-title" data-i18n="schedule_1700_title">三便積込み</h3>
+          <p class="tl-desc" data-i18n="schedule_1700_desc">営業所で最後の積込み。夕方から夜にかけて在宅率が上がる時間帯なので、配達完了率も自然と高くなります。</p>
           <span class="tl-badge">LOADING</span>
         </div>
       </div>
@@ -4351,8 +4444,8 @@
       <div class="tl-row">
         <div class="tl-time">18:00<small>3RD</small></div>
         <div class="tl-body">
-          <h3 class="tl-title">三便配達開始</h3>
-          <p class="tl-desc">最後の便。在宅のお客様が多く、1件あたりの完了がスムーズです。ここで個数を稼げるドライバーが収入を伸ばしています。</p>
+          <h3 class="tl-title" data-i18n="schedule_1800_title">三便配達開始</h3>
+          <p class="tl-desc" data-i18n="schedule_1800_desc">最後の便。在宅のお客様が多く、1件あたりの完了がスムーズです。ここで個数を稼げるドライバーが収入を伸ばしています。</p>
           <span class="tl-badge">DELIVERY - EVENING</span>
         </div>
       </div>
@@ -4360,8 +4453,8 @@
       <div class="tl-row">
         <div class="tl-time">20:00<small>END</small></div>
         <div class="tl-body">
-          <h3 class="tl-title">締め作業 &amp; 業務終了</h3>
-          <p class="tl-desc">当日の伝票処理、車両整理、報告をして業務終了。お疲れさまでした。翌日のシフトを確認してそのまま帰宅です。</p>
+          <h3 class="tl-title" data-i18n="schedule_2000_title">締め作業 &amp; 業務終了</h3>
+          <p class="tl-desc" data-i18n="schedule_2000_desc">当日の伝票処理、車両整理、報告をして業務終了。お疲れさまでした。翌日のシフトを確認してそのまま帰宅です。</p>
           <span class="tl-badge">CLOSE</span>
         </div>
       </div>
@@ -4374,7 +4467,7 @@
 <section class="benefits">
   <div class="container">
     <div class="section-tag">WORK BENEFITS</div>
-    <h2 class="section-title">働きやすさの、<br><span class="fire">理由がある。</span></h2>
+    <h2 class="section-title" data-i18n="benefits_title" data-i18n-html="1">働きやすさの、<br><span class="fire">理由がある。</span></h2>
 
     <div class="benefits__grid">
       <div class="bene">
@@ -4388,8 +4481,8 @@
           <circle cx="50" cy="48" r="2" fill="#f3ece0"/>
           <rect x="10" y="28" width="10" height="8" fill="#f3ece0"/>
         </svg>
-        <h3 class="bene__title">車両リース完備</h3>
-        <p class="bene__desc">軽バンを自分で持っていなくてOK。リース制度を利用すれば、自己資金なしで働き始められます。車両メンテナンスも会社がサポート。</p>
+        <h3 class="bene__title" data-i18n="bene1_title">車両リース完備</h3>
+        <p class="bene__desc" data-i18n="bene1_desc">軽バンを自分で持っていなくてOK。リース制度を利用すれば、自己資金なしで働き始められます。車両メンテナンスも会社がサポート。</p>
       </div>
 
       <div class="bene">
@@ -4399,8 +4492,8 @@
           <path d="M28 8 L32 14 L36 8" stroke="#ff2d00" stroke-width="3" fill="none"/>
           <circle cx="32" cy="36" r="4" fill="#ff2d00"/>
         </svg>
-        <h3 class="bene__title">制服支給あり</h3>
-        <p class="bene__desc">BURNING BROS.オリジナルの作業着を支給。着る物で悩む必要なし、プロ意識もグッと上がります。気になる汚れの洗い替えも用意。</p>
+        <h3 class="bene__title" data-i18n="bene2_title">制服支給あり</h3>
+        <p class="bene__desc" data-i18n="bene2_desc">BURNING BROS.オリジナルの作業着を支給。着る物で悩む必要なし、プロ意識もグッと上がります。気になる汚れの洗い替えも用意。</p>
       </div>
 
       <div class="bene">
@@ -4411,8 +4504,8 @@
           <rect x="14" y="32" width="8" height="8" fill="#ff2d00"/>
           <rect x="42" y="32" width="8" height="8" fill="#ff2d00"/>
         </svg>
-        <h3 class="bene__title">社宅契約サポート</h3>
-        <p class="bene__desc">賃貸の審査が不安で住居が決まらない。そんな時は会社名義で契約を代行します（家賃は自己負担）。ブランクがある方、上京直後の方も、住まいで働けない事態を作りません。</p>
+        <h3 class="bene__title" data-i18n="bene3_title">社宅契約サポート</h3>
+        <p class="bene__desc" data-i18n="bene3_desc">賃貸の審査が不安で住居が決まらない。そんな時は会社名義で契約を代行します（家賃は自己負担）。ブランクがある方、上京直後の方も、住まいで働けない事態を作りません。</p>
       </div>
 
       <div class="bene">
@@ -4423,8 +4516,8 @@
           <circle cx="32" cy="32" r="8" fill="#0a0906"/>
           <text x="32" y="36" text-anchor="middle" fill="#ffc700" font-family="Archivo Black" font-size="10" font-weight="900">¥</text>
         </svg>
-        <h3 class="bene__title">前借り制度</h3>
-        <p class="bene__desc">急な出費や生活のピンチ。そんな時は会社に相談してください。一定条件のもと、前借り制度を利用できます。お金の不安で働けない、を作りません。</p>
+        <h3 class="bene__title" data-i18n="bene4_title">前借り制度</h3>
+        <p class="bene__desc" data-i18n="bene4_desc">急な出費や生活のピンチ。そんな時は会社に相談してください。一定条件のもと、前借り制度を利用できます。お金の不安で働けない、を作りません。</p>
       </div>
 
       <div class="bene">
@@ -4433,8 +4526,8 @@
           <path d="M32 4 L40 24 L60 24 L44 38 L50 58 L32 46 L14 58 L20 38 L4 24 L24 24 Z" fill="#0a0906"/>
           <path d="M32 16 L36 28 L46 28 L38 34 L40 44 L32 38 L24 44 L26 34 L18 28 L28 28 Z" fill="#ff2d00"/>
         </svg>
-        <h3 class="bene__title">リーダー・管理者インセンティブ</h3>
-        <p class="bene__desc">ドライバーとしての実績を積めば、リーダー・管理者へのキャリアアップが可能。プレイヤー収入に加えて、チーム成績に応じたインセンティブが発生します。</p>
+        <h3 class="bene__title" data-i18n="bene5_title">リーダー・管理者インセンティブ</h3>
+        <p class="bene__desc" data-i18n="bene5_desc">ドライバーとしての実績を積めば、リーダー・管理者へのキャリアアップが可能。プレイヤー収入に加えて、チーム成績に応じたインセンティブが発生します。</p>
       </div>
 
       <div class="bene">
@@ -4444,8 +4537,8 @@
           <path d="M32 14 L32 32 L44 40" stroke="#ff2d00" stroke-width="4" fill="none" stroke-linecap="square"/>
           <circle cx="32" cy="32" r="3" fill="#ffc700"/>
         </svg>
-        <h3 class="bene__title">完全シフト制</h3>
-        <p class="bene__desc">週◯日〜、ガッツリでも週末だけでもOK。自分のライフスタイルに合わせて勤務日を設定できます。稼ぎたい時期は入って、休みたい時期は抜ける、そんな柔軟性。</p>
+        <h3 class="bene__title" data-i18n="bene6_title">完全シフト制</h3>
+        <p class="bene__desc" data-i18n="bene6_desc">週◯日〜、ガッツリでも週末だけでもOK。自分のライフスタイルに合わせて勤務日を設定できます。稼ぎたい時期は入って、休みたい時期は抜ける、そんな柔軟性。</p>
       </div>
     </div>
   </div>
@@ -4640,7 +4733,7 @@
 <section class="pay">
   <div class="container">
     <div class="section-tag">COMPENSATION</div>
-    <h2 class="section-title">収入は、<br><span class="fire">3層構造。</span></h2>
+    <h2 class="section-title" data-i18n="pay_title" data-i18n-html="1">収入は、<br><span class="fire">3層構造。</span></h2>
 
     <div class="pay__intro">
       <p>単価のみで勝負していない分、BURNING BROS.の報酬設計は少し複雑です。</p>
@@ -4741,13 +4834,13 @@
 <section class="locations">
   <div class="container">
     <div class="section-tag">WORKING AREA</div>
-    <h2 class="section-title">勤務地は<br>東京×<span class="fire">神奈川</span>。</h2>
+    <h2 class="section-title" data-i18n="locations_title" data-i18n-html="1">勤務地は<br>東京×<span class="fire">神奈川</span>。</h2>
 
     <div class="locations__wrap">
       <div>
         <div class="loc-card">
           <div class="loc-card__region">TOKYO / 東京</div>
-          <div class="loc-card__name">世田谷区・大田区</div>
+          <div class="loc-card__name" data-i18n="loc_tokyo_name">世田谷区・大田区</div>
           <div class="loc-card__areas">
             <span class="loc-tag fire">世田谷区</span>
             <span class="loc-tag fire">大田区</span>
@@ -4758,7 +4851,7 @@
         </div>
         <div class="loc-card">
           <div class="loc-card__region">KANAGAWA / 神奈川</div>
-          <div class="loc-card__name">横浜市・座間市</div>
+          <div class="loc-card__name" data-i18n="loc_kanagawa_name">横浜市・座間市</div>
           <div class="loc-card__areas">
             <span class="loc-tag">横浜市</span>
             <span class="loc-tag">座間市</span>
@@ -4837,7 +4930,7 @@
 <section class="who">
   <div class="container">
     <div class="section-tag">WHO WE WANT</div>
-    <h2 class="section-title">こんな人に、<br><span style="color:var(--hazard);">来てほしい。</span></h2>
+    <h2 class="section-title" data-i18n="who_title" data-i18n-html="1">こんな人に、<br><span style="color:var(--hazard);">来てほしい。</span></h2>
 
     <div class="who__list">
       <div class="who__item">
@@ -4891,7 +4984,7 @@
   <div class="container">
     <div class="section-tag">REFERRAL REWARD / 紹介報酬</div>
     <div class="referral__head">
-      <h2 class="section-title">一度呼んだら、<br><span style="color:var(--fire);">ずっと、続く。</span></h2>
+      <h2 class="section-title" data-i18n="referral_title" data-i18n-html="1">一度呼んだら、<br><span style="color:var(--fire);">ずっと、続く。</span></h2>
       <div class="lead">
         <p>BURNING BROS.の紹介報酬は、一回払いで終わるボーナスではありません。</p>
         <p>あなたが紹介した人が配達する1個ごとに、あなたに報酬が発生し続ける仕組み。</p>
@@ -4968,7 +5061,7 @@
 <section class="career">
   <div class="container">
     <div class="section-tag">CAREER PATH / その先の設計</div>
-    <h2 class="section-title">配達員で、<br><span class="fire">終わらせない。</span></h2>
+    <h2 class="section-title" data-i18n="career_title" data-i18n-html="1">配達員で、<br><span class="fire">終わらせない。</span></h2>
 
     <div class="career__intro">
       <p>配達だけで完結する関係ではなく、段階的にステップアップできる構造を社内に置いています。</p>
@@ -4979,32 +5072,32 @@
       <div class="step">
         <div class="step__marker">STEP 01 / START</div>
         <div class="step__when">DAY 1 〜</div>
-        <h3 class="step__title">配達員</h3>
-        <p class="step__desc">先輩同行でルートを覚え、一人立ち。L01（配達歩合）で収入のベースを作る段階。</p>
+        <h3 class="step__title" data-i18n="career_step1">配達員</h3>
+        <p class="step__desc" data-i18n="career_step1_desc">先輩同行でルートを覚え、一人立ち。L01（配達歩合）で収入のベースを作る段階。</p>
         <div class="step__arrow"></div>
       </div>
 
       <div class="step">
         <div class="step__marker">STEP 02 / GROW</div>
         <div class="step__when">6 〜 12 M</div>
-        <h3 class="step__title">リーダー</h3>
-        <p class="step__desc">新人の育成、ルート改善の相談役へ。L02の役職インセンティブが加算される段階。</p>
+        <h3 class="step__title" data-i18n="career_step2">リーダー</h3>
+        <p class="step__desc" data-i18n="career_step2_desc">新人の育成、ルート改善の相談役へ。L02の役職インセンティブが加算される段階。</p>
         <div class="step__arrow"></div>
       </div>
 
       <div class="step">
         <div class="step__marker">STEP 03 / LEAD</div>
         <div class="step__when">1 〜 2 Y</div>
-        <h3 class="step__title">管理者</h3>
-        <p class="step__desc">エリア運営・ドライバー全体のマネジメントへ。自分で走る以外の収入比率が高くなる。</p>
+        <h3 class="step__title" data-i18n="career_step3">管理者</h3>
+        <p class="step__desc" data-i18n="career_step3_desc">エリア運営・ドライバー全体のマネジメントへ。自分で走る以外の収入比率が高くなる。</p>
         <div class="step__arrow"></div>
       </div>
 
       <div class="step">
         <div class="step__marker">STEP 04 / NEXT</div>
         <div class="step__when">2 Y 〜</div>
-        <h3 class="step__title">独立 / 次の事業</h3>
-        <p class="step__desc">自分で軽貨物事業を立ち上げたい人への支援、関連事業への展開。会社から「離れる」選択肢も含めて。</p>
+        <h3 class="step__title" data-i18n="career_step4">独立 / 次の事業</h3>
+        <p class="step__desc" data-i18n="career_step4_desc">自分で軽貨物事業を立ち上げたい人への支援、関連事業への展開。会社から「離れる」選択肢も含めて。</p>
       </div>
     </div>
   </div>
@@ -5077,17 +5170,43 @@
   </div>
 </section>
 
+<!-- ============== JAPANESE LEVEL (i18n) ============== -->
+<section class="japanese-level" id="japaneseLevel">
+  <div class="container">
+    <div class="section-tag">JAPANESE LEVEL</div>
+    <h2 class="section-title" data-i18n="japanese_title">必要な日本語レベル</h2>
+    <p class="japanese-level__desc" data-i18n="japanese_desc">JLPTは不要です。以下の実用スキルだけで大丈夫:</p>
+    <ul class="japanese-checks">
+      <li data-i18n="japanese_check1">配送アプリを日本語で読める</li>
+      <li data-i18n="japanese_check2">住所を読める（漢字含む）</li>
+      <li data-i18n="japanese_check3">基本的な挨拶ができる（「お届け物です」「ここにサインください」）</li>
+      <li data-i18n="japanese_check4">電話で簡単な状況説明ができる</li>
+      <li data-i18n="japanese_check5">道路標識が読める</li>
+    </ul>
+    <div class="japanese-unsure" data-i18n="japanese_unsure">自信がない？LINEで簡単テストができます!</div>
+  </div>
+</section>
+
+<!-- ============== TAX SUPPORT (i18n) ============== -->
+<section class="tax-support" id="taxSupport">
+  <div class="container">
+    <div class="section-tag">TAX SUPPORT</div>
+    <h2 class="tax-support__title" data-i18n="tax_title">確定申告サポート</h2>
+    <p class="tax-support__desc" data-i18n="tax_desc">フリーランスとして確定申告が必要です。ご安心ください — 経験豊富なドライバーが初回の申告をサポートします。ビザ更新にも重要です。</p>
+  </div>
+</section>
+
 <!-- ============== FAQ ============== -->
 <section class="faq">
   <div class="container">
     <div class="section-tag">FAQ / よくある質問</div>
-    <h2 class="section-title">不安な点は、<br><span class="fire">先に全部。</span></h2>
+    <h2 class="section-title" data-i18n="faq_title" data-i18n-html="1">不安な点は、<br><span class="fire">先に全部。</span></h2>
 
     <div class="faq__list">
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q1</span>
-          <span class="txt">他社と比べて、配達単価はどうですか？</span>
+          <span class="txt" data-i18n="faq_q1">他社と比べて、配達単価はどうですか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">
@@ -5101,7 +5220,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q2</span>
-          <span class="txt">普通免許しか持っていませんが、応募できますか？</span>
+          <span class="txt" data-i18n="faq_q2">普通免許しか持っていませんが、応募できますか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">もちろんOKです。軽貨物配送は普通自動車免許（AT限定可）があれば始められます。大型免許や特殊資格は不要です。</div>
@@ -5110,7 +5229,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q3</span>
-          <span class="txt">未経験ですが、本当に大丈夫ですか？</span>
+          <span class="txt" data-i18n="faq_q3">未経験ですが、本当に大丈夫ですか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">全く問題ありません。むしろ未経験スタートのドライバーが多数です。最初の期間は先輩が同行し、ルートの覚え方、積込みのコツ、お客様対応までしっかりお伝えします。</div>
@@ -5119,7 +5238,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q4</span>
-          <span class="txt">リーダーや管理者には、どれくらいでなれますか？</span>
+          <span class="txt" data-i18n="faq_q4">リーダーや管理者には、どれくらいでなれますか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">稼働状況とチーム内での関わり方によりますが、半年〜1年でリーダー候補、1〜2年で管理者を目指すのが一般的なペースです。もちろん「配達員として走り続けたい」という選択も尊重します。キャリアは本人の希望ありきで設計します。</div>
@@ -5128,7 +5247,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q5</span>
-          <span class="txt">自分の車や軽バンを持っていませんが、働けますか？</span>
+          <span class="txt" data-i18n="faq_q5">自分の車や軽バンを持っていませんが、働けますか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">車両リース制度をご用意しています。自己資金なしで車両を用意できるため、手持ちがなくても始められます。リース料は業務委託料から差し引く方式で、無理なく利用できます。</div>
@@ -5137,7 +5256,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q6</span>
-          <span class="txt">初期費用はどのくらいかかりますか？</span>
+          <span class="txt" data-i18n="faq_q6">初期費用はどのくらいかかりますか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">基本的に初期費用は不要です。制服支給、車両リース利用であれば、手ぶらで始められます。自己所有の車両で始めたい方のみ、車両準備が必要になります。</div>
@@ -5146,7 +5265,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q7</span>
-          <span class="txt">地方在住ですが、応募できますか？社宅は用意されますか？</span>
+          <span class="txt" data-i18n="faq_q7">地方在住ですが、応募できますか？社宅は用意されますか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">ご応募は歓迎です。なお、当社の「社宅制度」は家賃補助つきの寮ではなく、賃貸の審査が通りづらい方のために<strong>会社名義で契約を代行する</strong>制度です。家賃そのものはご自身の負担となります。上京と同時に住まいと仕事の両方をスタートしたい方は、ぜひご相談ください。</div>
@@ -5155,7 +5274,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q8</span>
-          <span class="txt">紹介報酬の仕組みを、もう少し詳しく教えてください。</span>
+          <span class="txt" data-i18n="faq_q8">紹介報酬の仕組みを、もう少し詳しく教えてください。</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">
@@ -5169,7 +5288,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q9</span>
-          <span class="txt">給与の支払いはいつですか？</span>
+          <span class="txt" data-i18n="faq_q9">給与の支払いはいつですか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">月1回の月末締め、翌月指定日払いとなります。生活費などでどうしても必要な場合は、一定条件で前借り制度もご利用いただけます。</div>
@@ -5178,7 +5297,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q10</span>
-          <span class="txt">週何日から働けますか？</span>
+          <span class="txt" data-i18n="faq_q10">週何日から働けますか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">完全シフト制のため、ご相談の上で決定します。週末のみ、平日のみ、フルタイム、いずれも対応可能です。続けやすいペースからスタートしましょう。</div>
@@ -5187,7 +5306,7 @@
       <details class="faq-item">
         <summary class="faq-item__q">
           <span class="mark">Q11</span>
-          <span class="txt">女性でも働けますか？</span>
+          <span class="txt" data-i18n="faq_q11">女性でも働けますか？</span>
           <span class="arrow">▸</span>
         </summary>
         <div class="faq-item__a">もちろんです。軽貨物の荷物は比較的軽量のものが中心で、女性ドライバーも活躍しています。主婦の方で、子育ての合間に働かれる方もいらっしゃいます。</div>
@@ -5200,12 +5319,12 @@
 <section class="cta" id="apply">
   <div class="container">
     <div class="section-tag" style="color: var(--fire);">JOIN US</div>
-    <h2 class="cta__big">
+    <h2 class="cta__big" data-i18n="cta_big" data-i18n-html="1">
       <span class="fire">燃やせ。</span><br>
       <span class="stroke">走れ。</span><br>
       稼げ。
     </h2>
-    <div class="cta__sub">
+    <div class="cta__sub" data-i18n="cta_sub" data-i18n-html="1">
       <p>BURNING BROS.株式会社は、本気で稼ぎたい仲間を募集しています。</p>
       <p>まずは話を聞いてみるだけでもOK。気軽にご連絡ください。</p>
     </div>
@@ -5214,12 +5333,12 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.282.629-.63.629h-2.386c-.345 0-.627-.285-.627-.63V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .628.285.628.63 0 .349-.282.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.65.65 0 0 1-.194.028.636.636 0 0 1-.51-.247l-2.443-3.324v2.94a.631.631 0 0 1-.63.629.63.63 0 0 1-.627-.628V8.108c0-.27.173-.51.43-.595a.646.646 0 0 1 .195-.03c.195 0 .375.104.495.254l2.462 3.33V8.108a.63.63 0 0 1 .628-.63.632.632 0 0 1 .63.63v4.771zm-5.741 0a.632.632 0 0 1-.631.629.631.631 0 0 1-.626-.63V8.109a.63.63 0 0 1 .629-.63c.345 0 .63.283.63.63v4.771zm-2.466.629H4.917a.634.634 0 0 1-.631-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
         </svg>
-        LINEで応募する
+        <span data-i18n="cta_line">LINEで応募する</span>
         <span class="arrow"></span>
       </a>
       <a href="tel:08089560913" class="btn-outline" id="telBtn" data-tel="080-8956-0913">
         <span class="phone-icon">☎</span>
-        電話で問い合わせる
+        <span data-i18n="cta_phone">電話で問い合わせる</span>
       </a>
     </div>
     <p class="cta__hint">
@@ -5248,7 +5367,7 @@
         BURNING BROS.
         <span class="ja">バーニングブロス株式会社</span>
       </div>
-      <p style="margin-top: 20px; font-size: 13px; max-width: 360px; line-height: 1.8;">
+      <p style="margin-top: 20px; font-size: 13px; max-width: 360px; line-height: 1.8;" data-i18n="footer_desc">
         東京・神奈川を拠点に、軽貨物配送事業を展開。一緒に走る仲間を募集中。
       </p>
       <a href="https://burning-bros.com" target="_blank" rel="noopener" class="footer__site-link">
@@ -5496,6 +5615,548 @@
       setTimeout(() => toast.remove(), 300);
     }, 2600);
   }
+
+  // ========== i18n Multi-language System ==========
+  const TRANSLATIONS = {
+    ja: {
+      nav_cta: "応募する",
+      hero_kicker: "RECRUIT / 業務委託配送ドライバー募集中",
+      hero_headline: '<span class="line">運ぶ、</span><span class="line">その<span class="fire">先</span>まで、</span><span class="line stroke">考える。</span>',
+      hero_lead: '<p>BURNING BROS.株式会社は、東京・神奈川で軽貨物配送を手がける会社です。</p><p>正直に言うと、<strong>うちの配達単価は業界の中でトップクラスに高いわけじゃない。</strong></p><p>でも私たちが設計しているのは「1個いくら」の仕事ではなく、<strong>入ってきた人の、その先のキャリア全体</strong>。複数の収入軸、リーダー登用、紹介の継続報酬、管理者ポジション、独立支援まで。長く一緒に走れる仕組みを本気で作っています。</p>',
+      hero_income_label: "INCOME STRUCTURE / 収入は3層構造",
+      hero_income_piece: "配達歩合",
+      hero_income_role: "役職インセンティブ",
+      hero_income_residual: "紹介継続報酬",
+      hero_income_total: "LAYERED — 走らない日にも、入り続ける。",
+      housing_badge: "会社名義で契約代行",
+      housing_title: "社宅契約サポート",
+      housing_desc: "賃貸の審査が不安な方のために、会社名義で契約を代行します。家賃はご自身の負担ですが、住まいの心配なく仕事をスタートできます。",
+      visa_title: "在留資格チェック",
+      visa_subtitle: "あなたのビザタイプを確認してください",
+      visa_eligible: "応募可能です!",
+      visa_not_eligible: "この在留資格では応募できません",
+      visa_special: "個別審査が必要なビザタイプです。お問い合わせください。",
+      visa_types_ok: ["永住者", "永住者の配偶者等", "日本人の配偶者等", "定住者", "特別永住者", "ワーキングホリデー", "特定活動（個別判断）"],
+      visa_types_ng: ["留学", "技能実習", "特定技能", "技術・人文知識・国際業務", "家族滞在"],
+      numbers_title: '数字で見る、<br>BURNING BROS.の<span class="fire">仕組み。</span>',
+      numbers_layers: '3<span class="unit">層</span>',
+      numbers_layers_label: "収入は積み重ねで作る",
+      numbers_residual: '<span class="prefix">¥</span>22<span class="unit">／個</span>',
+      numbers_residual_label: "紹介先の個数に継続発生",
+      numbers_steps: '4<span class="unit">段階</span>',
+      numbers_steps_label: "配達員→リーダー→管理者→独立",
+      numbers_areas: '4<span class="unit">エリア</span>',
+      numbers_areas_label: "東京2区・神奈川2市",
+      philosophy_title: '単価じゃなく、<br><span class="fire">仕組み</span>で選ばれたい。',
+      philosophy_intro: '<p>軽貨物配送の世界は、ぶっちゃけ「単価勝負」になりがちです。</p><p>どこが一番1個あたり高いか。そのロジックだけで会社を選ぶと、<span class="highlight">3年後、5年後に残っているものが「疲れた体」だけ</span>、という話をよく聞きます。</p><p>BURNING BROS.が設計しているのは、配達員という職業を「通過点」ではなく「スタート地点」にすること。<br>走れる間に稼ぎ、走りながら次のポジションを見つけ、走らなくなった時にも関われる場所を残す。それがこの会社の作り方です。</p>',
+      phil_card1_title: '単価以外に、<br>収入軸を重ねる',
+      phil_card1_text: "配達歩合は業界で飛び抜けて高い数字ではありません。代わりに、役職インセンティブ、紹介報酬、マネジメント報酬。複数の収入源が積み重なる設計にしています。単価だけで比べると、見えない部分です。",
+      phil_card2_title: '配達員の、<br>その先を用意する',
+      phil_card2_text: "体力仕事にはいつか限界が来ます。怪我、加齢、家庭の事情。その時に「次がない」会社は長く関われない。リーダー、管理者、独立支援まで、複数の選択肢を社内に置いています。",
+      phil_card3_title: '紹介は、<br>継続収入になる',
+      phil_card3_text: "紹介報酬は1回払いではなく、紹介した人が配達した1個ごとに¥22が発生し続ける継続型。仲間が走り続ける限り、紹介した人にも毎月入り続ける。走らなくなった後にも残る収入源になります。",
+      schedule_title: '1日の<span class="fire">流れ。</span>',
+      schedule_0800_title: "積込み",
+      schedule_0800_desc: "営業所に集合。当日の配達荷物をルートに合わせて車両に積み込みます。効率の良い積み方をマスターすれば、午後がグッとラクになります。",
+      schedule_0900_title: "一便配達開始",
+      schedule_0900_desc: "午前中に配達する荷物を順番に回ります。住宅街中心で、1個あたりの移動距離は短め。ペースを掴んでいきましょう。",
+      schedule_1300_title: "昼休憩 & 二便積込み",
+      schedule_1300_desc: "営業所に戻ってしっかり休憩。食事を取りながら午後の荷物を積み込みます。自由時間なので、仮眠を取るドライバーも多いです。",
+      schedule_1400_title: "二便配達開始",
+      schedule_1400_desc: "午後の配達スタート。不在で戻ってきた荷物も、このタイミングで再配達します。個数が伸びる時間帯です。",
+      schedule_1700_title: "三便積込み",
+      schedule_1700_desc: "営業所で最後の積込み。夕方から夜にかけて在宅率が上がる時間帯なので、配達完了率も自然と高くなります。",
+      schedule_1800_title: "三便配達開始",
+      schedule_1800_desc: "最後の便。在宅のお客様が多く、1件あたりの完了がスムーズです。ここで個数を稼げるドライバーが収入を伸ばしています。",
+      schedule_2000_title: "締め作業 & 業務終了",
+      schedule_2000_desc: "当日の伝票処理、車両整理、報告をして業務終了。お疲れさまでした。翌日のシフトを確認してそのまま帰宅です。",
+      benefits_title: '働きやすさの、<br><span class="fire">理由がある。</span>',
+      bene1_title: "車両リース完備", bene1_desc: "軽バンを自分で持っていなくてOK。リース制度を利用すれば、自己資金なしで働き始められます。車両メンテナンスも会社がサポート。",
+      bene2_title: "制服支給あり", bene2_desc: "BURNING BROS.オリジナルの作業着を支給。着る物で悩む必要なし、プロ意識もグッと上がります。気になる汚れの洗い替えも用意。",
+      bene3_title: "社宅契約サポート", bene3_desc: "賃貸の審査が不安で住居が決まらない。そんな時は会社名義で契約を代行します（家賃は自己負担）。ブランクがある方、上京直後の方も、住まいで働けない事態を作りません。",
+      bene4_title: "前借り制度", bene4_desc: "急な出費や生活のピンチ。そんな時は会社に相談してください。一定条件のもと、前借り制度を利用できます。お金の不安で働けない、を作りません。",
+      bene5_title: "リーダー・管理者インセンティブ", bene5_desc: "ドライバーとしての実績を積めば、リーダー・管理者へのキャリアアップが可能。プレイヤー収入に加えて、チーム成績に応じたインセンティブが発生します。",
+      bene6_title: "完全シフト制", bene6_desc: "週◯日〜、ガッツリでも週末だけでもOK。自分のライフスタイルに合わせて勤務日を設定できます。稼ぎたい時期は入って、休みたい時期は抜ける、そんな柔軟性。",
+      pay_title: '収入は、<br><span class="fire">3層構造。</span>',
+      locations_title: '勤務地は<br>東京×<span class="fire">神奈川</span>。',
+      loc_tokyo_name: "世田谷区・大田区",
+      loc_kanagawa_name: "横浜市・座間市",
+      who_title: 'こんな人に、<br><span style="color:var(--hazard);">来てほしい。</span>',
+      referral_title: '一度呼んだら、<br><span style="color:var(--fire);">ずっと、続く。</span>',
+      career_title: '配達員で、<br><span class="fire">終わらせない。</span>',
+      career_step1: "配達員", career_step1_desc: "先輩同行でルートを覚え、一人立ち。L01（配達歩合）で収入のベースを作る段階。",
+      career_step2: "リーダー", career_step2_desc: "新人の育成、ルート改善の相談役へ。L02の役職インセンティブが加算される段階。",
+      career_step3: "管理者", career_step3_desc: "エリア運営・ドライバー全体のマネジメントへ。自分で走る以外の収入比率が高くなる。",
+      career_step4: "独立 / 次の事業", career_step4_desc: "自分で軽貨物事業を立ち上げたい人への支援、関連事業への展開。会社から「離れる」選択肢も含めて。",
+      japanese_title: "必要な日本語レベル", japanese_desc: "JLPTは不要です。以下の実用スキルだけで大丈夫:",
+      japanese_check1: "配送アプリを日本語で読める", japanese_check2: "住所を読める（漢字含む）",
+      japanese_check3: "基本的な挨拶ができる（「お届け物です」「ここにサインください」）",
+      japanese_check4: "電話で簡単な状況説明ができる", japanese_check5: "道路標識が読める",
+      japanese_unsure: "自信がない？LINEで簡単テストができます!",
+      tax_title: "確定申告サポート",
+      tax_desc: "フリーランスとして確定申告が必要です。ご安心ください — 経験豊富なドライバーが初回の申告をサポートします。ビザ更新にも重要です。",
+      faq_title: '不安な点は、<br><span class="fire">先に全部。</span>',
+      faq_q1: "他社と比べて、配達単価はどうですか？",
+      faq_q2: "普通免許しか持っていませんが、応募できますか？",
+      faq_q3: "未経験ですが、本当に大丈夫ですか？",
+      faq_q4: "リーダーや管理者には、どれくらいでなれますか？",
+      faq_q5: "自分の車や軽バンを持っていませんが、働けますか？",
+      faq_q6: "初期費用はどのくらいかかりますか？",
+      faq_q7: "地方在住ですが、応募できますか？社宅は用意されますか？",
+      faq_q8: "紹介報酬の仕組みを、もう少し詳しく教えてください。",
+      faq_q9: "給与の支払いはいつですか？",
+      faq_q10: "週何日から働けますか？",
+      faq_q11: "女性でも働けますか？",
+      cta_big: '<span class="fire">燃やせ。</span><br><span class="stroke">走れ。</span><br>稼げ。',
+      cta_sub: '<p>BURNING BROS.株式会社は、本気で稼ぎたい仲間を募集しています。</p><p>まずは話を聞いてみるだけでもOK。気軽にご連絡ください。</p>',
+      cta_line: "LINEで応募する",
+      cta_phone: "電話で問い合わせる",
+      footer_desc: "東京・神奈川を拠点に、軽貨物配送事業を展開。一緒に走る仲間を募集中。"
+    },
+    en: {
+      nav_cta: "Apply Now",
+      hero_kicker: "RECRUIT / Freelance Delivery Drivers Wanted",
+      hero_headline: '<span class="line">Your road</span><span class="line">starts <span class="fire">here</span>.</span>',
+      hero_lead: '<p>BURNING BROS. is a freelance delivery company based in Tokyo & Kanagawa.</p><p>Honestly, <strong>our per-package rate isn\'t the highest in the industry.</strong></p><p>But what we\'re building isn\'t a "per-piece" job \u2014 it\'s <strong>a complete career system</strong>. Multiple income layers, leadership roles, ongoing referral rewards, management positions, and independence support. We\'re serious about building a system where you can run with us long-term.</p>',
+      hero_income_label: "INCOME STRUCTURE / 3 Layers",
+      hero_income_piece: "Piece Rate",
+      hero_income_role: "Role Incentive",
+      hero_income_residual: "Referral Residual",
+      hero_income_total: "LAYERED \u2014 Income continues even on rest days.",
+      housing_badge: "We sign the lease for you.",
+      housing_title: "Company Housing Support",
+      housing_desc: "Can't pass rental screening? We contract the apartment under our company name. Focus on driving, not paperwork.",
+      visa_title: "Check Your Visa Status",
+      visa_subtitle: "Select your visa type to see if you can apply",
+      visa_eligible: "You can apply!",
+      visa_not_eligible: "Unfortunately, this visa type cannot be used for freelance delivery work.",
+      visa_special: "Your visa requires individual review. Please contact us.",
+      visa_types_ok: ["Permanent Resident", "Spouse of Permanent Resident", "Spouse of Japanese National", "Long-term Resident", "Special Permanent Resident", "Working Holiday", "Designated Activities (case-by-case)"],
+      visa_types_ng: ["Student", "Technical Intern Training", "Specified Skilled Worker", "Engineer/Specialist/International Services", "Dependent"],
+      numbers_title: 'By the numbers,<br>BURNING BROS. <span class="fire">system.</span>',
+      numbers_layers: '3<span class="unit"> layers</span>',
+      numbers_layers_label: "Income is built by stacking",
+      numbers_residual: '<span class="prefix">\u00a5</span>22<span class="unit">/pkg</span>',
+      numbers_residual_label: "Ongoing per referral package",
+      numbers_steps: '4<span class="unit"> steps</span>',
+      numbers_steps_label: "Driver \u2192 Leader \u2192 Manager \u2192 Independent",
+      numbers_areas: '4<span class="unit"> areas</span>',
+      numbers_areas_label: "2 Tokyo wards + 2 Kanagawa cities",
+      philosophy_title: 'Not by price,<br>but by <span class="fire">system</span>.',
+      philosophy_intro: '<p>The delivery industry tends to be a "price war" \u2014 who pays the most per package.</p><p>But if you choose a company only by that logic, <span class="highlight">all you\'ll have in 3-5 years is a tired body</span>.</p><p>BURNING BROS. is designed to make delivery driving not a "dead end" but a "starting point." Earn while you can run, find your next position while running, and keep a place even when you stop running.</p>',
+      phil_card1_title: 'Stack income<br>beyond unit price',
+      phil_card1_text: "Our per-package rate isn't the industry's highest. Instead, we layer role incentives, referral rewards, and management bonuses. Multiple income streams that stack up over time.",
+      phil_card2_title: 'Prepare what\'s<br>beyond delivery',
+      phil_card2_text: "Physical work has limits. Injury, aging, family. Companies with no \"next step\" can't keep people long. We offer leader, manager, and independence paths internally.",
+      phil_card3_title: 'Referrals become<br>ongoing income',
+      phil_card3_text: "Referral rewards aren't one-time. \u00a522 per package your referral delivers, continuously. As long as they keep delivering, you keep earning \u2014 even after you stop driving.",
+      schedule_title: 'A day in <span class="fire">the life.</span>',
+      schedule_0800_title: "Loading",
+      schedule_0800_desc: "Arrive at the depot. Load packages into your vehicle by route. Master efficient loading and your afternoon gets much easier.",
+      schedule_0900_title: "First deliveries",
+      schedule_0900_desc: "Morning delivery round. Mostly residential areas with short distances between stops. Find your pace.",
+      schedule_1300_title: "Lunch & reload",
+      schedule_1300_desc: "Return to depot for a break. Eat and load afternoon packages. Free time \u2014 many drivers take a nap.",
+      schedule_1400_title: "Second deliveries",
+      schedule_1400_desc: "Afternoon delivery start. Re-deliver packages from earlier missed deliveries. This is when numbers climb.",
+      schedule_1700_title: "Final loading",
+      schedule_1700_desc: "Last loading at the depot. Evening hours mean higher at-home rates, so completion rates go up naturally.",
+      schedule_1800_title: "Evening deliveries",
+      schedule_1800_desc: "Last round. More people at home means smoother completions. Drivers who push here grow their income.",
+      schedule_2000_title: "Wrap up & done",
+      schedule_2000_desc: "Process slips, organize vehicle, report, and you're done. Check tomorrow's schedule and head home.",
+      benefits_title: 'Real reasons<br>it\'s <span class="fire">easy to work here.</span>',
+      bene1_title: "Vehicle Lease Available", bene1_desc: "Don't have your own van? No problem. Use our lease program \u2014 start with zero capital. We handle vehicle maintenance too.",
+      bene2_title: "Uniform Provided", bene2_desc: "BURNING BROS. original work clothes provided. No need to worry about what to wear. Spare sets for dirty ones too.",
+      bene3_title: "Company Housing Support", bene3_desc: "Can't pass rental screening? We'll sign the lease under our company name (rent is your responsibility). No one should miss work because they can't find housing.",
+      bene4_title: "Advance Pay System", bene4_desc: "Unexpected expenses? Talk to us. Under certain conditions, you can get advance payment. We don't let money worries stop you from working.",
+      bene5_title: "Leader & Manager Incentives", bene5_desc: "Build your track record and move up to leader or manager. Earn team performance incentives on top of your delivery income.",
+      bene6_title: "Flexible Scheduling", bene6_desc: "Full-time, weekends only, whatever fits your life. Set your own work days. Ramp up when you want to earn, pull back when you need rest.",
+      pay_title: 'Income in<br><span class="fire">3 layers.</span>',
+      locations_title: 'Working areas:<br>Tokyo \u00d7 <span class="fire">Kanagawa</span>.',
+      loc_tokyo_name: "Setagaya & Ota",
+      loc_kanagawa_name: "Yokohama & Zama",
+      who_title: 'We want people<br><span style="color:var(--hazard);">like this.</span>',
+      referral_title: 'Refer once,<br><span style="color:var(--fire);">earn forever.</span>',
+      career_title: 'Don\'t end<br>at <span class="fire">delivery.</span>',
+      career_step1: "Delivery Driver", career_step1_desc: "Learn routes with a senior driver, then go solo. Build your income base with L01 (piece rate).",
+      career_step2: "Team Leader", career_step2_desc: "Train new drivers, advise on route optimization. L02 role incentive kicks in.",
+      career_step3: "Area Manager", career_step3_desc: "Manage area operations and all drivers. Income shifts from driving to management.",
+      career_step4: "Independent Owner", career_step4_desc: "Support for starting your own delivery business. Including the option to branch out from the company.",
+      japanese_title: "Japanese Level Required",
+      japanese_desc: "You don't need JLPT. Just these practical skills:",
+      japanese_check1: "Can read delivery app in Japanese",
+      japanese_check2: "Can read addresses (including kanji)",
+      japanese_check3: "Can say basic greetings (\"Here's your package\", \"Please sign here\")",
+      japanese_check4: "Can explain simple situations on the phone",
+      japanese_check5: "Can read road signs",
+      japanese_unsure: "Not sure? Take a quick test on LINE!",
+      tax_title: "Tax Filing Support",
+      tax_desc: "As a freelancer, you need to file taxes. Don't worry \u2014 our experienced drivers will guide you through your first filing. This is important for visa renewal too.",
+      faq_title: 'All your concerns,<br><span class="fire">answered first.</span>',
+      faq_q1: "Do I need my own vehicle?",
+      faq_q2: "What documents do I need?",
+      faq_q3: "Can I choose my working days?",
+      faq_q4: "Is there training?",
+      faq_q5: "How soon can I start?",
+      faq_q6: "Can I work part-time?",
+      faq_q7: "What about insurance?",
+      faq_q8: "How do I get paid?",
+      faq_q9: "When is the payment date?",
+      faq_q10: "How many days per week minimum?",
+      faq_q11: "Can women work here?",
+      cta_big: '<span class="fire">Burn.</span><br><span class="stroke">Run.</span><br>Earn.',
+      cta_sub: '<p>BURNING BROS. is looking for serious earners.</p><p>Just want to hear more? That\'s fine too. Contact us anytime.</p>',
+      cta_line: "Apply via LINE",
+      cta_phone: "Call us",
+      footer_desc: "Freelance delivery company based in Tokyo & Kanagawa. Looking for drivers to run with us."
+    },
+    vi: {
+      nav_cta: "\u1ee8ng tuy\u1ec3n ngay",
+      hero_kicker: "TUY\u1ec2N D\u1ee4NG / T\u00e0i x\u1ebf giao h\u00e0ng t\u1ef1 do",
+      hero_headline: '<span class="line">Con \u0111\u01b0\u1eddng</span><span class="line">c\u1ee7a b\u1ea1n b\u1eaft \u0111\u1ea7u <span class="fire">t\u1eeb \u0111\u00e2y</span>.</span>',
+      hero_lead: '<p>BURNING BROS. l\u00e0 c\u00f4ng ty giao h\u00e0ng t\u1ef1 do t\u1ea1i Tokyo & Kanagawa.</p><p>Th\u00e0nh th\u1eadt m\u00e0 n\u00f3i, <strong>\u0111\u01a1n gi\u00e1 giao h\u00e0ng c\u1ee7a ch\u00fang t\u00f4i kh\u00f4ng ph\u1ea3i cao nh\u1ea5t ng\u00e0nh.</strong></p><p>Nh\u01b0ng ch\u00fang t\u00f4i \u0111ang x\u00e2y d\u1ef1ng kh\u00f4ng ch\u1ec9 c\u00f4ng vi\u1ec7c "theo ki\u1ec7n" m\u00e0 l\u00e0 <strong>c\u1ea3 h\u1ec7 th\u1ed1ng s\u1ef1 nghi\u1ec7p</strong>. Nhi\u1ec1u t\u1ea7ng thu nh\u1eadp, vai tr\u00f2 l\u00e3nh \u0111\u1ea1o, th\u01b0\u1edfng gi\u1edbi thi\u1ec7u li\u00ean t\u1ee5c, qu\u1ea3n l\u00fd, v\u00e0 h\u1ed7 tr\u1ee3 \u0111\u1ed9c l\u1eadp.</p>',
+      hero_income_label: "C\u01a0 C\u1ea4U THU NH\u1eacP / 3 t\u1ea7ng",
+      hero_income_piece: "Theo ki\u1ec7n",
+      hero_income_role: "Th\u01b0\u1edfng vai tr\u00f2",
+      hero_income_residual: "Thu nh\u1eadp th\u1ee5 \u0111\u1ed9ng",
+      hero_income_total: "CH\u1ed2NG L\u1eceP \u2014 Thu nh\u1eadp v\u1eabn \u0111\u1ebfn ngay c\u1ea3 ng\u00e0y ngh\u1ec9.",
+      housing_badge: "Ch\u00fang t\u00f4i \u0111\u1ee9ng t\u00ean h\u1ee3p \u0111\u1ed3ng thu\u00ea nh\u00e0 cho b\u1ea1n.",
+      housing_title: "H\u1ed7 tr\u1ee3 nh\u00e0 \u1edf c\u00f4ng ty",
+      housing_desc: "Kh\u00f4ng qua \u0111\u01b0\u1ee3c th\u1ea9m \u0111\u1ecbnh thu\u00ea nh\u00e0? Ch\u00fang t\u00f4i k\u00fd h\u1ee3p \u0111\u1ed3ng thu\u00ea d\u01b0\u1edbi t\u00ean c\u00f4ng ty. B\u1ea1n ch\u1ec9 c\u1ea7n t\u1eadp trung giao h\u00e0ng.",
+      visa_title: "Ki\u1ec3m tra t\u01b0 c\u00e1ch l\u01b0u tr\u00fa",
+      visa_subtitle: "Ch\u1ecdn lo\u1ea1i visa c\u1ee7a b\u1ea1n \u0111\u1ec3 xem c\u00f3 \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n kh\u00f4ng",
+      visa_eligible: "B\u1ea1n \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n \u1ee9ng tuy\u1ec3n!",
+      visa_not_eligible: "R\u1ea5t ti\u1ebfc, lo\u1ea1i visa n\u00e0y kh\u00f4ng th\u1ec3 d\u00f9ng cho c\u00f4ng vi\u1ec7c giao h\u00e0ng t\u1ef1 do.",
+      visa_special: "Visa c\u1ee7a b\u1ea1n c\u1ea7n xem x\u00e9t ri\u00eang. Vui l\u00f2ng li\u00ean h\u1ec7 ch\u00fang t\u00f4i.",
+      visa_types_ok: ["Th\u01b0\u1eddng tr\u00fa nh\u00e2n", "V\u1ee3/ch\u1ed3ng c\u1ee7a th\u01b0\u1eddng tr\u00fa nh\u00e2n", "V\u1ee3/ch\u1ed3ng c\u1ee7a c\u00f4ng d\u00e2n Nh\u1eadt", "C\u01b0 tr\u00fa d\u00e0i h\u1ea1n", "Th\u01b0\u1eddng tr\u00fa nh\u00e2n \u0111\u1eb7c bi\u1ec7t", "Working Holiday", "Ho\u1ea1t \u0111\u1ed9ng ch\u1ec9 \u0111\u1ecbnh (t\u00f9y tr\u01b0\u1eddng h\u1ee3p)"],
+      visa_types_ng: ["Du h\u1ecdc sinh", "Th\u1ef1c t\u1eadp k\u1ef9 n\u0103ng", "K\u1ef9 n\u0103ng \u0111\u1eb7c \u0111\u1ecbnh", "K\u1ef9 s\u01b0/Chuy\u00ean gia/D\u1ecbch v\u1ee5 qu\u1ed1c t\u1ebf", "Gia \u0111\u00ecnh ph\u1ee5 thu\u1ed9c"],
+      numbers_title: 'Nh\u00ecn qua s\u1ed1 li\u1ec7u,<br>h\u1ec7 th\u1ed1ng <span class="fire">BURNING BROS.</span>',
+      numbers_layers: '3<span class="unit"> t\u1ea7ng</span>',
+      numbers_layers_label: "Thu nh\u1eadp \u0111\u01b0\u1ee3c x\u00e2y d\u1ef1ng t\u1eeb nhi\u1ec1u t\u1ea7ng",
+      numbers_residual: '<span class="prefix">\u00a5</span>22<span class="unit">/ki\u1ec7n</span>',
+      numbers_residual_label: "Li\u00ean t\u1ee5c theo ki\u1ec7n gi\u1edbi thi\u1ec7u",
+      numbers_steps: '4<span class="unit"> b\u01b0\u1edbc</span>',
+      numbers_steps_label: "T\u00e0i x\u1ebf \u2192 Tr\u01b0\u1edfng nh\u00f3m \u2192 Qu\u1ea3n l\u00fd \u2192 \u0110\u1ed9c l\u1eadp",
+      numbers_areas: '4<span class="unit"> khu v\u1ef1c</span>',
+      numbers_areas_label: "2 qu\u1eadn Tokyo + 2 th\u00e0nh ph\u1ed1 Kanagawa",
+      philosophy_title: 'Kh\u00f4ng b\u1eb1ng gi\u00e1,<br>m\u00e0 b\u1eb1ng <span class="fire">h\u1ec7 th\u1ed1ng</span>.',
+      philosophy_intro: '<p>Ng\u00e0nh giao h\u00e0ng th\u01b0\u1eddng l\u00e0 "cu\u1ed9c chi\u1ebfn gi\u00e1" \u2014 n\u01a1i n\u00e0o tr\u1ea3 nhi\u1ec1u nh\u1ea5t m\u1ed7i ki\u1ec7n.</p><p>Nh\u01b0ng n\u1ebfu ch\u1ecdn c\u00f4ng ty ch\u1ec9 theo logic \u0111\u00f3, <span class="highlight">3-5 n\u0103m sau b\u1ea1n ch\u1ec9 c\u00f2n l\u1ea1i m\u1ed9t c\u01a1 th\u1ec3 m\u1ec7t m\u1ecfi</span>.</p><p>BURNING BROS. thi\u1ebft k\u1ebf \u0111\u1ec3 giao h\u00e0ng kh\u00f4ng ph\u1ea3i "ng\u00f5 c\u1ee5t" m\u00e0 l\u00e0 "\u0111i\u1ec3m kh\u1edfi \u0111\u1ea7u."</p>',
+      phil_card1_title: 'Ch\u1ed3ng thu nh\u1eadp<br>ngo\u00e0i \u0111\u01a1n gi\u00e1',
+      phil_card1_text: "\u0110\u01a1n gi\u00e1 giao h\u00e0ng kh\u00f4ng ph\u1ea3i cao nh\u1ea5t. Thay v\u00e0o \u0111\u00f3, ch\u00fang t\u00f4i ch\u1ed3ng th\u01b0\u1edfng vai tr\u00f2, gi\u1edbi thi\u1ec7u, qu\u1ea3n l\u00fd. Nhi\u1ec1u ngu\u1ed3n thu nh\u1eadp c\u00f9ng t\u00edch l\u0169y.",
+      phil_card2_title: 'Chu\u1ea9n b\u1ecb t\u01b0\u01a1ng lai<br>sau giao h\u00e0ng',
+      phil_card2_text: "C\u00f4ng vi\u1ec7c th\u1ec3 ch\u1ea5t c\u00f3 gi\u1edbi h\u1ea1n. Ch\u1ea5n th\u01b0\u01a1ng, tu\u1ed5i t\u00e1c, gia \u0111\u00ecnh. Ch\u00fang t\u00f4i cung c\u1ea5p l\u1ed9 tr\u00ecnh: tr\u01b0\u1edfng nh\u00f3m, qu\u1ea3n l\u00fd, \u0111\u1ed9c l\u1eadp.",
+      phil_card3_title: 'Gi\u1edbi thi\u1ec7u l\u00e0<br>thu nh\u1eadp li\u00ean t\u1ee5c',
+      phil_card3_text: "Th\u01b0\u1edfng gi\u1edbi thi\u1ec7u kh\u00f4ng ph\u1ea3i m\u1ed9t l\u1ea7n. \u00a522 m\u1ed7i ki\u1ec7n ng\u01b0\u1eddi b\u1ea1n gi\u1edbi thi\u1ec7u giao, li\u00ean t\u1ee5c mi\u1ec5n h\u1ecd c\u00f2n giao h\u00e0ng.",
+      schedule_title: 'M\u1ed9t ng\u00e0y <span class="fire">l\u00e0m vi\u1ec7c.</span>',
+      schedule_0800_title: "Nh\u1eadn h\u00e0ng",
+      schedule_0800_desc: "T\u1eadp trung t\u1ea1i kho. X\u1ebfp h\u00e0ng l\u00ean xe theo tuy\u1ebfn \u0111\u01b0\u1eddng.",
+      schedule_0900_title: "B\u1eaft \u0111\u1ea7u giao h\u00e0ng",
+      schedule_0900_desc: "V\u00f2ng giao bu\u1ed5i s\u00e1ng. Ch\u1ee7 y\u1ebfu khu d\u00e2n c\u01b0.",
+      schedule_1300_title: "Ngh\u1ec9 tr\u01b0a & nh\u1eadn h\u00e0ng chi\u1ec1u",
+      schedule_1300_desc: "V\u1ec1 kho ngh\u1ec9 ng\u01a1i. \u0102n tr\u01b0a v\u00e0 x\u1ebfp h\u00e0ng bu\u1ed5i chi\u1ec1u.",
+      schedule_1400_title: "Giao h\u00e0ng bu\u1ed5i chi\u1ec1u",
+      schedule_1400_desc: "B\u1eaft \u0111\u1ea7u giao chi\u1ec1u. T\u00e1i giao c\u00e1c ki\u1ec7n b\u1ecb l\u1ee1 bu\u1ed5i s\u00e1ng.",
+      schedule_1700_title: "Nh\u1eadn h\u00e0ng cu\u1ed1i ng\u00e0y",
+      schedule_1700_desc: "L\u1ea7n nh\u1eadn h\u00e0ng cu\u1ed1i. Bu\u1ed5i t\u1ed1i ng\u01b0\u1eddi \u1edf nh\u00e0 nhi\u1ec1u h\u01a1n.",
+      schedule_1800_title: "Giao h\u00e0ng bu\u1ed5i t\u1ed1i",
+      schedule_1800_desc: "V\u00f2ng cu\u1ed1i. Nhi\u1ec1u ng\u01b0\u1eddi \u1edf nh\u00e0 h\u01a1n, giao nhanh h\u01a1n.",
+      schedule_2000_title: "K\u1ebft th\u00fac",
+      schedule_2000_desc: "X\u1eed l\u00fd gi\u1ea5y t\u1edd, s\u1eafp x\u1ebfp xe, b\u00e1o c\u00e1o v\u00e0 xong vi\u1ec7c.",
+      benefits_title: 'L\u00fd do<br>l\u00e0m vi\u1ec7c <span class="fire">tho\u1ea3i m\u00e1i.</span>',
+      bene1_title: "Cho thu\u00ea xe", bene1_desc: "Kh\u00f4ng c\u00f3 xe? Kh\u00f4ng sao. D\u00f9ng ch\u01b0\u01a1ng tr\u00ecnh thu\u00ea xe c\u1ee7a ch\u00fang t\u00f4i.",
+      bene2_title: "C\u1ea5p \u0111\u1ed3ng ph\u1ee5c", bene2_desc: "\u0110\u1ed3ng ph\u1ee5c BURNING BROS. \u0111\u01b0\u1ee3c c\u1ea5p mi\u1ec5n ph\u00ed.",
+      bene3_title: "H\u1ed7 tr\u1ee3 nh\u00e0 \u1edf", bene3_desc: "C\u00f4ng ty \u0111\u1ee9ng t\u00ean thu\u00ea nh\u00e0 cho b\u1ea1n (ti\u1ec1n thu\u00ea do b\u1ea1n tr\u1ea3).",
+      bene4_title: "\u1ee8ng l\u01b0\u01a1ng tr\u01b0\u1edbc", bene4_desc: "C\u1ea7n ti\u1ec1n g\u1ea5p? H\u00e3y n\u00f3i v\u1edbi ch\u00fang t\u00f4i. C\u00f3 ch\u1ebf \u0111\u1ed9 \u1ee9ng l\u01b0\u01a1ng.",
+      bene5_title: "Th\u01b0\u1edfng l\u00e3nh \u0111\u1ea1o", bene5_desc: "L\u00ean tr\u01b0\u1edfng nh\u00f3m ho\u1eb7c qu\u1ea3n l\u00fd \u0111\u1ec3 nh\u1eadn th\u00eam th\u01b0\u1edfng.",
+      bene6_title: "L\u1ecbch linh ho\u1ea1t", bene6_desc: "To\u00e0n th\u1eddi gian, cu\u1ed1i tu\u1ea7n, t\u00f9y b\u1ea1n ch\u1ecdn.",
+      pay_title: 'Thu nh\u1eadp<br><span class="fire">3 t\u1ea7ng.</span>',
+      locations_title: 'Khu v\u1ef1c l\u00e0m vi\u1ec7c:<br>Tokyo \u00d7 <span class="fire">Kanagawa</span>.',
+      loc_tokyo_name: "Setagaya & Ota",
+      loc_kanagawa_name: "Yokohama & Zama",
+      who_title: 'Ch\u00fang t\u00f4i c\u1ea7n<br><span style="color:var(--hazard);">nh\u1eefng ng\u01b0\u1eddi nh\u01b0 th\u1ebf n\u00e0y.</span>',
+      referral_title: 'Gi\u1edbi thi\u1ec7u m\u1ed9t l\u1ea7n,<br><span style="color:var(--fire);">nh\u1eadn m\u00e3i.</span>',
+      career_title: 'Kh\u00f4ng d\u1eebng l\u1ea1i \u1edf<br><span class="fire">giao h\u00e0ng.</span>',
+      career_step1: "T\u00e0i x\u1ebf giao h\u00e0ng", career_step1_desc: "H\u1ecdc tuy\u1ebfn c\u00f9ng ti\u1ec1n b\u1ed1i r\u1ed3i t\u1ef1 l\u00e0m. X\u00e2y d\u1ef1ng thu nh\u1eadp n\u1ec1n t\u1ea3ng.",
+      career_step2: "Tr\u01b0\u1edfng nh\u00f3m", career_step2_desc: "\u0110\u00e0o t\u1ea1o ng\u01b0\u1eddi m\u1edbi, c\u1ed1 v\u1ea5n tuy\u1ebfn \u0111\u01b0\u1eddng. Nh\u1eadn th\u01b0\u1edfng vai tr\u00f2.",
+      career_step3: "Qu\u1ea3n l\u00fd khu v\u1ef1c", career_step3_desc: "Qu\u1ea3n l\u00fd v\u1eadn h\u00e0nh v\u00e0 t\u00e0i x\u1ebf. Thu nh\u1eadp chuy\u1ec3n sang qu\u1ea3n l\u00fd.",
+      career_step4: "Ch\u1ee7 doanh nghi\u1ec7p \u0111\u1ed9c l\u1eadp", career_step4_desc: "H\u1ed7 tr\u1ee3 kh\u1edfi nghi\u1ec7p ri\u00eang. K\u1ec3 c\u1ea3 r\u1eddi c\u00f4ng ty.",
+      japanese_title: "Tr\u00ecnh \u0111\u1ed9 ti\u1ebfng Nh\u1eadt c\u1ea7n thi\u1ebft",
+      japanese_desc: "Kh\u00f4ng c\u1ea7n b\u1eb1ng JLPT. Ch\u1ec9 c\u1ea7n nh\u1eefng k\u1ef9 n\u0103ng th\u1ef1c t\u1ebf sau:",
+      japanese_check1: "\u0110\u1ecdc \u0111\u01b0\u1ee3c \u1ee9ng d\u1ee5ng giao h\u00e0ng b\u1eb1ng ti\u1ebfng Nh\u1eadt",
+      japanese_check2: "\u0110\u1ecdc \u0111\u01b0\u1ee3c \u0111\u1ecba ch\u1ec9 (k\u1ec3 c\u1ea3 ch\u1eef H\u00e1n)",
+      japanese_check3: "N\u00f3i \u0111\u01b0\u1ee3c c\u00e2u ch\u00e0o c\u01a1 b\u1ea3n",
+      japanese_check4: "Gi\u1ea3i th\u00edch \u0111\u01b0\u1ee3c t\u00ecnh hu\u1ed1ng \u0111\u01a1n gi\u1ea3n qua \u0111i\u1ec7n tho\u1ea1i",
+      japanese_check5: "\u0110\u1ecdc \u0111\u01b0\u1ee3c bi\u1ec3n b\u00e1o giao th\u00f4ng",
+      japanese_unsure: "Ch\u01b0a ch\u1eafc ch\u1eafn? L\u00e0m b\u00e0i test nhanh tr\u00ean LINE!",
+      tax_title: "H\u1ed7 tr\u1ee3 khai thu\u1ebf",
+      tax_desc: "L\u00e0 ng\u01b0\u1eddi t\u1ef1 do, b\u1ea1n c\u1ea7n khai thu\u1ebf. \u0110\u1eebng lo \u2014 c\u00e1c t\u00e0i x\u1ebf k\u1ef3 c\u1ef1u s\u1ebd h\u01b0\u1edbng d\u1eabn b\u1ea1n l\u1ea7n \u0111\u1ea7u. Vi\u1ec7c n\u00e0y c\u0169ng quan tr\u1ecdng cho gia h\u1ea1n visa.",
+      faq_title: 'C\u00e2u h\u1ecfi<br><span class="fire">th\u01b0\u1eddng g\u1eb7p.</span>',
+      faq_q1: "T\u00f4i c\u00f3 c\u1ea7n xe ri\u00eang kh\u00f4ng?",
+      faq_q2: "T\u00f4i c\u1ea7n gi\u1ea5y t\u1edd g\u00ec?",
+      faq_q3: "T\u00f4i c\u00f3 th\u1ec3 ch\u1ecdn ng\u00e0y l\u00e0m kh\u00f4ng?",
+      faq_q4: "C\u00f3 \u0111\u01b0\u1ee3c \u0111\u00e0o t\u1ea1o kh\u00f4ng?",
+      faq_q5: "Bao l\u00e2u th\u00ec b\u1eaft \u0111\u1ea7u \u0111\u01b0\u1ee3c?",
+      faq_q6: "T\u00f4i c\u00f3 th\u1ec3 l\u00e0m b\u00e1n th\u1eddi gian kh\u00f4ng?",
+      faq_q7: "B\u1ea3o hi\u1ec3m th\u00ec sao?",
+      faq_q8: "Thanh to\u00e1n nh\u01b0 th\u1ebf n\u00e0o?",
+      faq_q9: "Ng\u00e0y thanh to\u00e1n l\u00e0 khi n\u00e0o?",
+      faq_q10: "T\u1ed1i thi\u1ec3u m\u1ea5y ng\u00e0y/tu\u1ea7n?",
+      faq_q11: "Ph\u1ee5 n\u1eef c\u00f3 l\u00e0m \u0111\u01b0\u1ee3c kh\u00f4ng?",
+      cta_big: '<span class="fire">Ch\u00e1y h\u1ebft m\u00ecnh.</span><br><span class="stroke">Ch\u1ea1y h\u1ebft s\u1ee9c.</span><br>Ki\u1ebfm h\u1ebft c\u1ee1.',
+      cta_sub: '<p>BURNING BROS. \u0111ang t\u00ecm nh\u1eefng ng\u01b0\u1eddi nghi\u00eam t\u00fac mu\u1ed1n ki\u1ebfm ti\u1ec1n.</p><p>Ch\u1ec9 mu\u1ed1n nghe th\u00eam? C\u0169ng \u0111\u01b0\u1ee3c. Li\u00ean h\u1ec7 b\u1ea5t c\u1ee9 l\u00fac n\u00e0o.</p>',
+      cta_line: "\u1ee8ng tuy\u1ec3n qua LINE",
+      cta_phone: "G\u1ecdi \u0111i\u1ec7n",
+      footer_desc: "C\u00f4ng ty giao h\u00e0ng t\u1ef1 do t\u1ea1i Tokyo & Kanagawa. Tuy\u1ec3n t\u00e0i x\u1ebf \u0111\u1ed3ng h\u00e0nh."
+    },
+    ne: {
+      nav_cta: "\u0905\u0939\u093f\u0932\u0947 \u0906\u0935\u0947\u0926\u0928 \u0926\u093f\u0928\u0941\u0939\u094b\u0938\u094d",
+      hero_kicker: "RECRUIT / \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0921\u094d\u0930\u093e\u0907\u092d\u0930 \u092d\u0930\u094d\u0924\u0940",
+      hero_headline: '<span class="line">\u0924\u092a\u093e\u0908\u0902\u0915\u094b</span><span class="line">\u092c\u093e\u091f\u094b <span class="fire">\u092f\u0939\u093e\u0901\u092c\u093e\u091f</span></span><span class="line stroke">\u0938\u0941\u0930\u0941 \u0939\u0941\u0928\u094d\u091b\u0964</span>',
+      hero_lead: '<p>BURNING BROS. \u091f\u094b\u0915\u093f\u092f\u094b \u0930 \u0915\u093e\u0928\u093e\u0917\u093e\u0935\u093e\u092e\u093e \u092b\u094d\u0930\u093f\u0932\u094d\u092f\u093e\u0928\u094d\u0938 \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0915\u092e\u094d\u092a\u0928\u0940 \u0939\u094b\u0964</p><p>\u0907\u092e\u093e\u0928\u0926\u093e\u0930\u0940\u0938\u0901\u0917, <strong>\u0939\u093e\u092e\u094d\u0930\u094b \u092a\u094d\u0930\u0924\u093f \u092a\u094d\u092f\u093e\u0915\u0947\u091c \u0926\u0930 \u0909\u0926\u094d\u092f\u094b\u0917\u092e\u093e \u0938\u092c\u0948\u092d\u0928\u094d\u0926\u093e \u0927\u0947\u0930\u0948 \u0939\u094b\u0907\u0928\u0964</strong></p><p>\u0924\u0930 \u0939\u093e\u092e\u0940\u0932\u0947 \u092c\u0928\u093e\u0907\u0930\u0939\u0947\u0915\u094b <strong>\u092a\u0942\u0930\u094d\u0923 \u0915\u094d\u092f\u093e\u0930\u093f\u092f\u0930 \u092a\u094d\u0930\u0923\u093e\u0932\u0940</strong> \u0939\u094b\u0964</p>',
+      hero_income_label: "\u0906\u092f \u0938\u0902\u0930\u091a\u0928\u093e / 3 \u0924\u0939",
+      hero_income_piece: "\u092a\u094d\u0930\u0924\u093f \u092a\u094d\u092f\u093e\u0915\u0947\u091c",
+      hero_income_role: "\u092d\u0942\u092e\u093f\u0915\u093e \u092c\u094b\u0928\u0938",
+      hero_income_residual: "\u0928\u093f\u0930\u0928\u094d\u0924\u0930 \u0906\u092f",
+      hero_income_total: "\u0924\u0939\u0917\u0924 \u2014 \u0928\u091a\u0932\u094d\u0928\u0947 \u0926\u093f\u0928\u092e\u093e \u092a\u0928\u093f \u0906\u092e\u094d\u0926\u093e\u0928\u0940 \u091c\u093e\u0930\u0940 \u0930\u0939\u0928\u094d\u091b\u0964",
+      housing_badge: "\u0939\u093e\u092e\u0940 \u0924\u092a\u093e\u0908\u0902\u0915\u094b \u0932\u093e\u0917\u093f \u092d\u093e\u0921\u093e \u0938\u092e\u094d\u091d\u094c\u0924\u093e \u0917\u0930\u094d\u091b\u094c\u0902\u0964",
+      housing_title: "\u0915\u092e\u094d\u092a\u0928\u0940 \u0906\u0935\u093e\u0938 \u0938\u0939\u092f\u094b\u0917",
+      housing_desc: "\u092d\u093e\u0921\u093e\u092e\u093e \u092c\u0938\u094d\u0928 \u0938\u094d\u0915\u094d\u0930\u093f\u0928\u093f\u0919 \u092a\u093e\u0938 \u0939\u0941\u0901\u0926\u0948\u0928? \u0939\u093e\u092e\u0940 \u0915\u092e\u094d\u092a\u0928\u0940 \u0928\u093e\u092e\u092e\u093e \u092b\u094d\u0932\u094d\u092f\u093e\u091f \u092d\u093e\u0921\u093e\u092e\u093e \u0932\u093f\u0928\u094d\u091b\u094c\u0902\u0964",
+      visa_title: "\u0924\u092a\u093e\u0908\u0902\u0915\u094b \u092d\u093f\u0938\u093e \u0938\u094d\u0925\u093f\u0924\u093f \u091c\u093e\u0901\u091a \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+      visa_subtitle: "\u0924\u092a\u093e\u0908\u0902\u0915\u094b \u092d\u093f\u0938\u093e \u092a\u094d\u0930\u0915\u093e\u0930 \u091b\u093e\u0928\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+      visa_eligible: "\u0924\u092a\u093e\u0908\u0902 \u0906\u0935\u0947\u0926\u0928 \u0926\u093f\u0928 \u0938\u0915\u094d\u0928\u0941\u0939\u0941\u0928\u094d\u091b!",
+      visa_not_eligible: "\u092e\u093e\u092b \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d, \u092f\u094b \u092d\u093f\u0938\u093e \u092a\u094d\u0930\u0915\u093e\u0930\u0932\u0947 \u092b\u094d\u0930\u093f\u0932\u094d\u092f\u093e\u0928\u094d\u0938 \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0915\u093e\u092e\u0915\u094b \u0932\u093e\u0917\u093f \u0915\u093e\u092e \u0917\u0930\u094d\u0926\u0948\u0928\u0964",
+      visa_special: "\u0924\u092a\u093e\u0908\u0902\u0915\u094b \u092d\u093f\u0938\u093e \u0935\u094d\u092f\u0915\u094d\u0924\u093f\u0917\u0924 \u0938\u092e\u0940\u0915\u094d\u0937\u093e \u091a\u093e\u0939\u093f\u0928\u094d\u091b\u0964 \u0915\u0943\u092a\u092f\u093e \u0939\u093e\u092e\u0940\u0932\u093e\u0908 \u0938\u092e\u094d\u092a\u0930\u094d\u0915 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d\u0964",
+      visa_types_ok: ["\u0938\u094d\u0925\u093e\u092f\u0940 \u092c\u093e\u0938\u093f\u0928\u094d\u0926\u093e", "\u0938\u094d\u0925\u093e\u092f\u0940 \u092c\u093e\u0938\u093f\u0928\u094d\u0926\u093e\u0915\u094b \u092a\u0924\u093f/\u092a\u0924\u094d\u0928\u0940", "\u091c\u093e\u092a\u093e\u0928\u0940 \u0928\u093e\u0917\u0930\u093f\u0915\u0915\u094b \u092a\u0924\u093f/\u092a\u0924\u094d\u0928\u0940", "\u0926\u0940\u0930\u094d\u0918\u0915\u093e\u0932\u0940\u0928 \u092c\u093e\u0938\u093f\u0928\u094d\u0926\u093e", "\u0935\u093f\u0936\u0947\u0937 \u0938\u094d\u0925\u093e\u092f\u0940 \u092c\u093e\u0938\u093f\u0928\u094d\u0926\u093e", "\u0935\u0930\u094d\u0915\u093f\u0919 \u0939\u094b\u0932\u093f\u0921\u0947", "\u0924\u094b\u0915\u093f\u090f\u0915\u094b \u0917\u0924\u093f\u0935\u093f\u0927\u093f (\u0915\u0947\u0938 \u0905\u0928\u0941\u0938\u093e\u0930)"],
+      visa_types_ng: ["\u0935\u093f\u0926\u094d\u092f\u093e\u0930\u094d\u0925\u0940", "\u092a\u094d\u0930\u093e\u0935\u093f\u0927\u093f\u0915 \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0941", "\u0935\u093f\u0936\u093f\u0937\u094d\u091f \u0915\u0941\u0936\u0932 \u0915\u093e\u092e\u0926\u093e\u0930", "\u0907\u0928\u094d\u091c\u093f\u0928\u093f\u092f\u0930/\u0935\u093f\u0936\u0947\u0937\u091c\u094d\u091e/\u0905\u0928\u094d\u0924\u0930\u094d\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u093f\u092f \u0938\u0947\u0935\u093e", "\u0906\u0936\u094d\u0930\u093f\u0924"],
+      numbers_title: '\u0938\u0902\u0916\u094d\u092f\u093e\u092e\u093e \u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d,<br>BURNING BROS. <span class="fire">\u092a\u094d\u0930\u0923\u093e\u0932\u0940\u0964</span>',
+      numbers_layers: '3<span class="unit"> \u0924\u0939</span>',
+      numbers_layers_label: "\u0906\u092e\u094d\u0926\u093e\u0928\u0940 \u0924\u0939\u0917\u0924 \u092c\u0928\u093e\u0907\u0928\u094d\u091b",
+      numbers_residual: '<span class="prefix">\u00a5</span>22<span class="unit">/\u092a\u094d\u092f\u093e\u0915\u0947\u091c</span>',
+      numbers_residual_label: "\u0938\u093f\u092b\u093e\u0930\u093f\u0938 \u092a\u094d\u092f\u093e\u0915\u0947\u091c\u092e\u093e \u0928\u093f\u0930\u0928\u094d\u0924\u0930",
+      numbers_steps: '4<span class="unit"> \u091a\u0930\u0923</span>',
+      numbers_steps_label: "\u0921\u094d\u0930\u093e\u0907\u092d\u0930 \u2192 \u0932\u093f\u0921\u0930 \u2192 \u092a\u094d\u0930\u092c\u0928\u094d\u0927\u0915 \u2192 \u0938\u094d\u0935\u0924\u0928\u094d\u0924\u094d\u0930",
+      numbers_areas: '4<span class="unit"> \u0915\u094d\u0937\u0947\u0924\u094d\u0930</span>',
+      numbers_areas_label: "\u091f\u094b\u0915\u093f\u092f\u094b 2 + \u0915\u093e\u0928\u093e\u0917\u093e\u0935\u093e 2",
+      philosophy_title: '\u092e\u0942\u0932\u094d\u092f\u0932\u0947 \u0939\u094b\u0907\u0928,<br><span class="fire">\u092a\u094d\u0930\u0923\u093e\u0932\u0940</span>\u0932\u0947\u0964',
+      philosophy_intro: '<p>\u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0909\u0926\u094d\u092f\u094b\u0917 \u092a\u094d\u0930\u093e\u092f: "\u092e\u0942\u0932\u094d\u092f \u092f\u0941\u0926\u094d\u0927" \u0939\u094b \u2014 \u0915\u0938\u0932\u0947 \u092a\u094d\u0930\u0924\u093f \u092a\u094d\u092f\u093e\u0915\u0947\u091c \u0927\u0947\u0930\u0948 \u0926\u093f\u0928\u094d\u091b\u0964</p><p>\u0924\u0930 \u092f\u094b logic \u092e\u093e\u0924\u094d\u0930\u0932\u0947 \u0915\u092e\u094d\u092a\u0928\u0940 \u091b\u093e\u0928\u094d\u0928\u0941\u092d\u092f\u094b \u092d\u0928\u0947, <span class="highlight">3-5 \u0935\u0930\u094d\u0937\u092a\u091b\u093f \u0925\u0915\u093f\u0924 \u0936\u0930\u0940\u0930 \u092e\u093e\u0924\u094d\u0930 \u092c\u093e\u0901\u0915\u0940 \u0939\u0941\u0928\u094d\u091b</span>\u0964</p><p>BURNING BROS. \u0932\u0947 \u0921\u0947\u0932\u093f\u092d\u0930\u0940\u0932\u093e\u0908 "\u0905\u0928\u094d\u0924\u094d\u092f" \u0939\u094b\u0907\u0928 "\u0938\u0941\u0930\u0941\u0935\u093e\u0924 \u092c\u093f\u0928\u094d\u0926\u0941" \u092c\u0928\u093e\u0909\u0928\u0947 \u0921\u093f\u091c\u093e\u0907\u0928 \u0917\u0930\u0947\u0915\u094b \u091b\u0964</p>',
+      phil_card1_title: '\u0926\u0930\u092d\u0928\u094d\u0926\u093e \u092c\u093e\u0939\u0947\u0915<br>\u0906\u092e\u094d\u0926\u093e\u0928\u0940 \u091a\u094d\u092f\u093e\u0928\u0932',
+      phil_card1_text: "\u092a\u094d\u0930\u0924\u093f \u092a\u094d\u092f\u093e\u0915\u0947\u091c \u0926\u0930 \u0938\u092c\u0948\u092d\u0928\u094d\u0926\u093e \u0927\u0947\u0930\u0948 \u091b\u0948\u0928\u0964 \u0924\u0930 \u092d\u0942\u092e\u093f\u0915\u093e, \u0938\u093f\u092b\u093e\u0930\u093f\u0938, \u0935\u094d\u092f\u0935\u0938\u094d\u0925\u093e\u092a\u0928 \u092c\u094b\u0928\u0938 \u091a\u094d\u092f\u093e\u0928\u0932\u0939\u0930\u0942 \u091c\u094b\u0921\u093f\u0928\u094d\u091b\u094c\u0902\u0964",
+      phil_card2_title: '\u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u092a\u091b\u093f\u0915\u094b<br>\u092d\u0935\u093f\u0937\u094d\u092f \u0924\u092f\u093e\u0930',
+      phil_card2_text: "\u0936\u093e\u0930\u0940\u0930\u093f\u0915 \u0915\u093e\u092e\u0915\u094b \u0938\u0940\u092e\u093e \u0939\u0941\u0928\u094d\u091b\u0964 \u091a\u094b\u091f, \u0909\u092e\u0947\u0930, \u092a\u0930\u093f\u0935\u093e\u0930\u0964 \u0939\u093e\u092e\u0940\u0938\u0901\u0917 \u0932\u093f\u0921\u0930, \u092a\u094d\u0930\u092c\u0928\u094d\u0927\u0915, \u0938\u094d\u0935\u0924\u0928\u094d\u0924\u094d\u0930 \u092e\u093e\u0930\u094d\u0917 \u091b\u0964",
+      phil_card3_title: '\u0938\u093f\u092b\u093e\u0930\u093f\u0938 =<br>\u0928\u093f\u0930\u0928\u094d\u0924\u0930 \u0906\u092f',
+      phil_card3_text: "\u0938\u093f\u092b\u093e\u0930\u093f\u0938 \u092a\u0941\u0930\u0938\u094d\u0915\u093e\u0930 \u090f\u0915 \u092a\u091f\u0915\u0915\u094b \u0939\u094b\u0907\u0928\u0964 \u0924\u092a\u093e\u0908\u0902\u0932\u0947 \u0938\u093f\u092b\u093e\u0930\u093f\u0938 \u0917\u0930\u0947\u0915\u093e \u0921\u094d\u0930\u093e\u0907\u092d\u0930\u0932\u0947 \u0921\u0947\u0932\u093f\u092d\u0930 \u0917\u0930\u0947\u0915\u094b \u092a\u094d\u0930\u0924\u093f \u092a\u094d\u092f\u093e\u0915\u0947\u091c \u00a522 \u0928\u093f\u0930\u0928\u094d\u0924\u0930\u0964",
+      schedule_title: '\u090f\u0915 \u0926\u093f\u0928\u0915\u094b <span class="fire">\u0915\u093e\u0930\u094d\u092f\u0915\u094d\u0930\u092e\u0964</span>',
+      schedule_0800_title: "\u092a\u094d\u092f\u093e\u0915\u0947\u091c \u0932\u093f\u0928\u0941\u0939\u094b\u0938\u094d", schedule_0800_desc: "\u0921\u093f\u092a\u094b\u092e\u093e \u092a\u094d\u092f\u093e\u0915\u0947\u091c \u0932\u094b\u0921 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d\u0964",
+      schedule_0900_title: "\u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0938\u0941\u0930\u0941", schedule_0900_desc: "\u092c\u093f\u0939\u093e\u0928\u0915\u094b \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0930\u093e\u0909\u0928\u094d\u0921\u0964",
+      schedule_1300_title: "\u0916\u093e\u091c\u093e & \u0926\u093f\u0909\u0901\u0938\u094b\u0915\u094b \u0932\u094b\u0921\u093f\u0919", schedule_1300_desc: "\u0916\u093e\u091c\u093e \u0916\u093e\u0928\u0941\u0939\u094b\u0938\u094d \u0930 \u0926\u093f\u0909\u0901\u0938\u094b\u0915\u094b \u092a\u094d\u092f\u093e\u0915\u0947\u091c \u0932\u094b\u0921 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d\u0964",
+      schedule_1400_title: "\u0926\u093f\u0909\u0901\u0938\u094b\u0915\u094b \u0921\u0947\u0932\u093f\u092d\u0930\u0940", schedule_1400_desc: "\u0926\u093f\u0909\u0901\u0938\u094b\u0915\u094b \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0938\u0941\u0930\u0941\u0964",
+      schedule_1700_title: "\u0905\u0928\u094d\u0924\u093f\u092e \u0932\u094b\u0921\u093f\u0919", schedule_1700_desc: "\u0905\u0928\u094d\u0924\u093f\u092e \u0932\u094b\u0921\u093f\u0919\u0964 \u0938\u093e\u0901\u091d\u092e\u093e \u0918\u0930\u092e\u093e \u092c\u0938\u094d\u0928\u0947 \u092c\u0922\u094d\u091b\u0964",
+      schedule_1800_title: "\u0938\u093e\u0901\u091d\u0915\u094b \u0921\u0947\u0932\u093f\u092d\u0930\u0940", schedule_1800_desc: "\u0905\u0928\u094d\u0924\u093f\u092e \u0930\u093e\u0909\u0928\u094d\u0921\u0964 \u0927\u0947\u0930\u0948 \u092e\u093e\u0928\u093f\u0938 \u0918\u0930\u092e\u093e \u0939\u0941\u0928\u094d\u091b\u0928\u094d\u0964",
+      schedule_2000_title: "\u0938\u093f\u0926\u094d\u0927\u093f\u092f\u094b!", schedule_2000_desc: "\u0915\u093e\u0917\u091c\u093e\u0924 \u092a\u094d\u0930\u0936\u094b\u0927\u0928, \u0917\u093e\u0921\u0940 \u092e\u093f\u0932\u093e\u0909\u0928\u0941\u0939\u094b\u0938\u094d, \u092c\u0930\u094d\u0916\u093e\u0938\u094d\u0924\u0964",
+      benefits_title: '\u0915\u093e\u092e \u0917\u0930\u094d\u0928<br><span class="fire">\u0938\u091c\u093f\u0932\u094b \u0915\u093e\u0930\u0923\u0964</span>',
+      bene1_title: "\u0917\u093e\u0921\u0940 \u0932\u093f\u091c", bene1_desc: "\u0906\u092b\u094d\u0928\u094b \u0917\u093e\u0921\u0940 \u091b\u0948\u0928? \u0939\u093e\u092e\u094d\u0930\u094b \u0932\u093f\u091c \u092a\u094d\u0930\u094b\u0917\u094d\u0930\u093e\u092e \u092a\u094d\u0930\u092f\u094b\u0917 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d\u0964",
+      bene2_title: "\u092f\u0941\u0928\u093f\u092b\u0930\u094d\u092e \u0926\u093f\u0907\u0928\u094d\u091b", bene2_desc: "BURNING BROS. \u0915\u094b \u0915\u093e\u092e\u0915\u094b \u0932\u0941\u0917\u093e \u0928\u093f\u0903\u0936\u0941\u0932\u094d\u0915 \u0926\u093f\u0907\u0928\u094d\u091b\u0964",
+      bene3_title: "\u0906\u0935\u093e\u0938 \u0938\u0939\u092f\u094b\u0917", bene3_desc: "\u0915\u092e\u094d\u092a\u0928\u0940 \u0928\u093e\u092e\u092e\u093e \u092d\u093e\u0921\u093e \u0938\u092e\u094d\u091d\u094c\u0924\u093e (\u092d\u093e\u0921\u093e \u0924\u092a\u093e\u0908\u0902\u0915\u094b)\u0964",
+      bene4_title: "\u0905\u0917\u094d\u0930\u093f\u092e \u092d\u0941\u0915\u094d\u0924\u093e\u0928\u0940", bene4_desc: "\u091c\u0930\u0941\u0930\u0940 \u092a\u0930\u094d\u0926\u093e? \u0939\u093e\u092e\u0940\u0938\u0901\u0917 \u0915\u0941\u0930\u093e \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d\u0964 \u0905\u0917\u094d\u0930\u093f\u092e \u092d\u0941\u0915\u094d\u0924\u093e\u0928\u0940 \u091b\u0964",
+      bene5_title: "\u0928\u0947\u0924\u0943\u0924\u094d\u0935 \u092c\u094b\u0928\u0938", bene5_desc: "\u091f\u093f\u092e \u0932\u093f\u0921\u0930 \u0935\u093e \u092a\u094d\u0930\u092c\u0928\u094d\u0927\u0915 \u092c\u0928\u094d\u0928\u0941\u0939\u094b\u0938\u094d \u0930 \u0925\u092a \u092c\u094b\u0928\u0938 \u092a\u093e\u0909\u0928\u0941\u0939\u094b\u0938\u094d\u0964",
+      bene6_title: "\u0932\u091a\u093f\u0932\u094b \u0924\u093e\u0932\u093f\u0915\u093e", bene6_desc: "\u092a\u0942\u0930\u094d\u0923\u0915\u093e\u0932\u0940\u0928, \u0938\u092a\u094d\u0924\u093e\u0939\u0928\u094d\u0924 \u092e\u093e\u0924\u094d\u0930, \u0924\u092a\u093e\u0908\u0902\u0915\u094b \u091c\u0940\u0935\u0928\u0936\u0948\u0932\u0940 \u0905\u0928\u0941\u0938\u093e\u0930\u0964",
+      pay_title: '\u0906\u092e\u094d\u0926\u093e\u0928\u0940<br><span class="fire">3 \u0924\u0939\u092e\u093e\u0964</span>',
+      locations_title: '\u0915\u093e\u092e \u0915\u094d\u0937\u0947\u0924\u094d\u0930:<br>\u091f\u094b\u0915\u093f\u092f\u094b \u00d7 <span class="fire">\u0915\u093e\u0928\u093e\u0917\u093e\u0935\u093e</span>.',
+      loc_tokyo_name: "\u0938\u0947\u0924\u093e\u0917\u093e\u092f\u093e & \u0913\u091f\u093e",
+      loc_kanagawa_name: "\u092f\u094b\u0915\u094b\u0939\u093e\u092e\u093e & \u091c\u093c\u093e\u092e\u093e",
+      who_title: '\u0939\u093e\u092e\u0940\u0932\u093e\u0908 \u091a\u093e\u0939\u093f\u0928\u094d\u091b<br><span style="color:var(--hazard);">\u092f\u0938\u094d\u0924\u093e \u092e\u093e\u0928\u093f\u0938\u0964</span>',
+      referral_title: '\u090f\u0915\u092a\u091f\u0915 \u0938\u093f\u092b\u093e\u0930\u093f\u0938,<br><span style="color:var(--fire);">\u0938\u0927\u0948\u0902 \u0915\u092e\u093e\u0908\u0964</span>',
+      career_title: '\u0921\u0947\u0932\u093f\u092d\u0930\u0940\u092e\u093e<br><span class="fire">\u0930\u094b\u0915\u093f\u0928\u0941 \u092a\u0930\u094d\u0926\u0948\u0928\u0964</span>',
+      career_step1: "\u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0921\u094d\u0930\u093e\u0907\u092d\u0930", career_step1_desc: "\u0938\u093f\u0928\u093f\u092f\u0930\u0938\u0901\u0917 \u0924\u093e\u0932\u093f\u092e \u0932\u093f\u0928\u0941\u0939\u094b\u0938\u094d\u0964 L01 \u0932\u0947 \u0906\u092e\u094d\u0926\u093e\u0928\u0940 \u0906\u0927\u093e\u0930 \u092c\u0928\u093e\u0909\u0928\u0941\u0939\u094b\u0938\u094d\u0964",
+      career_step2: "\u091f\u093f\u092e \u0932\u093f\u0921\u0930", career_step2_desc: "\u0928\u092f\u093e\u0901 \u0921\u094d\u0930\u093e\u0907\u092d\u0930 \u0924\u093e\u0932\u093f\u092e, \u0930\u0941\u091f \u0938\u0941\u0927\u093e\u0930\u0964 L02 \u092d\u0942\u092e\u093f\u0915\u093e \u092c\u094b\u0928\u0938 \u0938\u0941\u0930\u0941\u0964",
+      career_step3: "\u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u092a\u094d\u0930\u092c\u0928\u094d\u0927\u0915", career_step3_desc: "\u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0935\u094d\u092f\u0935\u0938\u094d\u0925\u093e\u092a\u0928 \u0930 \u0938\u092c\u0948 \u0921\u094d\u0930\u093e\u0907\u092d\u0930 \u0935\u094d\u092f\u0935\u0938\u094d\u0925\u093e\u092a\u0928\u0964",
+      career_step4: "\u0938\u094d\u0935\u0924\u0928\u094d\u0924\u094d\u0930 \u092e\u093e\u0932\u093f\u0915", career_step4_desc: "\u0906\u092b\u094d\u0928\u0948 \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0935\u094d\u092f\u0935\u0938\u093e\u092f \u0938\u0941\u0930\u0941 \u0917\u0930\u094d\u0928\u0947 \u0938\u0939\u092f\u094b\u0917\u0964",
+      japanese_title: "\u0906\u0935\u0936\u094d\u092f\u0915 \u091c\u093e\u092a\u093e\u0928\u0940 \u092d\u093e\u0937\u093e \u0938\u094d\u0924\u0930",
+      japanese_desc: "JLPT \u091a\u093e\u0939\u093f\u0901\u0926\u0948\u0928\u0964 \u092f\u0940 \u0935\u094d\u092f\u093e\u0935\u0939\u093e\u0930\u093f\u0915 \u0938\u0940\u092a\u0939\u0930\u0942 \u092e\u093e\u0924\u094d\u0930 \u091a\u093e\u0939\u093f\u0928\u094d\u091b:",
+      japanese_check1: "\u091c\u093e\u092a\u093e\u0928\u0940\u092e\u093e \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u090f\u092a \u092a\u0922\u094d\u0928 \u0938\u0915\u094d\u0928\u0947",
+      japanese_check2: "\u0920\u0947\u0917\u093e\u0928\u093e \u092a\u0922\u094d\u0928 \u0938\u0915\u094d\u0928\u0947 (\u0915\u093e\u091e\u094d\u091c\u0940 \u0938\u0939\u093f\u0924)",
+      japanese_check3: "\u0906\u0927\u093e\u0930\u092d\u0942\u0924 \u0905\u092d\u093f\u0935\u093e\u0926\u0928 \u092d\u0928\u094d\u0928 \u0938\u0915\u094d\u0928\u0947",
+      japanese_check4: "\u092b\u094b\u0928\u092e\u093e \u0938\u0930\u0932 \u092a\u0930\u093f\u0938\u094d\u0925\u093f\u0924\u093f \u092c\u0924\u093e\u0909\u0928 \u0938\u0915\u094d\u0928\u0947",
+      japanese_check5: "\u0938\u0921\u0915 \u091a\u093f\u0928\u094d\u0939\u0939\u0930\u0942 \u092a\u0922\u094d\u0928 \u0938\u0915\u094d\u0928\u0947",
+      japanese_unsure: "\u092a\u0915\u094d\u0915\u093e \u0939\u0941\u0928\u0941\u0939\u0941\u0928\u094d\u0928? LINE \u092e\u093e \u091b\u093f\u091f\u094b \u091f\u0947\u0938\u094d\u091f \u0932\u093f\u0928\u0941\u0939\u094b\u0938\u094d!",
+      tax_title: "\u0915\u0930 \u0926\u093e\u0916\u093f\u0932\u093e \u0938\u0939\u092f\u094b\u0917",
+      tax_desc: "\u092b\u094d\u0930\u093f\u0932\u094d\u092f\u093e\u0928\u094d\u0938\u0930\u0915\u094b \u0930\u0942\u092a\u092e\u093e, \u0924\u092a\u093e\u0908\u0902\u0932\u0947 \u0915\u0930 \u0926\u093e\u0916\u093f\u0932\u093e \u0917\u0930\u094d\u0928\u0941\u092a\u0930\u094d\u091b\u0964 \u091a\u093f\u0928\u094d\u0924\u093e \u0928\u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d \u2014 \u0905\u0928\u0941\u092d\u0935\u0940 \u0921\u094d\u0930\u093e\u0907\u092d\u0930\u0939\u0930\u0942\u0932\u0947 \u092e\u093e\u0930\u094d\u0917\u0926\u0930\u094d\u0936\u0928 \u0917\u0930\u094d\u091b\u0928\u094d\u0964 \u092f\u094b \u092d\u093f\u0938\u093e \u0928\u0935\u0940\u0915\u0930\u0923\u0915\u094b \u0932\u093e\u0917\u093f \u092a\u0928\u093f \u092e\u0939\u0924\u094d\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u091b\u0964",
+      faq_title: '\u092c\u093e\u0930\u092e\u094d\u092c\u093e\u0930 \u0938\u094b\u0927\u093f\u0928\u0947<br><span class="fire">\u092a\u094d\u0930\u0936\u094d\u0928\u0939\u0930\u0942\u0964</span>',
+      faq_q1: "\u092e\u0932\u093e\u0908 \u0906\u092b\u094d\u0928\u094b \u0917\u093e\u0921\u0940 \u091a\u093e\u0939\u093f\u0928\u094d\u091b?",
+      faq_q2: "\u092e\u0932\u093e\u0908 \u0915\u0947 \u0915\u093e\u0917\u091c\u093e\u0924\u0939\u0930\u0942 \u091a\u093e\u0939\u093f\u0928\u094d\u091b?",
+      faq_q3: "\u092e \u0906\u092b\u094d\u0928\u094b \u0915\u093e\u092e \u0917\u0930\u094d\u0928\u0947 \u0926\u093f\u0928 \u091b\u093e\u0928\u094d\u0928 \u0938\u0915\u094d\u091b\u0941?",
+      faq_q4: "\u0924\u093e\u0932\u093f\u092e \u0926\u093f\u0907\u0928\u094d\u091b?",
+      faq_q5: "\u0915\u0924\u093f \u091b\u093f\u091f\u094b \u0938\u0941\u0930\u0941 \u0917\u0930\u094d\u0928 \u0938\u0915\u094d\u091b\u0941?",
+      faq_q6: "\u092a\u093e\u0930\u094d\u091f-\u091f\u093e\u0907\u092e \u0915\u093e\u092e \u0917\u0930\u094d\u0928 \u0938\u0915\u094d\u091b\u0941?",
+      faq_q7: "\u092c\u093f\u092e\u093e\u0915\u094b \u092c\u093e\u0930\u0947\u092e\u093e \u0915\u0947 \u091b?",
+      faq_q8: "\u092a\u0948\u0938\u093e \u0915\u0938\u0930\u0940 \u092a\u093e\u0907\u0928\u094d\u091b?",
+      faq_q9: "\u092d\u0941\u0915\u094d\u0924\u093e\u0928\u0940 \u0915\u0939\u093f\u0932\u0947 \u0939\u0941\u0928\u094d\u091b?",
+      faq_q10: "\u0939\u092a\u094d\u0924\u093e\u092e\u093e \u0915\u092e\u094d\u0924\u0940\u092e\u093e \u0915\u0924\u093f \u0926\u093f\u0928?",
+      faq_q11: "\u092e\u0939\u093f\u0932\u093e\u0932\u0947 \u0915\u093e\u092e \u0917\u0930\u094d\u0928 \u0938\u0915\u094d\u091b\u0928\u094d?",
+      cta_big: '<span class="fire">\u091c\u0932\u0964</span><br><span class="stroke">\u0926\u094c\u0921\u0964</span><br>\u0915\u092e\u093e\u0964',
+      cta_sub: '<p>BURNING BROS. \u0932\u0947 \u0917\u092e\u094d\u092d\u0940\u0930 \u0915\u092e\u093e\u0909\u0928\u0947\u0939\u0930\u0942 \u0916\u094b\u091c\u093f\u0930\u0939\u0947\u0915\u094b \u091b\u0964</p><p>\u0915\u0941\u0930\u093e \u0917\u0930\u094d\u0928 \u091a\u093e\u0939\u0928\u0941\u0939\u0941\u0928\u094d\u091b? \u0938\u092e\u094d\u092a\u0930\u094d\u0915 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d\u0964</p>',
+      cta_line: "LINE \u092e\u093e \u0906\u0935\u0947\u0926\u0928",
+      cta_phone: "\u092b\u094b\u0928 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+      footer_desc: "\u091f\u094b\u0915\u093f\u092f\u094b \u0930 \u0915\u093e\u0928\u093e\u0917\u093e\u0935\u093e\u092e\u093e \u0921\u0947\u0932\u093f\u092d\u0930\u0940 \u0915\u092e\u094d\u092a\u0928\u0940\u0964 \u0939\u093e\u092e\u0940\u0938\u0901\u0917 \u0926\u094c\u0921\u094d\u0928\u0947 \u0921\u094d\u0930\u093e\u0907\u092d\u0930 \u0916\u094b\u091c\u093f\u0930\u0939\u0947\u0915\u094b \u091b\u0964"
+    },
+    id: {
+      nav_cta: "Lamar Sekarang",
+      hero_kicker: "REKRUTMEN / Driver Pengiriman Freelance",
+      hero_headline: '<span class="line">Perjalananmu</span><span class="line">dimulai <span class="fire">di sini</span>.</span>',
+      hero_lead: '<p>BURNING BROS. adalah perusahaan pengiriman freelance di Tokyo & Kanagawa.</p><p>Jujur saja, <strong>tarif per paket kami bukan yang tertinggi di industri.</strong></p><p>Tapi yang kami bangun bukan pekerjaan "per paket" \u2014 ini adalah <strong>sistem karir lengkap</strong>. Beberapa lapis penghasilan, peran kepemimpinan, reward referral berkelanjutan, posisi manajemen, dan dukungan kemandirian.</p>',
+      hero_income_label: "STRUKTUR PENGHASILAN / 3 Lapis",
+      hero_income_piece: "Per Paket",
+      hero_income_role: "Bonus Jabatan",
+      hero_income_residual: "Pendapatan Pasif",
+      hero_income_total: "BERLAPIS \u2014 Penghasilan terus masuk bahkan di hari libur.",
+      housing_badge: "Kami yang tanda tangan kontrak sewa untuk Anda.",
+      housing_title: "Dukungan Tempat Tinggal Perusahaan",
+      housing_desc: "Tidak lolos screening sewa? Kami kontrak apartemen atas nama perusahaan. Anda cukup fokus mengantar.",
+      visa_title: "Cek Status Visa Anda",
+      visa_subtitle: "Pilih jenis visa Anda untuk melihat apakah Anda memenuhi syarat",
+      visa_eligible: "Anda bisa melamar!",
+      visa_not_eligible: "Maaf, jenis visa ini tidak bisa digunakan untuk pekerjaan pengiriman freelance.",
+      visa_special: "Visa Anda memerlukan peninjauan khusus. Silakan hubungi kami.",
+      visa_types_ok: ["Penduduk Tetap", "Pasangan Penduduk Tetap", "Pasangan Warga Negara Jepang", "Penduduk Jangka Panjang", "Penduduk Tetap Khusus", "Working Holiday", "Kegiatan Tertentu (kasus per kasus)"],
+      visa_types_ng: ["Pelajar", "Pelatihan Teknis", "Pekerja Terampil Tertentu", "Insinyur/Spesialis/Layanan Internasional", "Tanggungan"],
+      numbers_title: 'Lihat angkanya,<br>sistem <span class="fire">BURNING BROS.</span>',
+      numbers_layers: '3<span class="unit"> lapis</span>',
+      numbers_layers_label: "Penghasilan dibangun berlapis",
+      numbers_residual: '<span class="prefix">\u00a5</span>22<span class="unit">/paket</span>',
+      numbers_residual_label: "Berkelanjutan per paket referral",
+      numbers_steps: '4<span class="unit"> tahap</span>',
+      numbers_steps_label: "Driver \u2192 Ketua Tim \u2192 Manajer \u2192 Independen",
+      numbers_areas: '4<span class="unit"> area</span>',
+      numbers_areas_label: "2 wilayah Tokyo + 2 kota Kanagawa",
+      philosophy_title: 'Bukan harga,<br>tapi <span class="fire">sistem</span>.',
+      philosophy_intro: '<p>Industri pengiriman cenderung "perang harga" \u2014 siapa yang bayar paling tinggi per paket.</p><p>Tapi jika Anda memilih perusahaan hanya dari logika itu, <span class="highlight">3-5 tahun lagi yang tersisa hanya tubuh yang lelah</span>.</p><p>BURNING BROS. dirancang agar pengiriman bukan "akhir" tapi "titik awal."</p>',
+      phil_card1_title: 'Tumpuk penghasilan<br>di luar tarif',
+      phil_card1_text: "Tarif per paket kami bukan tertinggi. Sebagai gantinya, kami menumpuk bonus jabatan, reward referral, dan bonus manajemen. Beberapa aliran penghasilan yang terakumulasi.",
+      phil_card2_title: 'Siapkan masa depan<br>setelah pengiriman',
+      phil_card2_text: "Pekerjaan fisik ada batasnya. Cedera, usia, keluarga. Kami menyediakan jalur: ketua tim, manajer, independen.",
+      phil_card3_title: 'Referral jadi<br>penghasilan berkelanjutan',
+      phil_card3_text: "Reward referral bukan sekali. \u00a522 per paket yang diantar referral Anda, berkelanjutan selama mereka masih mengantar.",
+      schedule_title: 'Sehari dalam <span class="fire">kehidupan.</span>',
+      schedule_0800_title: "Muat paket", schedule_0800_desc: "Tiba di depo. Muat paket ke kendaraan sesuai rute.",
+      schedule_0900_title: "Mulai pengiriman", schedule_0900_desc: "Ronde pengiriman pagi. Sebagian besar area perumahan.",
+      schedule_1300_title: "Istirahat & muat ulang", schedule_1300_desc: "Kembali ke depo untuk istirahat. Makan siang dan muat paket sore.",
+      schedule_1400_title: "Pengiriman sore", schedule_1400_desc: "Mulai pengiriman sore. Kirim ulang paket yang terlewat.",
+      schedule_1700_title: "Muatan terakhir", schedule_1700_desc: "Muatan terakhir. Sore hari lebih banyak orang di rumah.",
+      schedule_1800_title: "Pengiriman malam", schedule_1800_desc: "Ronde terakhir. Lebih banyak orang di rumah, lebih cepat selesai.",
+      schedule_2000_title: "Selesai!", schedule_2000_desc: "Proses slip, rapikan kendaraan, lapor, dan selesai.",
+      benefits_title: 'Alasan nyata<br><span class="fire">nyaman bekerja di sini.</span>',
+      bene1_title: "Sewa Kendaraan Tersedia", bene1_desc: "Tidak punya van? Tidak masalah. Gunakan program sewa kami \u2014 mulai tanpa modal.",
+      bene2_title: "Seragam Disediakan", bene2_desc: "Seragam kerja BURNING BROS. disediakan gratis.",
+      bene3_title: "Dukungan Tempat Tinggal", bene3_desc: "Kami tanda tangan kontrak sewa atas nama perusahaan (sewa tanggung jawab Anda).",
+      bene4_title: "Sistem Uang Muka", bene4_desc: "Pengeluaran mendadak? Bicara dengan kami. Ada sistem uang muka.",
+      bene5_title: "Bonus Kepemimpinan", bene5_desc: "Naik jadi ketua tim atau manajer untuk mendapat bonus tambahan.",
+      bene6_title: "Jadwal Fleksibel", bene6_desc: "Full-time, akhir pekan saja, sesuai hidup Anda.",
+      pay_title: 'Penghasilan<br><span class="fire">3 lapis.</span>',
+      locations_title: 'Area kerja:<br>Tokyo \u00d7 <span class="fire">Kanagawa</span>.',
+      loc_tokyo_name: "Setagaya & Ota",
+      loc_kanagawa_name: "Yokohama & Zama",
+      who_title: 'Kami mencari orang<br><span style="color:var(--hazard);">seperti ini.</span>',
+      referral_title: 'Referensikan sekali,<br><span style="color:var(--fire);">dapatkan terus.</span>',
+      career_title: 'Jangan berhenti<br>di <span class="fire">pengiriman.</span>',
+      career_step1: "Driver Pengiriman", career_step1_desc: "Belajar rute dengan driver senior, lalu solo. Bangun basis penghasilan dengan L01.",
+      career_step2: "Ketua Tim", career_step2_desc: "Latih driver baru, optimalkan rute. Bonus jabatan L02 mulai berlaku.",
+      career_step3: "Manajer Area", career_step3_desc: "Kelola operasi area dan semua driver. Penghasilan bergeser ke manajemen.",
+      career_step4: "Pemilik Independen", career_step4_desc: "Dukungan untuk memulai bisnis pengiriman sendiri. Termasuk opsi untuk berdiri sendiri.",
+      japanese_title: "Kemampuan Bahasa Jepang yang Diperlukan",
+      japanese_desc: "Tidak perlu JLPT. Cukup keterampilan praktis ini:",
+      japanese_check1: "Bisa membaca aplikasi pengiriman dalam bahasa Jepang",
+      japanese_check2: "Bisa membaca alamat (termasuk kanji)",
+      japanese_check3: "Bisa mengucapkan salam dasar (\"Ini paket Anda\", \"Silakan tanda tangan di sini\")",
+      japanese_check4: "Bisa menjelaskan situasi sederhana lewat telepon",
+      japanese_check5: "Bisa membaca rambu lalu lintas",
+      japanese_unsure: "Belum yakin? Ikuti tes singkat di LINE!",
+      tax_title: "Dukungan Pelaporan Pajak",
+      tax_desc: "Sebagai pekerja freelance, Anda perlu melaporkan pajak. Jangan khawatir \u2014 driver berpengalaman kami akan membimbing Anda dalam pelaporan pertama. Ini juga penting untuk perpanjangan visa.",
+      faq_title: 'Semua pertanyaan,<br><span class="fire">dijawab duluan.</span>',
+      faq_q1: "Apakah saya perlu kendaraan sendiri?",
+      faq_q2: "Dokumen apa yang diperlukan?",
+      faq_q3: "Bisakah saya memilih hari kerja?",
+      faq_q4: "Apakah ada pelatihan?",
+      faq_q5: "Seberapa cepat saya bisa mulai?",
+      faq_q6: "Bisakah saya kerja paruh waktu?",
+      faq_q7: "Bagaimana dengan asuransi?",
+      faq_q8: "Bagaimana cara pembayarannya?",
+      faq_q9: "Kapan tanggal pembayaran?",
+      faq_q10: "Minimum berapa hari per minggu?",
+      faq_q11: "Bisakah wanita bekerja di sini?",
+      cta_big: '<span class="fire">Semangat.</span><br><span class="stroke">Jalan.</span><br>Cuan.',
+      cta_sub: '<p>BURNING BROS. mencari orang yang serius ingin menghasilkan.</p><p>Hanya ingin tahu lebih lanjut? Boleh juga. Hubungi kami kapan saja.</p>',
+      cta_line: "Lamar via LINE",
+      cta_phone: "Telepon kami",
+      footer_desc: "Perusahaan pengiriman freelance di Tokyo & Kanagawa. Mencari driver untuk bergabung."
+    }
+  };
+
+  function setLang(lang) {
+    localStorage.setItem('bb_lang', lang);
+    const t = TRANSLATIONS[lang];
+    if (!t) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.dataset.i18n;
+      if (t[key] !== undefined) {
+        if (el.hasAttribute('data-i18n-html')) {
+          el.innerHTML = t[key];
+        } else {
+          el.textContent = t[key];
+        }
+      }
+    });
+
+    // Update lang switcher display
+    var names = {ja:'JP',en:'EN',vi:'VI',ne:'NE',id:'ID'};
+    document.querySelector('.lang-switcher button').textContent = '\ud83c\udf10 ' + (names[lang]||lang) + ' \u25be';
+    document.getElementById('lang-menu').classList.remove('show');
+
+    // Show/hide foreign-worker-specific sections
+    var foreignSections = ['housingSupport', 'visaCheck', 'japaneseLevel', 'taxSupport'];
+    foreignSections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) {
+        if (lang !== 'ja') {
+          el.classList.add('i18n-visible');
+        } else {
+          el.classList.remove('i18n-visible');
+        }
+      }
+    });
+
+    // Populate visa lists
+    if (t.visa_types_ok) {
+      var okList = document.getElementById('visaOkList');
+      if (okList) {
+        okList.innerHTML = t.visa_types_ok.map(function(v) { return '<li>' + v + '</li>'; }).join('');
+      }
+    }
+    if (t.visa_types_ng) {
+      var ngList = document.getElementById('visaNgList');
+      if (ngList) {
+        ngList.innerHTML = t.visa_types_ng.map(function(v) { return '<li>' + v + '</li>'; }).join('');
+      }
+    }
+  }
+
+  // Auto-detect on load
+  document.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('bb_lang');
+    if (saved && saved !== 'ja') {
+      setLang(saved);
+    }
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    var switcher = document.querySelector('.lang-switcher');
+    if (switcher && !switcher.contains(e.target)) {
+      document.getElementById('lang-menu').classList.remove('show');
+    }
+  });
 </script>
 
 </body>
