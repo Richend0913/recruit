@@ -7294,5 +7294,22 @@
   });
 </script>
 
+<!-- スクロール追従 固定応募バー(常時CV導線) -->
+<div id="sticky-apply" style="position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;gap:8px;
+  padding:9px 10px calc(9px + env(safe-area-inset-bottom,0px));background:rgba(20,16,12,.92);
+  backdrop-filter:blur(6px);box-shadow:0 -4px 18px rgba(0,0,0,.35);">
+  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;
+    justify-content:center;gap:8px;padding:14px 10px;border-radius:12px;background:#06c755;color:#fff;
+    font-weight:900;font-size:15px;text-decoration:none;letter-spacing:.02em;">
+    <span style="font-size:18px;">💬</span>LINEで応募（最短）</a>
+  <a href="tel:08089560913" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:7px;
+    padding:14px 18px;border-radius:12px;background:#f3ece0;color:#1a1410;font-weight:900;font-size:15px;
+    text-decoration:none;"><span style="font-size:17px;">☎</span>電話</a>
+</div>
+<script>
+  // フッターに被らないよう下部に余白を確保
+  (function(){var b=document.getElementById('sticky-apply');if(b){document.body.style.paddingBottom=(b.offsetHeight+8)+'px';}})();
+</script>
+
 </body>
 </html>
