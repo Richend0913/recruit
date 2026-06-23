@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BURNING BROS. | 委託配送ドライバー募集 / 東京・神奈川</title>
 <meta name="description" content="BURNING BROS.株式会社の委託配送ドライバー募集ページ。1個143円〜の完全歩合制。東京（世田谷・大田）、神奈川（横浜・座間）で走れるドライバーを募集中。">
+<!-- TODO: オーナーから本番GA4測定ID(G-XXXX)を受領したら G-RECRUIT_PLACEHOLDER を置換 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RECRUIT_PLACEHOLDER"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RECRUIT_PLACEHOLDER');
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -4029,6 +4037,126 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* ===== ANSWER-FIRST SUMMARY CARD (added) ===== */
+  .answer-card {
+    background: linear-gradient(160deg, #141009 0%, #1d150c 100%);
+    border: 1px solid rgba(255, 45, 0, 0.35);
+    border-radius: 16px;
+    max-width: 760px;
+    margin: -10px auto 0;
+    padding: 26px 26px 28px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+    position: relative;
+    z-index: 4;
+  }
+  .answer-card__tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--fire);
+    margin-bottom: 6px;
+  }
+  .answer-card__where {
+    color: var(--paper);
+    font-weight: 900;
+    font-size: clamp(17px, 4.6vw, 22px);
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+  .answer-card__income {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 12px 0 4px;
+    border-top: 1px dashed rgba(255,255,255,0.12);
+  }
+  .answer-card__income-num {
+    color: var(--hazard);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(34px, 9vw, 48px);
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+  .answer-card__income-unit { color: var(--paper); font-weight: 700; font-size: 15px; }
+  .answer-card__income-note {
+    color: var(--smoke);
+    font-size: 11px;
+    line-height: 1.5;
+    flex-basis: 100%;
+    margin-top: 2px;
+  }
+  .answer-card__facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 20px;
+    padding: 0;
+  }
+  .answer-card__facts li {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    color: var(--paper);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+  }
+  .answer-card__facts li::before { content: "✓ "; color: var(--fire); }
+  .answer-card__cta { display: flex; gap: 10px; flex-wrap: wrap; }
+  .answer-card__cta .ac-line,
+  .answer-card__cta .ac-tel {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    text-decoration: none; font-weight: 900; border-radius: 12px;
+    padding: 15px 20px; font-size: 15px; transition: transform .15s ease, filter .15s ease;
+  }
+  .answer-card__cta .ac-line {
+    flex: 1 1 240px;
+    background: linear-gradient(135deg, var(--fire), var(--fire-deep));
+    color: #fff; box-shadow: 0 8px 22px rgba(255,45,0,0.35);
+  }
+  .answer-card__cta .ac-tel {
+    flex: 0 0 auto;
+    background: transparent; color: var(--paper);
+    border: 1.5px solid rgba(243,236,224,0.4);
+  }
+  .answer-card__cta .ac-line:hover,
+  .answer-card__cta .ac-tel:hover { transform: translateY(-2px); filter: brightness(1.06); }
+  @media (max-width: 480px) {
+    .answer-card { margin: 0 14px; padding: 20px 18px 22px; border-radius: 14px; }
+    .answer-card__cta .ac-tel { flex: 1 1 100%; }
+  }
+
+  /* ===== INLINE CONSULT CTA (added) ===== */
+  .inline-cta {
+    display: flex; justify-content: center;
+    padding: 28px 16px 4px;
+  }
+  .inline-cta a {
+    display: inline-flex; align-items: center; gap: 9px;
+    text-decoration: none; font-weight: 900; font-size: 15px;
+    color: #fff; padding: 14px 26px; border-radius: 999px;
+    background: linear-gradient(135deg, var(--fire), var(--fire-deep));
+    box-shadow: 0 8px 22px rgba(255,45,0,0.30);
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .inline-cta a:hover { transform: translateY(-2px); filter: brightness(1.07); }
+  .inline-cta a .ic-sub { font-weight: 600; font-size: 12px; opacity: .85; }
+
+  /* ===== ANTI-MLM REASSURANCE (added) ===== */
+  .reassure-note {
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--fire);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 0 0 4px;
+    color: var(--paper);
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+  .reassure-note strong { color: var(--hazard); }
 </style>
 </head>
 <body>
@@ -4182,6 +4310,33 @@
     </div>
   </div>
 </section>
+
+<!-- ============== ANSWER-FIRST SUMMARY CARD (added) ============== -->
+<div class="answer-card reveal" id="answerCard">
+  <div class="answer-card__tag">QUICK ANSWER / まず結論</div>
+  <div class="answer-card__where">東京・神奈川｜軽貨物 委託ドライバー募集</div>
+  <div class="answer-card__income">
+    <span class="answer-card__income-num">35〜55<span class="answer-card__income-unit">万円／月 可能</span></span>
+    <span class="answer-card__income-note">※モデル収入（L01単体のシミュレーション値）。実績を保証するものではありません。</span>
+  </div>
+  <ul class="answer-card__facts">
+    <li>車両リースあり（手持ちの車は不要）</li>
+    <li>未経験歓迎</li>
+    <li>専属サポート</li>
+    <li>確定申告サポート</li>
+  </ul>
+  <div class="answer-card__cta">
+    <a href="https://lin.ee/8rR88pb" class="ac-line" target="_blank" rel="noopener"
+       onclick="gtag('event','generate_lead',{method:'line',location:'hero'})">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで相談（30秒）
+    </a>
+    <a href="tel:08089560913" class="ac-tel"
+       onclick="gtag('event','generate_lead',{method:'tel',location:'hero'})">
+      ☎ 電話
+    </a>
+  </div>
+</div>
 
 <!-- ============== TICKER ============== -->
 <div class="ticker">
@@ -4476,6 +4631,14 @@
     </div>
   </div>
 </section>
+
+<!-- INLINE CONSULT CTA (added) -->
+<div class="inline-cta">
+  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener"
+     onclick="gtag('event','generate_lead',{method:'line',location:'numbers'})">
+    LINEで相談（30秒）<span class="ic-sub">／まず話を聞くだけでOK</span>
+  </a>
+</div>
 
 <!-- ============== PHILOSOPHY ============== -->
 <section class="philosophy">
@@ -4900,6 +5063,11 @@
 
       <div class="layer-plus">+</div>
 
+      <!-- ANTI-MLM REASSURANCE (added) — placed immediately before L03 紹介継続報酬 -->
+      <div class="reassure-note reveal">
+        <strong>収入の柱はあくまで本業の配送です。</strong> 下のL03（紹介報酬）は“やってもやらなくてもいい”完全任意の追加収入で、<strong>出資・勧誘・ノルマ・ネットワークビジネスは一切ありません。</strong> 上のL01（配達歩合）の本業配送収入だけで生活できます。
+      </div>
+
       <div class="layer">
         <div class="layer__side">
           <div class="layer__num">L<br>03</div>
@@ -4956,6 +5124,14 @@
     <div class="pay-note" data-i18n="pay_note">※上記は配達歩合のみのシミュレーション例。実際の個数はエリア・ルート・繁忙期によって変動します。ここに役職インセンティブ・紹介継続報酬が加わるのがBURNING BROS.の設計です。</div>
   </div>
 </section>
+
+<!-- INLINE CONSULT CTA (added) -->
+<div class="inline-cta">
+  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener"
+     onclick="gtag('event','generate_lead',{method:'line',location:'income'})">
+    LINEで相談（30秒）<span class="ic-sub">／自分のエリアの個数を聞く</span>
+  </a>
+</div>
 
 <!-- ============== VEHICLE LEASE ============== -->
 <section class="lease-section" id="leaseInfo">
@@ -5068,6 +5244,14 @@
     </div>
   </div>
 </section>
+
+<!-- INLINE CONSULT CTA (added) -->
+<div class="inline-cta">
+  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener"
+     onclick="gtag('event','generate_lead',{method:'line',location:'locations'})">
+    LINEで相談（30秒）<span class="ic-sub">／近いエリアがあるか聞く</span>
+  </a>
+</div>
 
 <!-- ============== WHO ============== -->
 <section class="who">
@@ -5199,6 +5383,14 @@
     </div>
   </div>
 </section>
+
+<!-- INLINE CONSULT CTA (added) -->
+<div class="inline-cta">
+  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener"
+     onclick="gtag('event','generate_lead',{method:'line',location:'referral'})">
+    LINEで相談（30秒）<span class="ic-sub">／本業の配送だけでもOK</span>
+  </a>
+</div>
 
 <!-- ============== CAREER ============== -->
 <section class="career">
@@ -5484,6 +5676,14 @@
   </div>
 </section>
 
+<!-- INLINE CONSULT CTA (added) -->
+<div class="inline-cta">
+  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener"
+     onclick="gtag('event','generate_lead',{method:'line',location:'faq'})">
+    LINEで相談（30秒）<span class="ic-sub">／疑問をそのまま聞く</span>
+  </a>
+</div>
+
 <!-- ============== CTA ============== -->
 <section class="cta" id="apply">
   <div class="container">
@@ -5498,14 +5698,16 @@
       <p>まずは話を聞いてみるだけでもOK。気軽にご連絡ください。</p>
     </div>
     <div class="cta__buttons">
-      <a href="https://lin.ee/8rR88pb" class="btn-fire" target="_blank" rel="noopener">
+      <a href="https://lin.ee/8rR88pb" class="btn-fire" target="_blank" rel="noopener"
+         onclick="gtag('event','generate_lead',{method:'line',location:'footer'})">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.282.629-.63.629h-2.386c-.345 0-.627-.285-.627-.63V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .628.285.628.63 0 .349-.282.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.65.65 0 0 1-.194.028.636.636 0 0 1-.51-.247l-2.443-3.324v2.94a.631.631 0 0 1-.63.629.63.63 0 0 1-.627-.628V8.108c0-.27.173-.51.43-.595a.646.646 0 0 1 .195-.03c.195 0 .375.104.495.254l2.462 3.33V8.108a.63.63 0 0 1 .628-.63.632.632 0 0 1 .63.63v4.771zm-5.741 0a.632.632 0 0 1-.631.629.631.631 0 0 1-.626-.63V8.109a.63.63 0 0 1 .629-.63c.345 0 .63.283.63.63v4.771zm-2.466.629H4.917a.634.634 0 0 1-.631-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
         </svg>
         <span data-i18n="cta_line">LINEで応募する</span>
         <span class="arrow"></span>
       </a>
-      <a href="tel:08089560913" class="btn-outline" id="telBtn" data-tel="080-8956-0913">
+      <a href="tel:08089560913" class="btn-outline" id="telBtn" data-tel="080-8956-0913"
+         onclick="gtag('event','generate_lead',{method:'tel',location:'footer'})">
         <span class="phone-icon">☎</span>
         <span data-i18n="cta_phone">電話で問い合わせる</span>
       </a>
@@ -7333,11 +7535,13 @@
 <div id="sticky-apply" style="position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;gap:8px;
   padding:9px 10px calc(9px + env(safe-area-inset-bottom,0px));background:rgba(20,16,12,.92);
   backdrop-filter:blur(6px);box-shadow:0 -4px 18px rgba(0,0,0,.35);">
-  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;
+  <a href="https://lin.ee/8rR88pb" target="_blank" rel="noopener"
+    onclick="gtag('event','generate_lead',{method:'line',location:'sticky'})" style="flex:1;display:flex;align-items:center;
     justify-content:center;gap:8px;padding:14px 10px;border-radius:12px;background:#06c755;color:#fff;
     font-weight:900;font-size:15px;text-decoration:none;letter-spacing:.02em;">
     <span style="font-size:18px;">💬</span>LINEで応募（最短）</a>
-  <a href="tel:08089560913" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:7px;
+  <a href="tel:08089560913"
+    onclick="gtag('event','generate_lead',{method:'tel',location:'sticky'})" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:7px;
     padding:14px 18px;border-radius:12px;background:#f3ece0;color:#1a1410;font-weight:900;font-size:15px;
     text-decoration:none;"><span style="font-size:17px;">☎</span>電話</a>
 </div>
