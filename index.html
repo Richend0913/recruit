@@ -4220,6 +4220,101 @@
     .trust-badge { flex: 0 0 auto; }
   }
 
+  /* ---- A2. 象徴写真（ヒーロー直下／実際の現場 1枚） ---- */
+  .hero-real {
+    max-width: 760px;
+    margin: 22px auto 0;
+    padding: 0 14px;
+  }
+  .hero-real__frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,45,0,0.30);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.55);
+  }
+  .hero-real__img {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 42vw, 380px);
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .hero-real__cap {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 26px 16px 12px;
+    background: linear-gradient(180deg, transparent, rgba(10,9,6,0.86));
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .hero-real__cap b { color: var(--hazard); font-weight: 800; }
+
+  /* ---- A. 現場のリアル 写真セクション ---- */
+  .real-site {
+    padding: 90px 0 100px;
+    background: var(--ink);
+    border-top: 1px solid rgba(243,236,224,0.10);
+    border-bottom: 1px solid rgba(243,236,224,0.10);
+  }
+  .real-site .section-tag { color: var(--fire); }
+  .real-site .section-title { color: var(--paper); margin-bottom: 18px; }
+  .real-site__lead {
+    color: var(--paper);
+    opacity: 0.82;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+  .real-site__lead b { color: var(--hazard); }
+  .real-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .real-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(243,236,224,0.13);
+    background: var(--ash);
+  }
+  .real-card__img {
+    display: block;
+    width: 100%;
+    height: clamp(200px, 30vw, 300px);
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+  }
+  .real-card:hover .real-card__img { transform: scale(1.04); }
+  .real-card__cap {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 30px 14px 12px;
+    background: linear-gradient(180deg, transparent, rgba(10,9,6,0.88));
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .real-card__cap::before {
+    content: "";
+    display: inline-block;
+    width: 14px; height: 2px;
+    background: var(--fire);
+    vertical-align: middle;
+    margin-right: 7px;
+  }
+  @media (max-width: 560px) {
+    .real-site { padding: 64px 0 72px; }
+    .real-grid { grid-template-columns: 1fr; gap: 13px; }
+    .real-card__img { height: clamp(210px, 56vw, 260px); }
+  }
+
   /* ---- B. ANSWER-CARD 質感UP（グラデ枠線・数字強調・チップ整え） ---- */
   .answer-card {
     border: 1px solid transparent;
@@ -4535,7 +4630,18 @@
   </div>
 </div>
 
-<!-- ============== TRUST STRIP (added) — 実在の事実のみ・写真は足さない ============== -->
+<!-- ============== HERO REAL PHOTO (added) — 実在の自社写真1枚 ============== -->
+<div class="hero-real reveal">
+  <figure class="hero-real__frame">
+    <img class="hero-real__img"
+         src="https://burning-bros.com/cms/wp-content/uploads/2022/10/dfbd990db7750f84ae0ec852e2be5a98.jpg"
+         alt="BURNING BROS.の配送ドライバーが荷物を持って軽貨物車両の横に立つ実際の現場"
+         loading="lazy" decoding="async">
+    <figcaption class="hero-real__cap"><b>これが、実際の現場です。</b>　荷物のお届け｜BURNING BROS.</figcaption>
+  </figure>
+</div>
+
+<!-- ============== TRUST STRIP (added) — 実在の事実＋実際の現場写真 ============== -->
 <div class="trust-strip reveal">
   <div class="trust-strip__inner">
     <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>適格請求書／インボイス対応</span>
@@ -4545,8 +4651,47 @@
     <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>東京・神奈川 全域</span>
     <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 11 2 2 4-4"/></svg>業務委託（個人事業主）</span>
   </div>
-  <div class="trust-strip__foot">FACTS, NOT PHOTOS — 実在の制度・条件のみを掲載しています</div>
+  <div class="trust-strip__foot">REAL SITE — 実際の現場写真と、実在の制度・条件のみを掲載しています</div>
 </div>
+
+<!-- ============== REAL SITE PHOTOS (added) — 現場のリアル / 実在の自社写真4枚 ============== -->
+<section class="real-site" id="realSite">
+  <div class="container">
+    <div class="section-tag">REAL SITE</div>
+    <h2 class="section-title">現場の<span class="fire">リアル</span>。</h2>
+    <p class="real-site__lead">実際の車両と、一緒に走る仲間。<b>写真はすべてBURNING BROS.の実際の現場</b>です。求人サイトにありがちな“イメージ写真”ではなく、いま走っているドライバーと車両を、そのまま載せています。</p>
+    <div class="real-grid">
+      <figure class="real-card">
+        <img class="real-card__img"
+             src="https://burning-bros.com/cms/wp-content/uploads/2022/10/dfbd990db7750f84ae0ec852e2be5a98.jpg"
+             alt="BURNING BROS.の配送ドライバーが荷物を持って軽貨物車両の横に立つ様子"
+             loading="lazy" decoding="async">
+        <figcaption class="real-card__cap">荷物のお届け</figcaption>
+      </figure>
+      <figure class="real-card">
+        <img class="real-card__img"
+             src="https://burning-bros.com/cms/wp-content/uploads/2022/10/f3447b1cc880e2c024b20a78d8e00b7b.jpg"
+             alt="住宅街でBURNING BROS.の配送ドライバーと軽貨物車両が稼働する様子"
+             loading="lazy" decoding="async">
+        <figcaption class="real-card__cap">住宅街での配送</figcaption>
+      </figure>
+      <figure class="real-card">
+        <img class="real-card__img"
+             src="https://burning-bros.com/cms/wp-content/uploads/2022/10/5955795736bb2681f97a299d9ebfaacd.jpg"
+             alt="BURNING BROS.の実際の配送車両（黒・白の軽貨物車）"
+             loading="lazy" decoding="async">
+        <figcaption class="real-card__cap">実際の配送車両</figcaption>
+      </figure>
+      <figure class="real-card">
+        <img class="real-card__img"
+             src="https://burning-bros.com/cms/wp-content/uploads/2021/02/S__25296906.jpg"
+             alt="BURNING BROS.のドライバー仲間・職場の雰囲気"
+             loading="lazy" decoding="async">
+        <figcaption class="real-card__cap">一緒に走る仲間</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <!-- ============== TICKER ============== -->
 <div class="ticker">
