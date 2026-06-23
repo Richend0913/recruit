@@ -4157,6 +4157,200 @@
     line-height: 1.85;
   }
   .reassure-note strong { color: var(--hazard); }
+
+  /* ============================================================
+     DESIGN POLISH (added) — 世界観維持・追記のみ
+     A.トラストストリップ / B.アンサーカード質感 /
+     C.収入ラダー重み付け / D.CTAトークン統一 / E.余白リズム
+     ============================================================ */
+
+  /* ---- A. TRUST STRIP（実在の事実だけ・写真は足さない） ---- */
+  .trust-strip {
+    max-width: 760px;
+    margin: 16px auto 0;
+    padding: 0 14px;
+  }
+  .trust-strip__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(243,236,224,0.14);
+    color: var(--paper);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .trust-badge svg { flex-shrink: 0; }
+  .trust-badge .tb-ico {
+    width: 16px; height: 16px;
+    color: var(--fire);
+  }
+  .trust-strip__foot {
+    text-align: center;
+    color: var(--smoke);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    margin-top: 10px;
+    font-family: "JetBrains Mono", monospace;
+  }
+  @media (max-width: 480px) {
+    .trust-strip { padding: 0 14px; }
+    .trust-strip__inner {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    .trust-strip__inner::-webkit-scrollbar { display: none; }
+    .trust-badge { flex: 0 0 auto; }
+  }
+
+  /* ---- B. ANSWER-CARD 質感UP（グラデ枠線・数字強調・チップ整え） ---- */
+  .answer-card {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(160deg, #141009 0%, #1d150c 100%) padding-box,
+      linear-gradient(135deg, rgba(255,45,0,0.65), rgba(255,199,0,0.35) 55%, rgba(255,45,0,0.15)) border-box;
+  }
+  .answer-card__income-num {
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 18px rgba(255,45,0,0.28);
+  }
+  /* 35〜55 の数字だけ赤を一段強く（級数も少し上げる） */
+  .answer-card__income-num {
+    background: linear-gradient(180deg, var(--hazard) 0%, #ffb300 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .answer-card__income-unit { letter-spacing: 0.01em; }
+  .answer-card__facts li {
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(243,236,224,0.13);
+    letter-spacing: 0.01em;
+  }
+  .answer-card__facts li::before { content: "✓"; color: var(--fire); margin-right: 5px; font-weight: 900; }
+
+  /* ---- D. CTAトークン統一 ----
+     LINE = LINEブランド緑 / 主CTA(電話・応募) = 炎/赤 / 副 = アウトライン
+     役割が色で一目で分かるよう全導線で一貫させる */
+  :root {
+    --line-green: #06c755;
+    --line-green-deep: #04a247;
+  }
+  /* LINEは全画面で緑トークンに統一（answer-cardのLINEも緑へ） */
+  .answer-card__cta .ac-line,
+  .inline-cta a {
+    background: linear-gradient(135deg, var(--line-green), var(--line-green-deep));
+    box-shadow: 0 8px 22px rgba(6,199,85,0.32);
+    color: #fff;
+  }
+  .answer-card__cta .ac-line:hover,
+  .inline-cta a:hover { filter: brightness(1.06); }
+  /* フッターLINEボタンは世界観の角オフセット影を維持しつつ緑へ */
+  .cta__buttons .btn-fire {
+    background: linear-gradient(135deg, var(--line-green), var(--line-green-deep));
+    border-color: var(--line-green-deep);
+    color: #fff;
+    box-shadow: 6px 6px 0 var(--hazard);
+  }
+  .cta__buttons .btn-fire:hover {
+    box-shadow: 9px 9px 0 var(--hazard);
+    filter: brightness(1.05);
+  }
+  /* 微アフォーダンス：LINE系CTAに右向き矢印 */
+  .answer-card__cta .ac-line::after,
+  .inline-cta a::after {
+    content: "→";
+    font-weight: 900;
+    margin-left: 2px;
+    transition: transform .15s ease;
+  }
+  .answer-card__cta .ac-line:hover::after,
+  .inline-cta a:hover::after { transform: translateX(3px); }
+  /* 電話 = 炎/赤の主アクション格 */
+  .answer-card__cta .ac-tel {
+    border-color: rgba(255,45,0,0.55);
+    color: var(--paper);
+  }
+  .answer-card__cta .ac-tel:hover {
+    border-color: var(--fire);
+    background: rgba(255,45,0,0.10);
+  }
+
+  /* ---- C. 収入ラダー L01主役 / L03 任意トーン落とし ---- */
+  /* 統一カードシステム：角丸を揃える */
+  .layer { border-radius: 14px; }
+  .layer__side { border-radius: 0; }
+  /* L01 = 収入の柱（主役・明るく・厚みを出す） */
+  .layer--pillar {
+    border-color: var(--hazard);
+    box-shadow: 0 14px 38px rgba(255,199,0,0.10), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .layer--pillar .layer__side {
+    background: linear-gradient(160deg, var(--fire), var(--fire-deep));
+  }
+  .layer--pillar .layer__num { font-size: 40px; }
+  .layer__pillar-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--hazard); color: var(--ink);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+    padding: 4px 10px; border-radius: 999px;
+    margin-bottom: 10px;
+  }
+  .layer--pillar .layer__title { font-size: 27px; }
+  /* L03 = 任意・おまけ（muted） */
+  .layer--optional {
+    border-color: rgba(243,236,224,0.16);
+    background: #221d18;
+    opacity: 0.92;
+  }
+  .layer--optional .layer__side {
+    background: rgba(255,255,255,0.05);
+  }
+  .layer--optional .layer__num { color: rgba(243,236,224,0.55); }
+  .layer--optional .layer__tag { color: var(--smoke); }
+  .layer--optional .layer__title { color: #cfc7bb; }
+  .layer--optional .layer__math { color: #9b938a; }
+  .layer--optional .layer__math span {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(243,236,224,0.14);
+  }
+  .layer__optional-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(243,236,224,0.18);
+    color: #b8b0a4;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em;
+    padding: 3px 9px; border-radius: 999px;
+    margin-bottom: 9px;
+  }
+
+  /* ---- E. 余白・リズム（スマホ390px最優先で破綻させない） ---- */
+  @media (max-width: 480px) {
+    .layer { grid-template-columns: 84px 1fr; border-radius: 12px; }
+    .layer__side { padding: 14px; }
+    .layer--pillar .layer__num,
+    .layer__num { font-size: 22px; }
+    .layer__body { padding: 18px 18px; }
+    .layer--pillar .layer__title { font-size: 21px; }
+  }
 </style>
 </head>
 <body>
@@ -4336,6 +4530,19 @@
       ☎ 電話
     </a>
   </div>
+</div>
+
+<!-- ============== TRUST STRIP (added) — 実在の事実のみ・写真は足さない ============== -->
+<div class="trust-strip reveal">
+  <div class="trust-strip__inner">
+    <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>適格請求書／インボイス対応</span>
+    <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>確定申告サポート</span>
+    <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>車両リース完備</span>
+    <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>専属サポート</span>
+    <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>東京・神奈川 全域</span>
+    <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 11 2 2 4-4"/></svg>業務委託（個人事業主）</span>
+  </div>
+  <div class="trust-strip__foot">FACTS, NOT PHOTOS — 実在の制度・条件のみを掲載しています</div>
 </div>
 
 <!-- ============== TICKER ============== -->
@@ -5031,11 +5238,12 @@
     </div>
 
     <div class="layers">
-      <div class="layer">
+      <div class="layer layer--pillar">
         <div class="layer__side">
           <div class="layer__num">L<br>01</div>
         </div>
         <div class="layer__body">
+          <span class="layer__pillar-badge" data-i18n="layer1_pillar">★ 収入の柱（本業）</span>
           <div class="layer__tag" data-i18n="layer1_tag">配達歩合 / PIECE RATE</div>
           <h4 class="layer__title" data-i18n="layer1_title">走った個数 × 単価</h4>
           <div class="layer__math">
@@ -5068,11 +5276,12 @@
         <strong>収入の柱はあくまで本業の配送です。</strong> 下のL03（紹介報酬）は“やってもやらなくてもいい”完全任意の追加収入で、<strong>出資・勧誘・ノルマ・ネットワークビジネスは一切ありません。</strong> 上のL01（配達歩合）の本業配送収入だけで生活できます。
       </div>
 
-      <div class="layer">
+      <div class="layer layer--optional">
         <div class="layer__side">
           <div class="layer__num">L<br>03</div>
         </div>
         <div class="layer__body">
+          <span class="layer__optional-tag" data-i18n="layer3_optional">任意・おまけ収入（やらなくてOK）</span>
           <div class="layer__tag" data-i18n="layer3_tag">紹介継続報酬 / RESIDUAL</div>
           <h4 class="layer__title" data-i18n="layer3_title">紹介先の個数 × ¥22 × 継続</h4>
           <div class="layer__math">
@@ -6095,6 +6304,7 @@
       ticker_7: '前借りOK',
       ticker_8: '紹介は継続報酬 ¥22/個',
       pay_intro: '<p>単価のみで勝負していない分、BURNING BROS.の報酬設計は少し複雑です。</p><p>でも複雑な分、「働き方」次第で上限は大きく変わります。積み重ねて、受け取る仕組みを見てください。</p>',
+      layer1_pillar: '★ 収入の柱（本業）',
       layer1_tag: '配達歩合 / PIECE RATE',
       layer1_title: '走った個数 × 単価',
       layer1_math: '<span>¥143〜</span> × <span>個数</span> × <span>稼働日数</span>',
@@ -6103,6 +6313,7 @@
       layer2_title: 'リーダー・管理者報酬',
       layer2_math: '<span>チーム成績</span> + <span>新人定着</span> + <span>運営貢献</span>',
       layer2_desc: '配達実績を積めばリーダー推薦、さらに管理者へ。自分の稼働とは別に、チーム運営への貢献に応じた報酬が加わります。',
+      layer3_optional: '任意・おまけ収入（やらなくてOK）',
       layer3_tag: '紹介継続報酬 / RESIDUAL',
       layer3_title: '紹介先の個数 × ¥22 × 継続',
       layer3_math: '<span>¥22／個</span> × <span>紹介先の配達個数</span> × <span>上限なし</span>',
@@ -6309,6 +6520,7 @@
       ticker_7: 'Advance pay available',
       ticker_8: 'Referral residual ¥22/pkg',
       pay_intro: '<p>Because we don\'t compete on rate alone, BURNING BROS.\' pay structure is a bit complex.</p><p>But that complexity means your earning potential changes dramatically based on how you work. Stack up, and receive — see the system.</p>',
+      layer1_pillar: '★ MAIN INCOME (CORE)',
       layer1_tag: 'PIECE RATE',
       layer1_title: 'Packages delivered x Rate',
       layer1_math: '<span>¥143~</span> x <span>Packages</span> x <span>Work days</span>',
@@ -6317,6 +6529,7 @@
       layer2_title: 'Leader & Manager rewards',
       layer2_math: '<span>Team results</span> + <span>New driver retention</span> + <span>Operations</span>',
       layer2_desc: 'Build your delivery record and get recommended for leader, then manager. On top of your own driving, you earn from team performance.',
+      layer3_optional: 'OPTIONAL EXTRA (skip is fine)',
       layer3_tag: 'REFERRAL RESIDUAL',
       layer3_title: 'Referral packages x ¥22 x Ongoing',
       layer3_math: '<span>¥22/pkg</span> x <span>Referral deliveries</span> x <span>No limit</span>',
