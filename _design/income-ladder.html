@@ -1,0 +1,103 @@
+<!-- @dsCard group="Income" -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Income Ladder — BURNING BROS.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=JetBrains+Mono&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#0a0906; --paper:#f3ece0; --fire:#ff2d00; --fire-deep:#cc2200; --hazard:#ffc700; --ash:#2a2520; --smoke:#6b635a; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0a0906;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;font-family:"Zen Kaku Gothic New",sans-serif;}
+  .frame{width:390px;max-width:100%;}
+
+  .layers{display:flex;flex-direction:column;gap:0;}
+  .layer{display:grid;grid-template-columns:84px 1fr;background:var(--ash);border:2px solid var(--fire);
+    border-radius:12px;overflow:hidden;transition:transform .2s ease;}
+  .layer:hover{transform:translate(-2px,-2px);}
+  .layer__side{background:var(--fire);padding:14px;display:flex;align-items:center;justify-content:center;}
+  .layer__num{font-family:"Archivo Black",sans-serif;font-size:22px;color:var(--paper);line-height:1;text-align:center;letter-spacing:-.02em;}
+  .layer__body{padding:18px 18px;}
+  .layer__tag{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--hazard);letter-spacing:.1em;margin-bottom:8px;}
+  .layer__title{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:21px;color:var(--paper);line-height:1.3;margin-bottom:10px;}
+  .layer__math{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--hazard);margin-bottom:12px;letter-spacing:.02em;}
+  .layer__math span{background:rgba(255,199,0,.12);padding:2px 8px;border:1px solid rgba(255,199,0,.3);}
+  .layer__desc{font-size:12.5px;line-height:1.8;color:#b8b0a4;}
+  .layer-plus,.layer-eq{font-family:"Archivo Black",sans-serif;font-size:30px;color:var(--fire);text-align:center;padding:8px 0;line-height:1;}
+  .layer-eq{color:var(--hazard);font-size:38px;}
+
+  /* C. L01 主役（柱） */
+  .layer--pillar{border-color:var(--hazard);box-shadow:0 14px 38px rgba(255,199,0,.10),inset 0 1px 0 rgba(255,255,255,.05);}
+  .layer--pillar .layer__side{background:linear-gradient(160deg,var(--fire),var(--fire-deep));}
+  .layer--pillar .layer__num{font-size:24px;}
+  .layer--pillar .layer__title{font-size:22px;}
+  .layer__pillar-badge{display:inline-flex;align-items:center;gap:6px;background:var(--hazard);color:var(--ink);
+    font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.06em;padding:4px 10px;border-radius:999px;margin-bottom:10px;}
+
+  /* C. L03 任意・おまけ（muted） */
+  .layer--optional{border-color:rgba(243,236,224,.16);background:#221d18;opacity:.92;}
+  .layer--optional .layer__side{background:rgba(255,255,255,.05);}
+  .layer--optional .layer__num{color:rgba(243,236,224,.55);}
+  .layer--optional .layer__tag{color:var(--smoke);}
+  .layer--optional .layer__title{color:#cfc7bb;}
+  .layer--optional .layer__math{color:#9b938a;}
+  .layer--optional .layer__math span{background:rgba(255,255,255,.05);border-color:rgba(243,236,224,.14);}
+  .layer__optional-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(243,236,224,.18);color:#b8b0a4;font-family:"JetBrains Mono",monospace;
+    font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:3px 9px;border-radius:999px;margin-bottom:9px;}
+
+  .reassure-note{background:rgba(255,255,255,.04);border-left:3px solid var(--fire);border-radius:10px;
+    padding:14px 16px;margin:8px 0;color:var(--paper);font-size:12.5px;line-height:1.8;}
+  .reassure-note strong{color:var(--hazard);}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="layers">
+      <div class="layer layer--pillar">
+        <div class="layer__side"><div class="layer__num">L<br>01</div></div>
+        <div class="layer__body">
+          <span class="layer__pillar-badge">★ 収入の柱（本業）</span>
+          <div class="layer__tag">配達歩合 / PIECE RATE</div>
+          <h4 class="layer__title">走った個数 × 単価</h4>
+          <div class="layer__math"><span>¥143〜</span> × <span>個数</span> × <span>稼働日数</span></div>
+          <p class="layer__desc">最もベーシックな報酬軸。配達した荷物の個数に応じた完全歩合制。これだけで生活できる本業の柱です。</p>
+        </div>
+      </div>
+
+      <div class="layer-plus">+</div>
+
+      <div class="layer">
+        <div class="layer__side"><div class="layer__num">L<br>02</div></div>
+        <div class="layer__body">
+          <div class="layer__tag">役職インセンティブ / ROLE</div>
+          <h4 class="layer__title">リーダー・管理者報酬</h4>
+          <div class="layer__math"><span>チーム成績</span> + <span>新人定着</span> + <span>運営貢献</span></div>
+          <p class="layer__desc">配達実績を積めばリーダー推薦、さらに管理者へ。チーム運営への貢献に応じた報酬が加わります。</p>
+        </div>
+      </div>
+
+      <div class="layer-plus">+</div>
+
+      <div class="reassure-note">
+        <strong>収入の柱はあくまで本業の配送です。</strong> 下のL03は“やってもやらなくてもいい”完全任意の追加収入で、<strong>出資・勧誘・ノルマ・ネットワークビジネスは一切ありません。</strong>
+      </div>
+
+      <div class="layer layer--optional">
+        <div class="layer__side"><div class="layer__num">L<br>03</div></div>
+        <div class="layer__body">
+          <span class="layer__optional-tag">任意・おまけ収入（やらなくてOK）</span>
+          <div class="layer__tag">紹介継続報酬 / RESIDUAL</div>
+          <h4 class="layer__title">紹介先の個数 × ¥22 × 継続</h4>
+          <div class="layer__math"><span>¥22／個</span> × <span>紹介先の配達個数</span> × <span>上限なし</span></div>
+          <p class="layer__desc">1回払いではなく継続発生。やってもやらなくてもいい、あくまでおまけの収入軸です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

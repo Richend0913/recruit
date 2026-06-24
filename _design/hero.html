@@ -1,0 +1,61 @@
+<!-- @dsCard group="Hero" -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero — BURNING BROS.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Bebas+Neue&family=JetBrains+Mono&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0906; --paper:#f3ece0; --fire:#ff2d00; --fire-deep:#cc2200;
+    --hazard:#ffc700; --smoke:#6b635a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0a0906;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;font-family:"Zen Kaku Gothic New",sans-serif;}
+  .frame{width:390px;max-width:100%;}
+  .hero{
+    position:relative;border-radius:18px;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(255,45,0,0.30) 0%, rgba(255,45,0,0) 55%),
+      linear-gradient(180deg,#1a1208 0%, #0a0906 100%);
+    border:1px solid rgba(255,45,0,0.25);
+    padding:46px 24px 40px;
+    box-shadow:0 24px 60px rgba(0,0,0,.55);
+  }
+  .hero__tag{
+    font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.22em;
+    color:var(--fire);margin-bottom:18px;text-transform:uppercase;
+  }
+  .hero__headline{
+    font-family:"Shippori Mincho B1",serif;font-weight:800;color:var(--paper);
+    font-size:34px;line-height:1.32;text-wrap:balance;margin-bottom:18px;
+    text-shadow:0 2px 24px rgba(255,45,0,.25);
+  }
+  .hero__headline .em{color:var(--hazard);}
+  .hero__sub{
+    font-family:"Bebas Neue",sans-serif;font-size:40px;letter-spacing:.04em;line-height:1;
+    color:transparent;
+    background:linear-gradient(135deg,var(--fire) 0%, var(--hazard) 100%);
+    -webkit-background-clip:text;background-clip:text;
+    margin-bottom:20px;
+  }
+  .hero__lead{color:#cfc7bb;font-size:14px;line-height:1.9;}
+  .hero__rule{height:2px;width:54px;background:var(--fire);margin:22px 0 0;}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="hero">
+      <div class="hero__tag">TOKYO / KANAGAWA — DELIVERY DRIVER</div>
+      <h1 class="hero__headline">運ぶ、その先まで、<span class="em">考える。</span></h1>
+      <div class="hero__sub">燃やせ。走れ。稼げ。</div>
+      <p class="hero__lead">軽貨物の委託ドライバー。車両リースあり・未経験歓迎。走った分だけ、まっすぐ報酬になる働き方。</p>
+      <div class="hero__rule"></div>
+    </div>
+  </div>
+</body>
+</html>

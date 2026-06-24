@@ -1,0 +1,101 @@
+<!-- @dsCard group="CTA" -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTA System — BURNING BROS.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0906; --paper:#f3ece0; --fire:#ff2d00; --fire-deep:#cc2200; --hazard:#ffc700;
+    --smoke:#6b635a; --line-green:#06c755; --line-green-deep:#04a247;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0a0906;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;font-family:"Zen Kaku Gothic New",sans-serif;}
+  .frame{width:390px;max-width:100%;display:flex;flex-direction:column;gap:26px;}
+  .lbl{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;color:var(--smoke);text-transform:uppercase;margin-bottom:8px;}
+
+  /* トークン凡例 */
+  .tokens{display:flex;gap:8px;flex-wrap:wrap;}
+  .swatch{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:var(--paper);}
+  .dot{width:13px;height:13px;border-radius:4px;}
+  .dot--line{background:var(--line-green);}
+  .dot--fire{background:var(--fire);}
+  .dot--outline{background:transparent;border:2px solid rgba(255,45,0,.55);}
+
+  /* インラインCTA（LINE=緑・矢印アフォーダンス） */
+  .inline-cta{display:flex;justify-content:center;}
+  .inline-cta a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:900;font-size:15px;color:#fff;
+    padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,var(--line-green),var(--line-green-deep));
+    box-shadow:0 8px 22px rgba(6,199,85,.30);transition:transform .15s ease,filter .15s ease;}
+  .inline-cta a:hover{transform:translateY(-2px);filter:brightness(1.07);}
+  .inline-cta a::after{content:"→";font-weight:900;margin-left:2px;transition:transform .15s ease;}
+  .inline-cta a:hover::after{transform:translateX(3px);}
+  .inline-cta a .ic-sub{font-weight:600;font-size:12px;opacity:.85;}
+
+  /* フッターCTA（LINE=緑＋角オフセット影／電話=アウトライン） */
+  .cta__buttons{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-fire{background:linear-gradient(135deg,var(--line-green),var(--line-green-deep));color:#fff;
+    border:2px solid var(--line-green-deep);padding:18px 22px;font-weight:900;font-size:15px;letter-spacing:.06em;
+    text-decoration:none;display:inline-flex;align-items:center;gap:12px;box-shadow:6px 6px 0 var(--hazard);
+    transition:transform .15s ease,box-shadow .15s ease,filter .15s ease;border-radius:4px;}
+  .btn-fire:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--hazard);filter:brightness(1.05);}
+  .btn-fire .arrow{width:22px;height:2px;background:#fff;position:relative;}
+  .btn-fire .arrow::after{content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;border-top:2px solid #fff;border-right:2px solid #fff;transform:rotate(45deg);}
+  .btn-outline{background:transparent;color:var(--paper);border:2px solid rgba(255,45,0,.55);padding:18px 22px;
+    font-weight:900;font-size:14px;letter-spacing:.06em;text-decoration:none;display:inline-flex;align-items:center;gap:10px;border-radius:4px;
+    transition:background .15s ease,color .15s ease,border-color .15s ease;}
+  .btn-outline:hover{border-color:var(--fire);background:rgba(255,45,0,.10);}
+
+  /* 追従stickyバー */
+  .sticky{display:flex;gap:8px;background:rgba(20,16,12,.92);padding:9px 10px;border-radius:12px;box-shadow:0 -4px 18px rgba(0,0,0,.35);}
+  .sticky a{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:900;font-size:15px;border-radius:12px;letter-spacing:.02em;}
+  .sticky .s-line{flex:1;padding:14px 10px;background:var(--line-green);color:#fff;}
+  .sticky .s-tel{flex:0 0 auto;padding:14px 18px;background:transparent;color:var(--paper);border:1.5px solid rgba(255,45,0,.55);}
+</style>
+</head>
+<body>
+  <div class="frame">
+
+    <div>
+      <div class="lbl">Design tokens</div>
+      <div class="tokens">
+        <span class="swatch"><span class="dot dot--line"></span>LINE = ブランド緑</span>
+        <span class="swatch"><span class="dot dot--fire"></span>主CTA = 炎/赤</span>
+        <span class="swatch"><span class="dot dot--outline"></span>副 = 赤アウトライン</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="lbl">Inline CTA</div>
+      <div class="inline-cta">
+        <a href="#">LINEで相談（30秒）<span class="ic-sub">／本業の配送だけでもOK</span></a>
+      </div>
+    </div>
+
+    <div>
+      <div class="lbl">Footer CTA</div>
+      <div class="cta__buttons">
+        <a href="#" class="btn-fire">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで応募する<span class="arrow"></span>
+        </a>
+        <a href="#" class="btn-outline"><span>☎</span>電話で問い合わせる</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="lbl">Sticky apply bar</div>
+      <div class="sticky">
+        <a href="#" class="s-line">💬 LINEで応募（最短）</a>
+        <a href="#" class="s-tel">☎ 電話</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

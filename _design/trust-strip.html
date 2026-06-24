@@ -1,0 +1,53 @@
+<!-- @dsCard group="Trust" -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trust Strip — BURNING BROS.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#0a0906; --paper:#f3ece0; --fire:#ff2d00; --hazard:#ffc700; --smoke:#6b635a; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0a0906;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;font-family:"Zen Kaku Gothic New",sans-serif;}
+  .frame{width:390px;max-width:100%;}
+
+  .trust-strip{padding:0 4px;}
+  .trust-strip__inner{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+  .trust-badge{
+    display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;
+    background:rgba(255,255,255,.035);border:1px solid rgba(243,236,224,.14);color:var(--paper);
+    font-size:12px;font-weight:700;line-height:1.2;white-space:nowrap;
+  }
+  .trust-badge svg{flex-shrink:0;}
+  .trust-badge .tb-ico{width:16px;height:16px;color:var(--fire);}
+  .trust-strip__foot{text-align:center;color:var(--smoke);font-size:10.5px;letter-spacing:.04em;
+    margin-top:12px;font-family:"JetBrains Mono",monospace;}
+  /* 390px：横スクロールに切替（実LPと一致） */
+  @media(max-width:480px){
+    .trust-strip__inner{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
+    .trust-strip__inner::-webkit-scrollbar{display:none;}
+    .trust-badge{flex:0 0 auto;}
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="trust-strip">
+      <div class="trust-strip__inner">
+        <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>適格請求書／インボイス対応</span>
+        <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>確定申告サポート</span>
+        <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>車両リース完備</span>
+        <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>専属サポート</span>
+        <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>東京・神奈川 全域</span>
+        <span class="trust-badge"><svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 11 2 2 4-4"/></svg>業務委託（個人事業主）</span>
+      </div>
+      <div class="trust-strip__foot">FACTS, NOT PHOTOS — 実在の制度・条件のみを掲載しています</div>
+    </div>
+  </div>
+</body>
+</html>

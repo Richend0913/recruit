@@ -1,0 +1,82 @@
+<!-- @dsCard group="Conversion" -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Answer Card — BURNING BROS.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Bebas+Neue&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0906; --paper:#f3ece0; --fire:#ff2d00; --fire-deep:#cc2200;
+    --hazard:#ffc700; --smoke:#6b635a; --line-green:#06c755; --line-green-deep:#04a247;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0a0906;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;font-family:"Zen Kaku Gothic New",sans-serif;}
+  .frame{width:390px;max-width:100%;}
+
+  .answer-card{
+    border:1px solid transparent;border-radius:16px;padding:22px 20px 24px;position:relative;
+    background:
+      linear-gradient(160deg,#141009 0%,#1d150c 100%) padding-box,
+      linear-gradient(135deg,rgba(255,45,0,.65),rgba(255,199,0,.35) 55%,rgba(255,45,0,.15)) border-box;
+    box-shadow:0 18px 50px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
+  }
+  .answer-card__tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--fire);margin-bottom:6px;}
+  .answer-card__where{color:var(--paper);font-weight:900;font-size:19px;line-height:1.4;margin-bottom:14px;}
+  .answer-card__income{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 12px;padding:12px 0 4px;border-top:1px dashed rgba(255,255,255,.12);}
+  .answer-card__income-num{
+    font-family:"Bebas Neue",sans-serif;font-size:46px;line-height:1;letter-spacing:.02em;
+    background:linear-gradient(180deg,var(--hazard) 0%,#ffb300 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    text-shadow:0 2px 18px rgba(255,45,0,.28);
+  }
+  .answer-card__income-unit{color:var(--paper);font-weight:700;font-size:15px;-webkit-text-fill-color:var(--paper);}
+  .answer-card__income-note{color:var(--smoke);font-size:11px;line-height:1.5;flex-basis:100%;margin-top:2px;}
+  .answer-card__facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px;padding:0;}
+  .answer-card__facts li{
+    background:rgba(255,255,255,.045);border:1px solid rgba(243,236,224,.13);color:var(--paper);
+    font-size:12.5px;font-weight:700;padding:8px 13px;border-radius:999px;letter-spacing:.01em;
+  }
+  .answer-card__facts li::before{content:"✓";color:var(--fire);margin-right:5px;font-weight:900;}
+  .answer-card__cta{display:flex;gap:10px;flex-wrap:wrap;}
+  .ac-line,.ac-tel{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+    font-weight:900;border-radius:12px;padding:15px 20px;font-size:15px;transition:transform .15s ease,filter .15s ease;}
+  .ac-line{flex:1 1 240px;background:linear-gradient(135deg,var(--line-green),var(--line-green-deep));color:#fff;box-shadow:0 8px 22px rgba(6,199,85,.32);}
+  .ac-line::after{content:"→";font-weight:900;margin-left:2px;transition:transform .15s ease;}
+  .ac-line:hover::after{transform:translateX(3px);}
+  .ac-tel{flex:0 0 auto;background:transparent;color:var(--paper);border:1.5px solid rgba(255,45,0,.55);}
+  .ac-line:hover,.ac-tel:hover{transform:translateY(-2px);filter:brightness(1.06);}
+  .ac-tel:hover{border-color:var(--fire);background:rgba(255,45,0,.10);}
+  @media(max-width:480px){.ac-tel{flex:1 1 100%;}}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="answer-card">
+      <div class="answer-card__tag">QUICK ANSWER / まず結論</div>
+      <div class="answer-card__where">東京・神奈川｜軽貨物 委託ドライバー募集</div>
+      <div class="answer-card__income">
+        <span class="answer-card__income-num">35〜55<span class="answer-card__income-unit">万円／月 可能</span></span>
+        <span class="answer-card__income-note">※モデル収入（L01単体のシミュレーション値）。実績を保証するものではありません。</span>
+      </div>
+      <ul class="answer-card__facts">
+        <li>車両リースあり（手持ちの車は不要）</li>
+        <li>未経験歓迎</li>
+        <li>専属サポート</li>
+        <li>確定申告サポート</li>
+      </ul>
+      <div class="answer-card__cta">
+        <a href="#" class="ac-line">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで相談（30秒）
+        </a>
+        <a href="#" class="ac-tel">☎ 電話</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
