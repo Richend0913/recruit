@@ -309,15 +309,18 @@
   .hero__lead {
     max-width: 520px;
     font-size: 16px;
-    line-height: 1.95;
+    line-height: 1.8;
     color: var(--paper);
   }
+  .hero__lead p { text-wrap: pretty; }
   .hero__lead p + p { margin-top: 14px; }
   .hero__lead strong {
     color: var(--hazard);
     font-weight: 900;
-    border-bottom: 2px solid var(--fire);
-    padding-bottom: 2px;
+    border-bottom: 1.5px solid var(--fire);
+    padding-bottom: 1px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
   .hero__stat {
     text-align: right;
