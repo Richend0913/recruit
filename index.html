@@ -108,13 +108,27 @@
   .bene__title, .tl-title, .loc-card__name, .faq-item__q .txt,
   .who__text h4 {
     text-wrap: balance;
+    /* 日本語をフレーズ境界で改行（語の途中で「あな|た」のように割れるのを防ぐ） */
+    word-break: auto-phrase;
+    line-break: strict;
   }
   p, .hero__lead, .philosophy__intro p, .career__intro,
   .layer__desc, .ph-card__text, .step__desc, .rm-card__text,
   .bene__desc, .tl-desc, .who__text p, .faq-item__a,
-  .cta__sub, .pay-note, .referral__head .lead {
+  .cta__sub, .pay-note, .referral__head .lead,
+  .answer-card__intro, .referral__hero-note, .cta__lead, .footer__lead {
     text-wrap: pretty;
+    line-break: strict;
   }
+  /* 強調(下線/背景)が折り返しても綺麗に分割される */
+  strong, .fire, mark, .hl, .highlight, .em-line {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  /* 1単位として折り返す（途中で割らせない）ユーティリティ */
+  .nb { white-space: nowrap; }
+  /* 紹介報酬ノートはクローズ(節)単位でブロック折り返し */
+  .referral__hero-note .nb { display: inline-block; }
   /* paper grain overlay */
   body::before {
     content: "";
@@ -846,10 +860,18 @@
     margin-bottom: 14px;
     letter-spacing: 0.02em;
   }
-  .layer__math span {
+  .layer__math {
+    display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: center; gap: 6px 4px;
+  }
+  /* 外側ラッパは素通し、チップ装飾は内側spanだけに当てる */
+  .layer__math > span { display: contents; }
+  .layer__math > span > span {
     background: rgba(255, 199, 0, 0.12);
     padding: 2px 8px;
     border: 1px solid rgba(255, 199, 0, 0.3);
+    /* チップ内（例:「稼働日数」）は途中で割らず丸ごと折り返す＝「数」だけ落ちない */
+    white-space: nowrap;
   }
   .layer__desc {
     font-size: 13px;
@@ -4164,15 +4186,22 @@
     padding: 28px 16px 4px;
   }
   .inline-cta a {
-    display: inline-flex; align-items: center; gap: 9px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 4px 9px; text-align: center;
     text-decoration: none; font-weight: 900; font-size: 15px;
-    color: #fff; padding: 14px 26px; border-radius: 999px;
+    color: #fff; padding: 14px 22px; border-radius: 999px;
     background: linear-gradient(135deg, var(--fire), var(--fire-deep));
     box-shadow: 0 8px 22px rgba(255,45,0,0.30);
     transition: transform .15s ease, filter .15s ease;
+    /* 主ラベル「LINEで相談（30秒）」が「秒)」だけ落ちないように語の途中で割らない */
+    word-break: keep-all; line-break: strict;
   }
   .inline-cta a:hover { transform: translateY(-2px); filter: brightness(1.07); }
-  .inline-cta a .ic-sub { font-weight: 600; font-size: 12px; opacity: .85; }
+  /* サブ文は丸ごと1単位で折り返す（「OK」「く」など1文字孤立を防ぐ） */
+  .inline-cta a .ic-sub {
+    font-weight: 600; font-size: 12px; opacity: .85;
+    display: inline-block; white-space: nowrap;
+  }
 
   /* ===== ANTI-MLM REASSURANCE (added) ===== */
   .reassure-note {
@@ -4451,7 +4480,7 @@
   .layer--optional .layer__tag { color: var(--smoke); }
   .layer--optional .layer__title { color: #cfc7bb; }
   .layer--optional .layer__math { color: #9b938a; }
-  .layer--optional .layer__math span {
+  .layer--optional .layer__math > span > span {
     background: rgba(255,255,255,0.05);
     border-color: rgba(243,236,224,0.14);
   }
@@ -4601,7 +4630,7 @@
           正直に言うと、<strong>うちの配達単価は業界の中でトップクラスに高いわけじゃない。</strong>
         </p>
         <p>
-          でも私たちが設計しているのは「1個いくら」の仕事ではなく、<strong>入ってきた人の、その先のキャリア全体</strong>。複数の収入軸、リーダー登用、紹介の継続報酬、管理者ポジション、独立支援まで。長く一緒に走れる仕組みを本気で作っています。
+          でも私たちが設計しているのは「1個いくら」の仕事ではなく、<strong>入ってきた人の、その先の<span class="nb">キャリア全体</span></strong>。複数の収入軸、リーダー登用、紹介の継続報酬、管理者ポジション、独立支援まで。長く一緒に走れる仕組みを本気で作っています。
         </p>
       </div>
       <div class="hero__income">
@@ -4982,7 +5011,7 @@
 <section class="numbers">
   <div class="container">
     <div class="section-tag">BY THE NUMBERS / 数字で見るBURNING BROS.</div>
-    <h2 class="section-title" data-i18n="numbers_title" data-i18n-html="1">数字で見る、<br>BURNING BROS.の<span class="fire">仕組み。</span></h2>
+    <h2 class="section-title" data-i18n="numbers_title" data-i18n-html="1">数字で見る、<br>BURNING&nbsp;BROS.の<span class="fire">仕組み。</span></h2>
 
     <div class="numbers__grid">
       <div class="num">
@@ -5708,8 +5737,8 @@
         <div class="referral__hero-amount">
           <span class="prefix">¥</span>22<span class="unit">／個</span>
         </div>
-        <div class="referral__hero-note" data-i18n="referral_hero_note">
-          × 紹介先が配達した個数 × 紹介先が走り続ける限り、毎月発生
+        <div class="referral__hero-note" data-i18n="referral_hero_note" data-i18n-html="1">
+          <span class="nb">× 紹介先が配達した個数</span> <span class="nb">× 紹介先が走り続ける限り、毎月発生</span>
         </div>
       </div>
     </div>
@@ -6376,7 +6405,7 @@
       nav_cta: "応募する",
       hero_kicker: "RECRUIT / 業務委託配送ドライバー募集中",
       hero_headline: '<span class="line">運ぶ、</span><span class="line">その<span class="fire">先</span>まで、</span><span class="line stroke">考える。</span>',
-      hero_lead: '<p>BURNING BROS.株式会社は、東京・神奈川で軽貨物配送を手がける会社です。</p><p>正直に言うと、<strong>うちの配達単価は業界の中でトップクラスに高いわけじゃない。</strong></p><p>でも私たちが設計しているのは「1個いくら」の仕事ではなく、<strong>入ってきた人の、その先のキャリア全体</strong>。複数の収入軸、リーダー登用、紹介の継続報酬、管理者ポジション、独立支援まで。長く一緒に走れる仕組みを本気で作っています。</p>',
+      hero_lead: '<p>BURNING BROS.株式会社は、東京・神奈川で軽貨物配送を手がける会社です。</p><p>正直に言うと、<strong>うちの配達単価は業界の中でトップクラスに高いわけじゃない。</strong></p><p>でも私たちが設計しているのは「1個いくら」の仕事ではなく、<strong>入ってきた人の、その先の<span class="nb">キャリア全体</span></strong>。複数の収入軸、リーダー登用、紹介の継続報酬、管理者ポジション、独立支援まで。長く一緒に走れる仕組みを本気で作っています。</p>',
       hero_income_label: "INCOME STRUCTURE / 収入は3層構造",
       hero_income_piece: "配達歩合",
       hero_income_role: "役職インセンティブ",
@@ -6531,7 +6560,7 @@
       who6_desc: '配送の実務から車両運用、チーム管理まで学べる環境。ここで経験を積んで、自分の事業を立ち上げた先輩もいます。',
       referral_lead: '<p>BURNING BROS.の紹介報酬は、一回払いで終わるボーナスではありません。</p><p>あなたが紹介した人が配達する1個ごとに、あなたに報酬が発生し続ける仕組み。</p><p>紹介した仲間が現場で走り続ける限り、毎月入り続けます。</p>',
       referral_hero_label: 'ONGOING RESIDUAL / 1個あたり',
-      referral_hero_note: '× 紹介先が配達した個数 × 紹介先が走り続ける限り、毎月発生',
+      referral_hero_note: '<span class="nb">× 紹介先が配達した個数</span> <span class="nb">× 紹介先が走り続ける限り、毎月発生</span>',
       rm1_title: '1個ごとに、発生',
       rm1_text: '単発ボーナスではなく、紹介先が配達した荷物1個につき¥22が紹介者に加算されます。紹介先の働きが、そのままあなたの報酬になります。',
       rm2_title: '走り続ける限り、続く',
