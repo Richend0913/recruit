@@ -332,6 +332,7 @@ body.sub{margin:0;font-family:var(--f-gothic);font-size:16px;line-height:1.8;let
 .sub .section-sub{color:var(--ink-2);margin-top:10px;line-height:1.8}
 .sub .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:26px}
 .sub .blog-card{display:flex;flex-direction:column;gap:8px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow-paper);padding:20px}
+.sub .blog-card-body{display:flex;flex-direction:column;gap:8px;min-width:0}
 .sub .blog-card-tag{align-self:flex-start;border:1px solid var(--ember);color:var(--ember-ink);font-size:12px;font-weight:700;line-height:1.35;padding:1px 7px;border-radius:2px}
 .sub .blog-card-title{font-size:17px;font-weight:700;line-height:1.55}
 .sub .blog-card-excerpt{font-size:14px;line-height:1.75;color:var(--ink-2)}
